@@ -37,7 +37,7 @@ function Navbar() {
     { name: "ABOUT", link: "#about" },
     { name: "PROGRAMME", link: "#workshops" },
     { name: "SPEAKERS", link: "#speakers" },
-    { name: "EXPO & IDEATHON", link: "#experience" },
+    // { name: "EXPO & IDEATHON", link: "#experience" },
     { name: "PARTNERS", link: "#partners" },
     { name: "IMPACT", link: "#impact" },
     { name: "REGISTER", link: "#join" },

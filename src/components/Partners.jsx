@@ -162,7 +162,7 @@ function Partners() {
                   font-medium
                 "
               >
-                0{index + 1}
+               
               </span>
               <span className="text-[10px] text-[#287A73] opacity-0 group-hover:opacity-100 transition-opacity font-medium tracking-wider">
                 VISIT ↗

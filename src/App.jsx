@@ -16,7 +16,6 @@ function App() {
       <Navbar />
 
       <Hero />
-gh
       <Introduction />
       {/* <Experience /> */}
       <Speakers />

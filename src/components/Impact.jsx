@@ -13,12 +13,8 @@ function Impact() {
 
   const stats = [
     {
-      number: "1000+",
+      number: "250+",
       label: "STUDENTS & PROFESSIONALS",
-    },
-    {
-      number: "50+",
-      label: "INSTITUTIONS & DELEGATES",
     },
     {
       number: "4",
