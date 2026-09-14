@@ -715,7 +715,7 @@ function Speakers() {
 
                 <div className="mt-6 border-t border-[#29312F]/15 pt-6">
                   {activeSpeaker.detailedDescription.map((paragraph, idx) => (
-                    <p key={idx} className="mb-4 text-sm md:text-base leading-relaxed text-nanavu-deepstone font-light last:mb-0">
+                    <p key={idx} className="mb-4 text-sm md:text-base leading-relaxed text-nana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vu-deepstone font-light last:mb-0">
                       {paragraph}
                     </p>
                   ))}
