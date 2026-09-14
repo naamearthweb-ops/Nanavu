@@ -50,15 +50,15 @@ function Speakers() {
     },
     {
       number: "04",
-      name: "MADHAVAN NAMBOOTHIRI",
-      role: "CLEAN TECH EXPERT · BIORESOURCE SPECIALIST",
+      name: "K. MADHAVAN NAMBOODIRI",
+      role: "GREEN BUILDER · WATER MANAGEMENT SPECIALIST",
       location: "TECHNICAL SPEAKER",
       image: "madhavan.png",
-      description: "Prominent specialist in renewable energy integration, bioresources, and sustainable technology transitions bridging research and practical application.",
+      description: "Retired civil engineer, water management specialist, and green builder advancing sustainable, low-cost earth architecture in Kerala.",
       detailedDescription: [
-        "Madhavan Nampoothiri is a recognized professional and thought leader in the Indian renewable energy and clean technology sector, possessing over a decade of comprehensive experience in the energy industry.",
-        "He is the founder and former director of RESolve Energy Consultants, a firm providing crucial advisory services for renewable energy policy, solar market entry, and green manufacturing in India. He has also served as a Managing Partner at Aspiration Cleantech Ventures.",
-        "Bridging the gap between industry and academia, his current research focuses on Climate Finance and ESG (Environmental, Social, and Governance) investments, driving sustainable technology transitions and practical clean tech applications."
+        "K. Madhavan Namboodiri is a retired civil engineer, water management specialist, and green builder from Kuttippuram, Kerala, widely recognized for his contributions to sustainable earth architecture.",
+        "Through the Susthira Bhavanam Foundation, a non-profit organization he founded in 2019, he champions eco-friendly and low-cost building techniques.",
+        "His work offers a practical alternative to resource-heavy concrete construction, promoting homes that are sustainable, affordable, and grounded in earth-based building methods."
       ]
     },
     {
