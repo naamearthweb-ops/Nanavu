@@ -53,7 +53,7 @@ function Speakers() {
       name: "MADHAVAN NAMBOOTHIRI",
       role: "CLEAN TECH EXPERT · BIORESOURCE SPECIALIST",
       location: "TECHNICAL SPEAKER",
-      image: "https://www.manipal.edu/content/dam/manipal/mu/mcops-manipal/Images/profile/new-faculty-images/Dr%20Madhavan%20Nampoothiri.jpg.transform/manipal-edu-transform-width-height-528px/image.jpg",
+      image: "madhavan.png",
       description: "Prominent specialist in renewable energy integration, bioresources, and sustainable technology transitions bridging research and practical application.",
       detailedDescription: [
         "Madhavan Nampoothiri is a recognized professional and thought leader in the Indian renewable energy and clean technology sector, possessing over a decade of comprehensive experience in the energy industry.",

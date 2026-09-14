@@ -23,7 +23,7 @@ gh
       {/* <Workshops /> */}
       <Partners />
       <Impact />
-      <Gallery />
+      {/* <Gallery /> */}
       <JoinNanavu />
       <Footer />
     </main>
