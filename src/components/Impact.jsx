@@ -101,7 +101,6 @@ function Impact() {
       if (impactRef.current) {
         gsap.from(impactRef.current.children, {
           y: 30,
-          opacity: 0,
           duration: 0.6,
           stagger: 0.08,
           ease: "power3.out",
@@ -325,7 +324,7 @@ function Impact() {
                   text-xs
                   md:text-sm
                   leading-relaxed
-                  text-[#8C877D]
+                  text-[#C4C1B7]
                   max-w-xl
                 "
               >

@@ -26,7 +26,6 @@ function Footer() {
             <li>• Naamearth Sustainable Initiative</li>
             <li>• TKM College of Engineering (TKMCE)</li>
             <li>• TKM College Trust</li>
-            <li>• COSTFORD & Laurie Baker Centre</li>
           </ul>
         </div>
 

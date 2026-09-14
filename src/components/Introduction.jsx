@@ -526,7 +526,7 @@ function Introduction() {
                 font-medium
               "
             >
-              01 / PRACTICAL & AFFORDABLE
+              PRACTICAL & AFFORDABLE
             </span>
 
             <p
@@ -556,7 +556,7 @@ function Introduction() {
                 font-medium
               "
             >
-              02 / EXPERIENTIAL LEARNING
+              EXPERIENTIAL LEARNING
             </span>
 
             <p
@@ -586,7 +586,7 @@ function Introduction() {
                 font-medium
               "
             >
-              03 / NET-ZERO COMMITMENT
+              NET-ZERO COMMITMENT
             </span>
 
             <p

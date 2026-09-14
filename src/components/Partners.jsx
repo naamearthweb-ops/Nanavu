@@ -14,7 +14,7 @@ function Partners() {
       name: "CAMPUS SUSTAINABILITY COUNCIL",
       short: "CSC · TKMCE KOLLAM",
       role: "ORGANISING EXECUTIVE BODY",
-      description: "Cross-disciplinary body embedding sustainability into campus learning, green audits, research, and industry collaboration.",
+      description: "Cross-disciplinary body embedding sustainability into campus learning, research, and industry collaboration.",
       logo: "/partners/csc-logo.png",
       url: "https://tkmce.ac.in",
     },
@@ -124,11 +124,15 @@ function Partners() {
           grid
           grid-cols-1
           sm:grid-cols-2
-          lg:grid-cols-3
-          gap-x-10
+          md:grid-cols-4
+          relative
+          gap-x-8
           gap-y-16
+          border-t
+          border-[#29312F]/20
         "
       >
+
         {partners.map((partner, index) => (
           <a
             key={partner.name}
@@ -139,13 +143,11 @@ function Partners() {
             className="
               group
               relative
-              min-h-[220px]
-              border-t
-              border-[#29312F]/20
               pt-8
               flex
               flex-col
-              justify-between
+              items-center
+              justify-start
               cursor-pointer
               transition-transform
               duration-300
@@ -153,7 +155,7 @@ function Partners() {
             "
           >
             {/* NUMBER & EXTERNAL ICON */}
-            <div className="flex justify-between items-center w-full absolute top-4 left-0 right-0">
+            <div className="flex justify-between items-center w-full absolute top-4 left-0 right-0 z-10">
               <span
                 className="
                   text-[10px]
@@ -162,7 +164,6 @@ function Partners() {
                   font-medium
                 "
               >
-               
               </span>
               <span className="text-[10px] text-[#287A73] opacity-0 group-hover:opacity-100 transition-opacity font-medium tracking-wider">
                 VISIT ↗
@@ -170,37 +171,44 @@ function Partners() {
             </div>
 
             {/* LOGO CONTAINER */}
-            <div className="h-20 flex items-center justify-center py-2 px-4 mb-4">
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="
-                  max-h-16
-                  max-w-[80%]
-                  object-contain
-                  grayscale
-                  opacity-70
-                  transition-all
-                  duration-700
-                  group-hover:grayscale-0
-                  group-hover:opacity-100
-                  group-hover:scale-105
-                "
-              />
+            <div className="flex items-center justify-center py-2 px-4 mb-6 h-24 w-full border-t border-transparent">
+              <div className="w-20 h-20 flex items-center justify-center">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="
+                    w-full
+                    h-full
+                    object-contain
+                    grayscale
+                    opacity-70
+                    transition-all
+                    duration-700
+                    group-hover:grayscale-0
+                    group-hover:opacity-100
+                    group-hover:scale-105
+                  "
+                />
+              </div>
             </div>
 
-            {/* DETAILS */}
-            <div className="text-center pt-2 border-t border-[#29312F]/10">
-              <h3 className="text-base md:text-lg font-medium tracking-tight text-[#29312F] group-hover:text-[#287A73] transition-colors flex items-center justify-center gap-1">
-                <span>{partner.name}</span>
-                <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            {/* HEADING */}
+            <div className="h-16 flex items-start justify-center mb-2 w-full px-2">
+              <h3 className="text-base md:text-lg font-medium tracking-tight text-[#29312F] group-hover:text-[#287A73] transition-colors text-center">
+                {partner.name}
               </h3>
+            </div>
 
-              <p className="text-[9px] tracking-[0.2em] text-[#287A73] font-medium uppercase mt-1">
+            {/* ROLE */}
+            <div className="h-10 flex items-start justify-center mb-3 w-full px-2">
+              <p className="text-[9px] tracking-[0.2em] text-[#287A73] font-medium uppercase text-center">
                 {partner.role}
               </p>
+            </div>
 
-              <p className="mt-3 text-xs leading-relaxed text-[#8C877D] max-w-xs mx-auto">
+            {/* DESCRIPTION */}
+            <div className="h-24 flex items-start justify-center w-full px-2">
+              <p className="text-xs leading-relaxed text-[#8C877D] max-w-xs text-center">
                 {partner.description}
               </p>
             </div>
