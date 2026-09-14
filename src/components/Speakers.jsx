@@ -1,0 +1,713 @@
+import { useLayoutEffect, useRef, useState, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+function Speakers() {
+  const sectionRef = useRef(null);
+  const [activeSpeaker, setActiveSpeaker] = useState(null);
+
+  const speakers = [
+    {
+      number: "01",
+      name: "AR. VINU DANIEL",
+      role: "FOUNDER, WALLMAKERS · TIME100 NEXT 2023",
+      location: "PANEL SPEAKER",
+      image: "https://www.asiarealestatesummit.com/wp-content/uploads/2023/10/Ar.-Vinu-Daniel_Temp-e1696505956368.png",
+      description: "Royal Academy Dorfman Award winner known for eco-responsive structures, Compressed Stabilised Earth Blocks (CSEB), scrap material upcycling, and mud masonry.",
+    },
+    {
+      number: "02",
+      name: "AR. EUGENE PANDALA",
+      role: "FOUNDER, CSBNE · LAURIE BAKER AWARDEE",
+      location: "PANEL SPEAKER",
+      image: "https://upload.wikimedia.org/wikipedia/commons/1/12/Eugene_Pandala.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+      description: "Pioneer of mud architecture, cob building, and eco-tourism design in India. Designer of Banasura Hill Resort—Asia's largest earth resort.",
+    },
+    {
+      number: "03",
+      name: "DR. BENNY KURIAKOSE",
+      role: "MASTER ARCHITECT & HERITAGE CONSERVATOR",
+      location: "KEYNOTE SPEAKER",
+      image: "https://www.architectandinteriorsindia.com/cloud/2021/11/15/benny.jpg",
+      description: "Baker disciple, Charles Wallace Scholar, and creator of DakshinaChitra & Muziris Heritage Project. Leading authority on disaster rehabilitation & vernacular architecture.",
+    },
+    {
+      number: "04",
+      name: "MADHAVAN NAMBOOTHIRI",
+      role: "CLEAN TECH EXPERT · BIORESOURCE SPECIALIST",
+      location: "TECHNICAL SPEAKER",
+      image: "https://www.manipal.edu/content/dam/manipal/mu/mcops-manipal/Images/profile/new-faculty-images/Dr%20Madhavan%20Nampoothiri.jpg.transform/manipal-edu-transform-width-height-528px/image.jpg",
+      description: "Prominent specialist in renewable energy integration, bioresources, and sustainable technology transitions bridging research and practical application.",
+    },
+    {
+      number: "05",
+      name: "AR. P.B. SAJAN",
+      role: "CHIEF ARCHITECT & JOINT DIRECTOR, COSTFORD",
+      location: "TECHNICAL SPEAKER",
+      image: "https://vescoa.ves.ac.in/wp-content/uploads/2023/07/12.-Ar.-P.-B.-Sajan.jpg",
+      description: "HUDCO Award winner and disciple of Laurie Baker. Champion of cost-effective green housing, rat-trap bond masonry, bamboo structures, and filler slabs.",
+    },
+  ];
+
+  // ==========================================
+  // GSAP REVEAL
+  // ==========================================
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Header label
+      gsap.from(".speakers-label", {
+        y: 25,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out",
+
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Main heading
+      gsap.from(".speakers-title", {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out",
+
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Description
+      gsap.from(".speakers-description", {
+        y: 25,
+        opacity: 0,
+        duration: 0.7,
+        delay: 0.15,
+        ease: "power3.out",
+
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Speaker tiles
+      const tiles = gsap.utils.toArray(".speaker-item");
+
+      tiles.forEach((tile, index) => {
+        gsap.from(tile, {
+          y: 60,
+          opacity: 0,
+          duration: 0.8,
+          delay: index * 0.08,
+          ease: "power3.out",
+
+          scrollTrigger: {
+            trigger: tile,
+            start: "top 88%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+
+      ScrollTrigger.refresh();
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      id="speakers"
+      className="
+        relative
+        overflow-hidden
+        bg-nanavu-offwhite
+        text-nanavu-charcoal
+      "
+    >
+      {/* =================================================
+          HEADER
+      ================================================= */}
+
+      <div
+        className="
+          px-6
+          md:px-12
+          lg:px-20
+          pt-28
+          md:pt-36
+          pb-20
+          md:pb-28
+        "
+      >
+        {/* TOP */}
+
+        <div
+          className="
+            speakers-label
+            flex
+            items-center
+            justify-between
+            mb-10
+          "
+        >
+          <span
+            className="
+              text-[10px]
+              tracking-[0.4em]
+              text-nanavu-teal
+            "
+          >
+            05 / SPEAKERS
+          </span>
+
+          <span
+            className="
+              text-[9px]
+              tracking-[0.3em]
+              text-nanavu-stone
+            "
+          >
+            NANAVU '27
+          </span>
+        </div>
+
+        {/* TITLE */}
+
+        <h2
+          className="
+            speakers-title
+            text-[17vw]
+            md:text-[12vw]
+            lg:text-[10vw]
+            leading-[0.75]
+            tracking-[-0.075em]
+            font-light
+          "
+        >
+          SPEAKERS
+        </h2>
+
+        {/* DESCRIPTION */}
+
+        <div
+          className="
+            speakers-description
+            mt-10
+            md:mt-12
+            flex
+            justify-end
+          "
+        >
+          <p
+            className="
+              max-w-sm
+              text-sm
+              md:text-base
+              leading-relaxed
+              text-nanavu-deepstone
+            "
+          >
+            Voices from different disciplines,
+            perspectives and places come together
+            to question, imagine and create new
+            possibilities.
+          </p>
+        </div>
+      </div>
+
+      {/* =================================================
+          SPEAKER GRID
+      ================================================= */}
+
+      <div
+        className="
+          px-6
+          md:px-12
+          lg:px-20
+          pb-32
+          md:pb-40
+        "
+      >
+        {/* ===============================================
+            DESKTOP — 4 COMPACT TILES
+        =============================================== */}
+
+        <div
+          className="
+            hidden
+            md:grid
+            grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-3
+            gap-8
+            items-start
+          "
+        >
+          {speakers.map((speaker, index) => (
+            <div
+              key={speaker.number}
+              onClick={() => setActiveSpeaker(speaker)}
+              className={`
+                speaker-item
+                group
+                cursor-pointer
+                ${index % 2 === 1 ? "mt-20" : ""}
+              `}
+            >
+              {/* IMAGE */}
+
+              <div
+                className="
+                  speaker-image-wrapper
+                  relative
+                  aspect-[4/5]
+                  overflow-hidden
+                  bg-nanavu-sand
+                "
+              >
+                <img
+                  src={speaker.image}
+                  alt={speaker.name}
+                  className="
+                    speaker-image
+                    w-full
+                    h-full
+                    object-cover
+                    transition-transform
+                    duration-[900ms]
+                    ease-[cubic-bezier(0.22,1,0.36,1)]
+                    group-hover:scale-110
+                  "
+                />
+
+                {/* HOVER OVERLAY */}
+
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-nanavu-teal/0
+                    group-hover:bg-nanavu-teal/20
+                    transition-colors
+                    duration-700
+                  "
+                />
+
+                {/* NUMBER */}
+
+                <span
+                  className="
+                    absolute
+                    top-4
+                    left-4
+                    text-[9px]
+                    tracking-[0.3em]
+                    text-nanavu-offwhite
+                    mix-blend-difference
+                  "
+                >
+                  {speaker.number}
+                </span>
+
+                {/* VIEW */}
+
+                <div
+                  className="
+                    absolute
+                    bottom-4
+                    right-4
+                    flex
+                    items-center
+                    gap-2
+                    opacity-0
+                    translate-y-3
+                    group-hover:opacity-100
+                    group-hover:translate-y-0
+                    transition-all
+                    duration-500
+                  "
+                >
+                  <span
+                    className="
+                      text-[8px]
+                      tracking-[0.25em]
+                      text-nanavu-offwhite
+                      mix-blend-difference
+                    "
+                  >
+                    VIEW
+                  </span>
+
+                  <span
+                    className="
+                      text-sm
+                      text-nanavu-offwhite
+                      mix-blend-difference
+                    "
+                  >
+                    →
+                  </span>
+                </div>
+              </div>
+
+              {/* INFO */}
+
+              <div
+                className="
+                  mt-4
+                  border-t
+                  border-nanavu-charcoal/20
+                  pt-3
+                "
+              >
+                <div
+                  className="
+                    flex
+                    items-start
+                    justify-between
+                    gap-3
+                  "
+                >
+                  <div>
+                    <h3
+                      className="
+                        text-lg
+                        lg:text-xl
+                        font-light
+                        tracking-[-0.03em]
+                      "
+                    >
+                      {speaker.name}
+                    </h3>
+
+                    <p
+                      className="
+                        mt-1.5
+                        text-[9px]
+                        tracking-[0.18em]
+                        text-nanavu-teal
+                        font-medium
+                      "
+                    >
+                      {speaker.role}
+                    </p>
+
+                    <p
+                      className="
+                        mt-2
+                        text-xs
+                        leading-relaxed
+                        text-nanavu-deepstone
+                      "
+                    >
+                      {speaker.description}
+                    </p>
+                  </div>
+
+                  <span
+                    className="
+                      text-[9px]
+                      tracking-[0.18em]
+                      text-nanavu-clay
+                      font-medium
+                      whitespace-nowrap
+                      border border-nanavu-clay/30
+                      px-2 py-0.5
+                      rounded
+                    "
+                  >
+                    {speaker.location}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ===============================================
+            MOBILE
+        =============================================== */}
+
+        <div
+          className="
+            md:hidden
+            grid
+            grid-cols-2
+            gap-x-4
+            gap-y-14
+          "
+        >
+          {speakers.map((speaker) => (
+            <div
+              key={speaker.number}
+              onClick={() => setActiveSpeaker(speaker)}
+              className="
+                speaker-item
+                group
+                cursor-pointer
+              "
+            >
+              {/* IMAGE */}
+
+              <div
+                className="
+                  relative
+                  aspect-[4/5]
+                  overflow-hidden
+                  bg-nanavu-sand
+                "
+              >
+                <img
+                  src={speaker.image}
+                  alt={speaker.name}
+                  className="
+                    w-full
+                    h-full
+                    object-cover
+                    transition-transform
+                    duration-[800ms]
+                    ease-out
+                    group-hover:scale-110
+                  "
+                />
+
+                {/* OVERLAY */}
+
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-nanavu-teal/0
+                    group-hover:bg-nanavu-teal/15
+                    transition-colors
+                    duration-500
+                  "
+                />
+
+                {/* NUMBER */}
+
+                <span
+                  className="
+                    absolute
+                    top-3
+                    left-3
+                    text-[8px]
+                    tracking-[0.25em]
+                    text-nanavu-offwhite
+                    mix-blend-difference
+                  "
+                >
+                  {speaker.number}
+                </span>
+              </div>
+
+              {/* INFO */}
+
+              <div
+                className="
+                  mt-3
+                  border-t
+                  border-nanavu-charcoal/20
+                  pt-3
+                "
+              >
+                <h3
+                  className="
+                    text-sm
+                    font-light
+                    tracking-[-0.02em]
+                  "
+                >
+                  {speaker.name}
+                </h3>
+
+                <p
+                  className="
+                    mt-1
+                    text-[7px]
+                    tracking-[0.15em]
+                    text-nanavu-stone
+                  "
+                >
+                  {speaker.role}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* =================================================
+          BOTTOM TRANSITION
+      ================================================= */}
+
+      <div
+        className="
+          px-6
+          md:px-12
+          lg:px-20
+          pb-10
+        "
+      >
+        <div
+          className="
+            border-t
+            border-nanavu-charcoal/20
+            pt-4
+            flex
+            justify-between
+            items-center
+          "
+        >
+          <span
+            className="
+              text-[8px]
+              tracking-[0.3em]
+              text-nanavu-stone
+            "
+          >
+            KEYNOTE & PANEL SPEAKERS
+          </span>
+
+          <span
+            className="
+              text-[8px]
+              tracking-[0.3em]
+              text-nanavu-teal
+            "
+          >
+            06 / PROGRAMME →
+          </span>
+        </div>
+      </div>
+
+      {/* =================================================
+          SPEAKER DETAIL MODAL OVERLAY
+      ================================================= */}
+
+      {activeSpeaker && (
+        <div
+          onClick={() => setActiveSpeaker(null)}
+          className="
+            fixed
+            inset-0
+            z-[100]
+            bg-black/80
+            backdrop-blur-xl
+            flex
+            items-center
+            justify-center
+            p-4
+            md:p-8
+          "
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="
+              relative
+              w-full
+              max-w-4xl
+              max-h-[90vh]
+              overflow-y-auto
+              bg-[#F3EFE6]
+              text-[#29312F]
+              rounded-3xl
+              shadow-2xl
+              p-6
+              md:p-12
+              border
+              border-white/20
+            "
+          >
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setActiveSpeaker(null)}
+              className="
+                absolute
+                top-6
+                right-6
+                w-10
+                h-10
+                rounded-full
+                bg-[#29312F]/10
+                hover:bg-[#29312F]
+                hover:text-[#F3EFE6]
+                flex
+                items-center
+                justify-center
+                text-lg
+                transition-all
+                duration-300
+                z-20
+              "
+            >
+              ✕
+            </button>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+              {/* IMAGE COLUMN */}
+              <div className="md:col-span-5 relative aspect-[4/5] rounded-2xl overflow-hidden bg-nanavu-sand">
+                <img
+                  src={activeSpeaker.image}
+                  alt={activeSpeaker.name}
+                  className="w-full h-full object-cover"
+                />
+                <span className="absolute top-4 left-4 text-[9px] tracking-[0.3em] text-[#F3EFE6] bg-black/50 backdrop-blur-md px-2.5 py-1 rounded">
+                  SPEAKER {activeSpeaker.number}
+                </span>
+              </div>
+
+              {/* DETAILS COLUMN */}
+              <div className="md:col-span-7 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-[9px] tracking-[0.25em] text-[#287A73] font-medium border border-[#287A73]/30 px-2.5 py-1 rounded-full uppercase">
+                    {activeSpeaker.location}
+                  </span>
+                  <span className="text-[9px] tracking-[0.2em] text-[#8C877D] uppercase">
+                    NANAVU CONCLAVE
+                  </span>
+                </div>
+
+                <h3 className="text-3xl md:text-5xl font-light tracking-tight text-[#29312F] leading-tight">
+                  {activeSpeaker.name}
+                </h3>
+
+                <p className="mt-2 text-xs md:text-sm tracking-wider text-[#C99A72] font-medium uppercase">
+                  {activeSpeaker.role}
+                </p>
+
+                <p className="mt-6 text-sm md:text-base leading-relaxed text-nanavu-deepstone font-light border-t border-[#29312F]/15 pt-6">
+                  {activeSpeaker.description}
+                </p>
+
+                <div className="mt-8 flex items-center justify-between pt-6 border-t border-[#29312F]/15 text-xs text-[#8C877D]">
+                  <span className="tracking-widest">TKM COLLEGE OF ENGINEERING</span>
+                  <button
+                    onClick={() => setActiveSpeaker(null)}
+                    className="text-[#287A73] font-medium hover:underline tracking-wider"
+                  >
+                    CLOSE DETAILS ↑
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+export default Speakers;
