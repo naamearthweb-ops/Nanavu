@@ -151,7 +151,7 @@ function Impact() {
         <h2
           ref={titleRef}
           className="
-            text-[15vw]
+            text-[12vw]
             md:text-[10vw]
             lg:text-[8vw]
             leading-[0.85]
@@ -202,7 +202,8 @@ function Impact() {
         ref={statsRef}
         className="
           grid
-          grid-cols-2
+          grid-cols-1
+          sm:grid-cols-2
           md:grid-cols-4
           border-t
           border-[#F3EFE6]/20

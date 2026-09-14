@@ -90,7 +90,7 @@ function Partners() {
         <h2
           ref={titleRef}
           className="
-            text-[15vw]
+            text-[12vw]
             md:text-[11vw]
             leading-[0.8]
             tracking-[-0.06em]

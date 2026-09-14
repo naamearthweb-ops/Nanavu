@@ -2,9 +2,12 @@
 
 @theme {
   --color-nanavu-paper: #F3EFE6;
+  --color-nanavu-offwhite: #F3EFE6;
   --color-nanavu-teal: #287A73;
   --color-nanavu-dark: #29312F;
+  --color-nanavu-charcoal: #29312F;
   --color-nanavu-stone: #8C877D;
+  --color-nanavu-deepstone: #6B665D;
   --color-nanavu-sand: #D8C7A5;
   --color-nanavu-clay: #C99A72;
 }

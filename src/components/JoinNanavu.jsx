@@ -140,7 +140,7 @@ function JoinNanavu() {
           <h2
             ref={titleRef}
             className="
-              text-[16vw]
+              text-[12vw]
               md:text-[12vw]
               lg:text-[10vw]
               leading-[0.76]

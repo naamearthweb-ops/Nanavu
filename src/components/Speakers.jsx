@@ -213,7 +213,7 @@ function Speakers() {
         <h2
           className="
             speakers-title
-            text-[17vw]
+            text-[14vw]
             md:text-[12vw]
             lg:text-[10vw]
             leading-[0.75]
@@ -469,7 +469,7 @@ function Speakers() {
           className="
             md:hidden
             grid
-            grid-cols-2
+            grid-cols-1
             gap-x-4
             gap-y-14
           "

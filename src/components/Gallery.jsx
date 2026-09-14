@@ -124,7 +124,7 @@ function Gallery() {
         <h2
           ref={titleRef}
           className="
-            text-[15vw]
+            text-[12vw]
             md:text-[10vw]
             lg:text-[9vw]
             leading-[0.8]
