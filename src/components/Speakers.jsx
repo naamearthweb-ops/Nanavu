@@ -16,6 +16,11 @@ function Speakers() {
       location: "PANEL SPEAKER",
       image: "https://www.asiarealestatesummit.com/wp-content/uploads/2023/10/Ar.-Vinu-Daniel_Temp-e1696505956368.png",
       description: "Royal Academy Dorfman Award winner known for eco-responsive structures, Compressed Stabilised Earth Blocks (CSEB), scrap material upcycling, and mud masonry.",
+      detailedDescription: [
+        "Vinu Daniel is an acclaimed Indian architect and the founder of Wallmakers, an architectural firm recognized globally for its pioneering work in sustainable, eco-friendly, and cost-effective architecture.",
+        "Born in Dubai and educated at the College of Engineering, Trivandrum, his journey into sustainable architecture was deeply influenced by his early work with the Auroville Earth Institute on post-tsunami construction projects. Under the inspiration of Laurie Baker, Daniel focuses on creating spaces that respond to specific site contexts.",
+        "He is celebrated for his commitment to utilizing unconventional and recycled materials, including mud, debris, discarded tires, and plastic bottles, drastically minimizing the carbon footprint of his buildings. In 2022, he was awarded the prestigious Royal Academy Dorfman Award, and in 2023, he was named one of the influential figures in the TIME100 Next list."
+      ]
     },
     {
       number: "02",
@@ -24,6 +29,11 @@ function Speakers() {
       location: "PANEL SPEAKER",
       image: "https://upload.wikimedia.org/wikipedia/commons/1/12/Eugene_Pandala.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
       description: "Pioneer of mud architecture, cob building, and eco-tourism design in India. Designer of Banasura Hill Resort—Asia's largest earth resort.",
+      detailedDescription: [
+        "Eugene Pandala is a prominent Indian architect, urban designer, and heritage conservator recognized for his pioneering work in environmental sustainability and mud architecture. He holds a Master's in Urban Design from the School of Planning and Architecture, New Delhi.",
+        "Inspired by legendary architect Hassan Fathy, Pandala advocates for a 'glorious return to tradition' by utilizing natural, locally available materials such as mud, laterite, timber, and stone. His buildings are often described as extensions of the earth, featuring organic forms that harmonize with nature.",
+        "His notable projects include Bodhi, his first major mud-house project, and The Raviz in Kollam, a deluxe resort blending traditional Travancore architecture with natural materials. Pandala was awarded the first Laurie Baker Award by the Lalit Kala Akademi in 2011 for his unwavering commitment to sustainable building."
+      ]
     },
     {
       number: "03",
@@ -32,6 +42,11 @@ function Speakers() {
       location: "KEYNOTE SPEAKER",
       image: "https://www.architectandinteriorsindia.com/cloud/2021/11/15/benny.jpg",
       description: "Baker disciple, Charles Wallace Scholar, and creator of DakshinaChitra & Muziris Heritage Project. Leading authority on disaster rehabilitation & vernacular architecture.",
+      detailedDescription: [
+        "Dr. Benny Kuriakose is a distinguished Indian architect and consultant renowned for his expertise in architectural conservation and vernacular architecture. His career began in 1984 under the tutelage of the legendary Laurie Baker.",
+        "A Charles Wallace Scholar, he holds a master’s degree in Conservation Studies from the University of York and a doctorate from IIT Madras. His work emphasizes climate-responsive design, environmental sustainability, and cost-effectiveness, deeply rooted in the traditional architectural practices of South India.",
+        "Dr. Kuriakose has served as a consultant for UNESCO, UNDP, and various state governments. He is the mastermind behind landmark projects like DakshinaChitra, the Muziris Heritage Project, and several disaster-relief rehabilitation settlements. He was honored with the Inside Outside Designer of the Year award in 2001."
+      ]
     },
     {
       number: "04",
@@ -40,6 +55,11 @@ function Speakers() {
       location: "TECHNICAL SPEAKER",
       image: "https://www.manipal.edu/content/dam/manipal/mu/mcops-manipal/Images/profile/new-faculty-images/Dr%20Madhavan%20Nampoothiri.jpg.transform/manipal-edu-transform-width-height-528px/image.jpg",
       description: "Prominent specialist in renewable energy integration, bioresources, and sustainable technology transitions bridging research and practical application.",
+      detailedDescription: [
+        "Madhavan Nampoothiri is a recognized professional and thought leader in the Indian renewable energy and clean technology sector, possessing over a decade of comprehensive experience in the energy industry.",
+        "He is the founder and former director of RESolve Energy Consultants, a firm providing crucial advisory services for renewable energy policy, solar market entry, and green manufacturing in India. He has also served as a Managing Partner at Aspiration Cleantech Ventures.",
+        "Bridging the gap between industry and academia, his current research focuses on Climate Finance and ESG (Environmental, Social, and Governance) investments, driving sustainable technology transitions and practical clean tech applications."
+      ]
     },
     {
       number: "05",
@@ -48,6 +68,11 @@ function Speakers() {
       location: "TECHNICAL SPEAKER",
       image: "https://vescoa.ves.ac.in/wp-content/uploads/2023/07/12.-Ar.-P.-B.-Sajan.jpg",
       description: "HUDCO Award winner and disciple of Laurie Baker. Champion of cost-effective green housing, rat-trap bond masonry, bamboo structures, and filler slabs.",
+      detailedDescription: [
+        "Ar. P.B. Sajan is a prominent architect who serves as the Joint Director and Chief Architect at COSTFORD (Centre of Science and Technology for Rural Development).",
+        "A dedicated disciple of the master architect Laurie Baker, Sajan worked closely with him for nearly 25 years. He plays a crucial role in promoting and implementing Baker's architectural theories, specializing in sustainable, green, and cost-effective building technologies.",
+        "His work seamlessly integrates human systems with natural systems, extensively utilizing materials like mud, bamboo, and recycled items. Recognized nationally with awards from HUDCO for his innovative green building models, he continues to educate and inspire the next generation through the Laurie Baker Centre for Habitat Studies."
+      ]
     },
   ];
 
@@ -688,9 +713,13 @@ function Speakers() {
                   {activeSpeaker.role}
                 </p>
 
-                <p className="mt-6 text-sm md:text-base leading-relaxed text-nanavu-deepstone font-light border-t border-[#29312F]/15 pt-6">
-                  {activeSpeaker.description}
-                </p>
+                <div className="mt-6 border-t border-[#29312F]/15 pt-6">
+                  {activeSpeaker.detailedDescription.map((paragraph, idx) => (
+                    <p key={idx} className="mb-4 text-sm md:text-base leading-relaxed text-nanavu-deepstone font-light last:mb-0">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
 
                 <div className="mt-8 flex items-center justify-between pt-6 border-t border-[#29312F]/15 text-xs text-[#8C877D]">
                   <span className="tracking-widest">TKM COLLEGE OF ENGINEERING</span>
