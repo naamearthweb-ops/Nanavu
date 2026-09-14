@@ -512,16 +512,17 @@ function Hero() {
           ref={logoRef}
           className="
             absolute
-            left-1/2
+            left-6
+            md:left-12
+            lg:left-20
             top-1/2
-            -translate-x-1/2
             -translate-y-1/2
 
             w-full
 
             flex
             items-center
-            justify-center
+            justify-start
 
             pointer-events-none
           "
@@ -569,18 +570,18 @@ function Hero() {
           ref={countdownRef}
           className="
             absolute
-            left-1/2
+            left-6
+            md:left-12
+            lg:left-20
             top-[52%]
             sm:top-[56%]
             md:top-[60%]
 
-            -translate-x-1/2
-
             w-full
             max-w-lg
-            px-4
+            pr-4
 
-            text-center
+            text-left
             opacity-0
           "
         >
@@ -625,7 +626,7 @@ function Hero() {
 
               flex
               items-start
-              justify-center
+              justify-start
 
               gap-3
               sm:gap-6
@@ -850,7 +851,7 @@ function Hero() {
           </div>
 
           {/* JOIN NANAVU CTA BUTTON */}
-          <div className="mt-4 sm:mt-6 flex justify-center pointer-events-auto">
+          <div className="mt-8 sm:mt-10 flex justify-start pointer-events-auto">
             <a
               href="#join"
               className="
@@ -985,7 +986,8 @@ function Hero() {
               w-full
               h-full
 
-              object-cover
+              object-contain
+              md:object-cover
             "
           >
 
