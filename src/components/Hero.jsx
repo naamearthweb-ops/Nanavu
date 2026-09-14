@@ -51,7 +51,7 @@ function Hero() {
 
   useEffect(() => {
     const targetDate = new Date(
-      "2027-02-12T10:00:00"
+      "2026-10-02T09:00:00+05:30"
     );
 
     const updateCountdown = () => {
@@ -620,6 +620,18 @@ function Hero() {
             NATIONAL SUSTAINABLE CONCLAVE
           </p>
 
+          <p
+            className="
+              mt-2
+              text-[9px]
+              sm:text-[10px]
+              tracking-[0.25em]
+              text-[#8C877D]
+            "
+          >
+            OCTOBER 2, 2026 · 9:00 AM — 5:00 PM
+          </p>
+
 
           {/* COUNTDOWN */}
 
@@ -856,7 +868,7 @@ function Hero() {
           </div>
 
           {/* JOIN NANAVU CTA BUTTON */}
-          <div className="mt-8 sm:mt-10 flex justify-start md:justify-center pointer-events-auto">
+          <div className="mt-5 sm:mt-7 flex justify-start md:justify-center pointer-events-auto">
             <a
               href="#join"
               className="
@@ -904,9 +916,9 @@ function Hero() {
           ref={scrollRef}
           className="
             absolute
-            bottom-3
-            sm:bottom-6
-            md:bottom-8
+            bottom-1
+            sm:bottom-3
+            md:bottom-4
             left-1/2
 
             -translate-x-1/2

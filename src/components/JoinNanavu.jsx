@@ -194,9 +194,9 @@ function JoinNanavu() {
             the NANAVU community.
           </p>
 
-          {/* CTA LINK WITH PLACEHOLDER */}
+          {/* REGISTRATION CTA */}
           <a
-            href="https://registration-link-placeholder.com"
+            href="https://forms.gle/Xi85n43efPGctmzh9"
             target="_blank"
             rel="noopener noreferrer"
             className="

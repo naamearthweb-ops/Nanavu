@@ -13,8 +13,8 @@ function Workshops() {
       number: "01",
       title: "NATURAL & REGENERATIVE CONSTRUCTION",
       category: "TECHNICAL SESSION",
-      date: "CONCLAVE DAY",
-      time: "10:00 AM",
+      date: "OCTOBER 2, 2026",
+      time: "9:00 AM — 5:00 PM",
       duration: "2.5 HOURS",
       mentor: "AR. VINU DANIEL & AR. EUGENE PANDALA",
       description:
@@ -24,8 +24,8 @@ function Workshops() {
       number: "02",
       title: "LOW-CARBON & AFFORDABLE HOUSING",
       category: "TECHNICAL SESSION",
-      date: "CONCLAVE DAY",
-      time: "02:00 PM",
+      date: "OCTOBER 2, 2026",
+      time: "9:00 AM — 5:00 PM",
       duration: "2.5 HOURS",
       mentor: "AR. P.B. SAJAN & MADHAVAN NAMBOOTHIRI",
       description:
@@ -35,8 +35,8 @@ function Workshops() {
       number: "03",
       title: "SUSTAINABLE BUILDING MATERIALS EXPO",
       category: "INTERACTIVE EXPO",
-      date: "CONCLAVE DAY",
-      time: "09:30 AM",
+      date: "OCTOBER 2, 2026",
+      time: "9:00 AM — 5:00 PM",
       duration: "ALL DAY",
       mentor: "NAAMEARTH & CSC TKMCE",
       description:
@@ -46,8 +46,8 @@ function Workshops() {
       number: "04",
       title: "SUSTAINABILITY IDEATHON CHALLENGE",
       category: "STUDENT COMPETITION",
-      date: "CONCLAVE DAY",
-      time: "11:00 AM",
+      date: "OCTOBER 2, 2026",
+      time: "9:00 AM — 5:00 PM",
       duration: "5 HOURS",
       mentor: "CSC TKMCE & INDUSTRY EXPERTS",
       description:
@@ -200,7 +200,7 @@ function Workshops() {
               text-[#8C877D]
             "
           >
-            12 — 14 FEBRUARY 2027
+            OCTOBER 2, 2026 · 9:00 AM — 5:00 PM
           </span>
 
         </div>
