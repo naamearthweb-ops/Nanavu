@@ -84,7 +84,7 @@ function Partners() {
       {/* HEADER */}
       <div className="mb-24">
         <p className="text-xs tracking-[0.3em] text-[#287A73] mb-8 uppercase font-medium">
-          07 / PARTNERS & ORGANISERS
+          04 / PARTNERS & ORGANISERS
         </p>
 
         <h2
@@ -215,7 +215,7 @@ function Partners() {
         </span>
 
         <span className="text-xs tracking-[0.25em] text-[#287A73]">
-          08 / IMPACT →
+          05 / IMPACT →
         </span>
       </div>
     </section>

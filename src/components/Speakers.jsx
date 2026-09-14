@@ -194,7 +194,7 @@ function Speakers() {
               text-nanavu-teal
             "
           >
-            05 / SPEAKERS
+            03 / SPEAKERS
           </span>
 
           <span
@@ -613,7 +613,6 @@ function Speakers() {
               text-nanavu-teal
             "
           >
-            06 / PROGRAMME →
           </span>
         </div>
       </div>

@@ -138,7 +138,7 @@ function Impact() {
       <div className="mb-10 md:mb-14">
         <div className="flex items-center gap-4 mb-4">
           <span className="text-xs tracking-[0.3em] text-[#D8C7A5]">
-            08 / IMPACT
+            05 / IMPACT
           </span>
 
           <div className="h-px w-16 bg-[#D8C7A5]/40" />
@@ -392,7 +392,7 @@ function Impact() {
         </span>
 
         <span className="text-xs tracking-[0.25em] text-[#D8C7A5]">
-          09 / GALLERY →
+          06 / JOIN NANAVU →
         </span>
       </div>
     </section>
