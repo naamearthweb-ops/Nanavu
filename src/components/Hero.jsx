@@ -513,9 +513,9 @@ function Hero() {
           className="
             absolute
             left-6
-            md:left-12
-            lg:left-20
+            md:left-1/2
             top-1/2
+            md:-translate-x-1/2
             -translate-y-1/2
 
             w-full
@@ -523,6 +523,7 @@ function Hero() {
             flex
             items-center
             justify-start
+            md:justify-center
 
             pointer-events-none
           "
@@ -571,17 +572,20 @@ function Hero() {
           className="
             absolute
             left-6
-            md:left-12
-            lg:left-20
+            md:left-1/2
             top-[52%]
             sm:top-[56%]
             md:top-[60%]
+            
+            md:-translate-x-1/2
 
             w-full
             max-w-lg
             pr-4
+            md:px-4
 
             text-left
+            md:text-center
             opacity-0
           "
         >
@@ -627,6 +631,7 @@ function Hero() {
               flex
               items-start
               justify-start
+              md:justify-center
 
               gap-3
               sm:gap-6
@@ -851,7 +856,7 @@ function Hero() {
           </div>
 
           {/* JOIN NANAVU CTA BUTTON */}
-          <div className="mt-8 sm:mt-10 flex justify-start pointer-events-auto">
+          <div className="mt-8 sm:mt-10 flex justify-start md:justify-center pointer-events-auto">
             <a
               href="#join"
               className="

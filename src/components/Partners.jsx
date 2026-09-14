@@ -39,7 +39,7 @@ function Partners() {
       role: "GOVERNING BODY & SPONSORING TRUST",
       short: "TKM TRUST",
       description: "Pioneering educational trust empowering technical education, research, and social transformation.",
-      logo: "/partners/tkmtrust-logo.svg",
+      logo: "/partners/tkm-trust.png",
       url: "https://tkmtrust.org",
     },
   ];

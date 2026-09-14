@@ -329,13 +329,13 @@ function Introduction() {
                 tracking-[-0.04em]
               "
             >
-              Nurturing the futures through
+              Nurturing
               <br />
               <span className="text-nanavu-clay italic">
-                sustainable & natural
+                the
               </span>
               <br />
-              construction.
+              future
             </h2>
 
             <p
