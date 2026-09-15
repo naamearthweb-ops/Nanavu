@@ -139,7 +139,6 @@ function Hero() {
     // ========================================
     // FAST SKIP
     // ========================================
-https://forms.gle/Xi85n43efPGctmzh9
     if (skip) {
       if (video) {
         gsap.killTweensOf(video);
@@ -190,7 +189,7 @@ https://forms.gle/Xi85n43efPGctmzh9
   };
 
   // ==========================================
-  // VIDEO ENDEDhttps://forms.gle/Xi85n43efPGctmzh9
+  // VIDEO ENDED
   // ==========================================
 
   const handleVideoEnded = () => {
