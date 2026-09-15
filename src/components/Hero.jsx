@@ -11,7 +11,6 @@ function Hero() {
   const logoRef = useRef(null);
   const logoBreathingRef = useRef(null);
   const countdownRef = useRef(null);
-  const scrollRef = useRef(null);
 
   // ==========================================
   // VIDEO REFS
@@ -280,9 +279,8 @@ function Hero() {
 
     const logo = logoRef.current;
     const countdown = countdownRef.current;
-    const scroll = scrollRef.current;
 
-    if (!logo || !countdown || !scroll) {
+    if (!logo || !countdown) {
       document.body.style.overflow = "";
       return;
     }
@@ -297,11 +295,6 @@ function Hero() {
 
     gsap.set(countdown, {
       y: 40,
-      opacity: 0,
-    });
-
-    gsap.set(scroll, {
-      y: 15,
       opacity: 0,
     });
 
@@ -356,20 +349,6 @@ function Hero() {
         "-=0.6"
       );
 
-      // ----------------------------------------
-      // SCROLL INDICATOR
-      // ----------------------------------------
-
-      timeline.to(
-        scroll,
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        "-=0.35"
-      );
     };
 
     window.addEventListener(
@@ -459,10 +438,6 @@ function Hero() {
 
       gsap.killTweensOf(
         countdownRef.current
-      );
-
-      gsap.killTweensOf(
-        scrollRef.current
       );
 
       gsap.killTweensOf(
@@ -906,62 +881,6 @@ function Hero() {
 
         </div>
 
-
-        {/* ==================================================
-            SCROLL INDICATOR
-        ================================================== */}
-
-        <div
-          ref={scrollRef}
-          className="
-            absolute
-            bottom-1
-            sm:bottom-3
-            md:bottom-4
-            left-1/2
-
-            -translate-x-1/2
-
-            opacity-0
-            pointer-events-none
-          "
-        >
-
-          <div
-            className="
-              flex
-              flex-col
-              items-center
-              gap-2
-              sm:gap-3
-            "
-          >
-
-            <span
-              className="
-                text-[8px]
-                sm:text-[9px]
-                tracking-[0.3em]
-                sm:tracking-[0.35em]
-                text-[#8C877D]
-              "
-            >
-              SCROLL
-            </span>
-
-            <div
-              className="
-                w-[1px]
-                h-6
-                sm:h-8
-                bg-[#287A73]
-              "
-            ></div>
-
-          </div>
-
-        </div>
-
       </div>
 
 
@@ -1038,44 +957,6 @@ function Hero() {
               pointer-events-none
             "
           ></div>
-
-
-          {/* =================================================
-              SUBTLE INTRO HINT
-          ================================================= */}
-
-          <div
-            className="
-              absolute
-
-              left-1/2
-              bottom-8
-
-              -translate-x-1/2
-
-              pointer-events-none
-            "
-          >
-
-            <p
-              className="
-                text-[8px]
-
-                tracking-[0.35em]
-
-                text-[#F3EFE6]/70
-
-                uppercase
-
-                whitespace-nowrap
-
-                animate-pulse
-              "
-            >
-              Scroll or click to enter
-            </p>
-
-          </div>
 
         </div>
       )}
