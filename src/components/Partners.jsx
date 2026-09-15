@@ -123,13 +123,14 @@ function Partners() {
         className="
           grid
           grid-cols-1
-          sm:grid-cols-2
-          md:grid-cols-4
+          md:grid-cols-2
           relative
-          gap-x-8
+          gap-x-12
           gap-y-16
           border-t
           border-[#29312F]/20
+          max-w-6xl
+          mx-auto
         "
       >
 
@@ -152,10 +153,14 @@ function Partners() {
               transition-transform
               duration-300
               hover:-translate-y-1.5
+              h-full
+              w-full
+              max-w-md
+              mx-auto
             "
           >
             {/* NUMBER & EXTERNAL ICON */}
-            <div className="flex justify-between items-center w-full absolute top-4 left-0 right-0 z-10">
+            <div className="flex justify-between items-center w-full absolute top-4 left-0 right-0 z-10 px-2">
               <span
                 className="
                   text-[10px]
@@ -171,14 +176,15 @@ function Partners() {
             </div>
 
             {/* LOGO CONTAINER */}
-            <div className="flex items-center justify-center py-2 px-4 mb-6 h-24 w-full border-t border-transparent">
-              <div className="w-20 h-20 flex items-center justify-center">
+            <div className="flex items-center justify-center py-2 px-4 mb-8 h-28 w-full border-t border-transparent">
+              <div className="h-full flex items-center justify-center">
                 <img
                   src={partner.logo}
                   alt={partner.name}
                   className="
-                    w-full
                     h-full
+                    w-auto
+                    max-w-[140px]
                     object-contain
                     grayscale
                     opacity-70
@@ -192,25 +198,24 @@ function Partners() {
               </div>
             </div>
 
-            {/* HEADING */}
-            <div className="h-16 flex items-start justify-center mb-2 w-full px-2">
-              <h3 className="text-base md:text-lg font-medium tracking-tight text-[#29312F] group-hover:text-[#287A73] transition-colors text-center">
-                {partner.name}
-              </h3>
-            </div>
+            {/* TEXT CONTAINER */}
+            <div className="flex flex-col flex-1 w-full justify-between items-center px-4">
+              {/* TOP PART: Heading and Role */}
+              <div className="flex flex-col items-center justify-start w-full mb-6">
+                <h3 className="text-lg md:text-xl font-medium tracking-tight text-[#29312F] group-hover:text-[#287A73] transition-colors text-center mb-3">
+                  {partner.name}
+                </h3>
+                <p className="text-[10px] tracking-[0.2em] text-[#287A73] font-medium uppercase text-center leading-relaxed">
+                  {partner.role}
+                </p>
+              </div>
 
-            {/* ROLE */}
-            <div className="h-10 flex items-start justify-center mb-3 w-full px-2">
-              <p className="text-[9px] tracking-[0.2em] text-[#287A73] font-medium uppercase text-center">
-                {partner.role}
-              </p>
-            </div>
-
-            {/* DESCRIPTION */}
-            <div className="h-24 flex items-start justify-center w-full px-2">
-              <p className="text-xs leading-relaxed text-[#8C877D] max-w-xs text-center">
-                {partner.description}
-              </p>
+              {/* BOTTOM PART: Description */}
+              <div className="w-full flex items-end justify-center">
+                <p className="text-sm leading-relaxed text-[#8C877D] max-w-sm text-center">
+                  {partner.description}
+                </p>
+              </div>
             </div>
           </a>
         ))}
