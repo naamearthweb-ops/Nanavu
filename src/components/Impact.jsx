@@ -266,7 +266,7 @@ function Impact() {
         {impactAreas.map((item, index) => (
           <div
             key={index}
-            className="
+            className={`
               group
               grid
               grid-cols-12
@@ -274,14 +274,13 @@ function Impact() {
               md:gap-8
               py-6
               md:py-8
-              border-b
-              border-[#F3EFE6]/20
+              ${index !== impactAreas.length - 1 ? 'border-b border-[#F3EFE6]/20' : ''}
               transition-all
               duration-300
               hover:bg-white/5
               px-2
               items-start
-            "
+            `}
           >
             <div className="col-span-1 flex justify-center pt-2 md:pt-3">
               <svg 
@@ -342,40 +341,7 @@ function Impact() {
         ))}
       </div>
 
-      {/* CLOSING STATEMENT */}
-      <div
-        className="
-          mt-10
-          md:mt-12
-          grid
-          grid-cols-1
-          md:grid-cols-12
-          gap-6
-        "
-      >
-        <div className="md:col-span-8">
-          <p
-            className="
-              text-2xl
-              md:text-4xl
-              lg:text-5xl
-              leading-[0.95]
-              tracking-[-0.04em]
-              font-light
-            "
-          >
-            SMALL MOMENTS.
-            <br />
-            <span className="text-[#D8C7A5] italic">BIGGER CHANGE.</span>
-          </p>
-        </div>
 
-        <div className="md:col-span-4 md:col-start-9">
-          <p className="text-xs leading-relaxed text-[#8C877D]">
-            Every discussion, demonstration, and hands-on experience contributes to Kerala's net-zero movement.
-          </p>
-        </div>
-      </div>
 
       {/* NEXT SECTION INDICATOR */}
       <div className="mt-10 md:mt-12 border-t border-[#F3EFE6]/15 pt-4 flex items-center justify-between">
