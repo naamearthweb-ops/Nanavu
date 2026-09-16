@@ -70,32 +70,42 @@ export default async function handler(req, res) {
       userId = authData.user.id;
     }
 
-    // 2. Create Razorpay Order
-    const razorpay = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_KEY_SECRET,
-    });
+    let order;
+    const bypass_payment = req.body.bypass_payment;
 
-    const options = {
-      amount: amount.toString(), // amount in smallest currency unit
-      currency,
-      receipt: receipt || `receipt_${Date.now()}`,
-    };
+    if (bypass_payment) {
+      order = { id: `bypass_${Date.now()}`, amount, currency };
+    } else {
+      // 2. Create Razorpay Order
+      const razorpay = new Razorpay({
+        key_id: process.env.RAZORPAY_KEY_ID,
+        key_secret: process.env.RAZORPAY_KEY_SECRET,
+      });
 
-    const order = await razorpay.orders.create(options);
+      const options = {
+        amount: amount.toString(), // amount in smallest currency unit
+        currency,
+        receipt: receipt || `receipt_${Date.now()}`,
+      };
+
+      order = await razorpay.orders.create(options);
+    }
     
     if (!order) {
       if (!isExistingPending) await supabase.auth.admin.deleteUser(userId);
       return res.status(500).json({ message: 'Error creating order' });
     }
 
-    // 3. Insert or Update PENDING Registration record
+    const payment_status = bypass_payment ? 'PAID' : 'PENDING';
+
+    // 3. Insert or Update Registration record
     if (isExistingPending) {
       const { error: dbError } = await supabase
         .from('registrations')
         .update({
           razorpay_order_id: order.id,
-          amount_paid_inr: amount / 100
+          amount_paid_inr: amount / 100,
+          payment_status: payment_status
         })
         .eq('user_id', userId);
 
@@ -117,7 +127,7 @@ export default async function handler(req, res) {
             year_of_study,
             razorpay_order_id: order.id,
             amount_paid_inr: amount / 100,
-            payment_status: 'PENDING'
+            payment_status: payment_status
           }
         ]);
 

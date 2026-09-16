@@ -18,6 +18,7 @@ import ResetPassword from "./components/ResetPassword";
 import Settings from "./components/Settings";
 import Checkout from "./components/Checkout";
 import Admin from "./components/Admin";
+import FloatingSocials from "./components/FloatingSocials";
 
 function Home() {
   return (
@@ -34,6 +35,7 @@ function Home() {
       <Gallery />
       <JoinNanavu />
       <Footer />
+      <FloatingSocials />
     </main>
   );
 }

@@ -71,7 +71,7 @@ function PeopleBehind() {
     >
       <div className="mb-20 max-w-6xl mx-auto">
         <p className="people-title text-xs tracking-[0.3em] text-[#287A73] mb-4 uppercase font-medium">
-          THE PEOPLE BEHIND
+          04 / THE PEOPLE BEHIND
         </p>
         <h2 className="people-title text-4xl md:text-6xl font-light tracking-tight mb-16">
           Conclave Leadership

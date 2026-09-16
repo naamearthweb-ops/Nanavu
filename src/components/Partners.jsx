@@ -262,7 +262,7 @@ function Partners() {
         </span>
 
         <span className="text-xs tracking-[0.25em] text-[#287A73]">
-          05 / IMPACT →
+          06 / IMPACT →
         </span>
       </div>
     </section>

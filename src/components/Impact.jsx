@@ -28,28 +28,29 @@ function Impact() {
 
   const impactAreas = [
     {
-      number: "01",
-      title: "PEOPLE & CAREERS",
+      title: "NURTURE FUTURE PROFESSIONALS",
       description:
-        "Connecting student education with real-world sustainable construction, opening rewarding career pathways for young architects and engineers.",
+        "Empower a generation of professionals who integrate sustainability into construction thinking, design, and practice.",
     },
     {
-      number: "02",
-      title: "PLANET & MATERIALS",
+      title: "CONNECT LEARNING WITH PRACTICE",
       description:
-        "Advancing low-carbon building technologies, Compressed Stabilised Earth Blocks (CSEB), bamboo masonry, and regenerative natural materials.",
+        "Enable experiential learning and practical exposure to sustainable materials, technologies, practices, and real-world applications.",
     },
     {
-      number: "03",
-      title: "CAMPUS & POLICY",
+      title: "BUILD ADAPTIVE & INNOVATIVE CAPACITY",
       description:
-        "Empowering green campus audits, experiential learning, and institution-wide practices aligned with Kerala's Carbon-Neutral Vision.",
+        "Encourage participants to explore, adapt, and apply sustainable solutions to diverse local contexts, resources, and construction needs.",
     },
     {
-      number: "04",
-      title: "PRACTICE & RESEARCH",
+      title: "CREATE LASTING COLLABORATIONS & ACTION",
       description:
-        "Bridging theoretical classroom knowledge with hands-on field experimentation, research publications, and sustainable design practice.",
+        "Connect education, industry, research, practice, and policy, enabling ideas from the Conclave to evolve into projects, initiatives, research, and professional collaborations.",
+    },
+    {
+      title: "SHAPE THE FUTURE OF SUSTAINABLE CONSTRUCTION",
+      description:
+        "Contribute in the long term to making sustainable construction more accessible, practical, valued, and rewarding as a professional and entrepreneurial pathway, supporting the transition towards a more sustainable built environment.",
     },
   ];
 
@@ -136,8 +137,8 @@ function Impact() {
       {/* HEADER */}
       <div className="mb-10 md:mb-14">
         <div className="flex items-center gap-4 mb-4">
-          <span className="text-xs tracking-[0.3em] text-[#D8C7A5]">
-            05 / IMPACT
+          <span className="text-xs tracking-[0.3em] text-[#287A73]">
+            06 / IMPACT
           </span>
 
           <div className="h-px w-16 bg-[#D8C7A5]/40" />
@@ -220,20 +221,6 @@ function Impact() {
               border-[#F3EFE6]/20
             "
           >
-            <span
-              className="
-                absolute
-                top-4
-                right-3
-                md:right-5
-                text-[9px]
-                tracking-[0.2em]
-                text-[#8C877D]
-              "
-            >
-              0{index + 1}
-            </span>
-
             <div
               className="
                 text-[10vw]
@@ -275,9 +262,9 @@ function Impact() {
         ref={impactRef}
         className="border-t border-[#F3EFE6]/20"
       >
-        {impactAreas.map((item) => (
+        {impactAreas.map((item, index) => (
           <div
-            key={item.number}
+            key={index}
             className="
               group
               grid
@@ -292,15 +279,20 @@ function Impact() {
               duration-300
               hover:bg-white/5
               px-2
+              items-start
             "
           >
-            <div className="col-span-2 md:col-span-1">
-              <span className="text-xs tracking-[0.2em] text-[#287A73] font-medium">
-                {item.number}
-              </span>
+            <div className="col-span-1 flex justify-center pt-2 md:pt-3">
+              <svg 
+                className="w-3 h-3 md:w-4 md:h-4 text-[#287A73] transition-transform duration-700 group-hover:rotate-180 group-hover:text-[#D8C7A5]" 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
+              >
+                <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+              </svg>
             </div>
 
-            <div className="col-span-10 md:col-span-4">
+            <div className="col-span-11 md:col-span-4">
               <h3
                 className="
                   text-2xl
@@ -390,8 +382,8 @@ function Impact() {
           MEASURED IN MOMENTS
         </span>
 
-        <span className="text-xs tracking-[0.25em] text-[#D8C7A5]">
-          06 / JOIN NANAVU →
+        <span className="text-xs tracking-[0.25em] text-[#287A73]">
+          07 / GALLERY →
         </span>
       </div>
     </section>

@@ -60,58 +60,17 @@ function Checkout() {
           amount: FIXED_AMOUNT * 100,
           currency: "INR",
           receipt: `rcpt_${Date.now()}`,
+          bypass_payment: true // TEMPORARY BYPASS
         }),
       });
 
       const order = await res.json();
       if (!res.ok) throw new Error(order.message || "Failed to create order");
 
-      // 2. Open Razorpay Checkout
-      const options = {
-        key: import.meta.env.VITE_RAZORPAY_KEY_ID, // Frontend key
-        amount: order.amount,
-        currency: order.currency,
-        name: "NANAVU '26",
-        description: `Registration Pass`,
-        order_id: order.id,
-        handler: async function (response) {
-          try {
-            // 3. Verify payment on backend
-            const verifyRes = await fetch("/api/verify-payment", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                razorpay_order_id: response.razorpay_order_id,
-                razorpay_payment_id: response.razorpay_payment_id,
-                razorpay_signature: response.razorpay_signature
-              }),
-            });
-            const verifyData = await verifyRes.json();
-            
-            if (verifyRes.ok) {
-              setSuccess(true);
-            } else {
-              setError(verifyData.message || "Payment verification failed");
-            }
-          } catch (err) {
-            setError("Error verifying payment.");
-          }
-        },
-        prefill: {
-          name: registration.full_name,
-          email: registration.email,
-          contact: registration.phone,
-        },
-        theme: {
-          color: "#287A73",
-        },
-      };
-
-      const rzp = new window.Razorpay(options);
-      rzp.on("payment.failed", function (response) {
-        setError(response.error.description || "Payment failed");
-      });
-      rzp.open();
+      // TEMPORARY BYPASS LOGIC
+      setSuccess(true);
+      setLoading(false);
+      return;
     } catch (err) {
       setError(err.message);
     } finally {
@@ -183,7 +142,7 @@ function Checkout() {
             disabled={loading}
             className="mt-2 bg-[#287A73] text-[#F3EFE6] hover:bg-[#287A73]/80 disabled:opacity-50 py-4 rounded-xl text-xs tracking-[0.2em] uppercase transition-all shadow-lg shadow-[#287A73]/20"
           >
-            {loading ? "Processing..." : `Pay ₹${FIXED_AMOUNT} Now`}
+            {loading ? "Processing..." : `Complete Registration`}
           </button>
         </div>
       </div>

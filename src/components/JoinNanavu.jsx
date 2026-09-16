@@ -110,7 +110,7 @@ function JoinNanavu() {
               text-nanavu-teal
             "
           >
-            06 / JOIN NANAVU
+            08 / JOIN NANAVU
           </span>
 
           <div className="h-px w-16 bg-nanavu-teal/40" />
@@ -420,7 +420,7 @@ function JoinNanavu() {
               text-nanavu-teal
             "
           >
-            07 / →
+            HOME →
           </span>
         </div>
       </div>

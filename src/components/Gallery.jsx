@@ -12,42 +12,14 @@ function Gallery() {
   const galleryRef = useRef(null);
 
   const images = [
-    {
-      src: "/gallery/cseb.jpg",
-      title: "EARTH BLOCKS (CSEB)",
-      location: "NATURAL MATERIALS",
-      placeholderLabel: "Compressed Stabilised Earth Blocks (CSEB) Showcase",
-    },
-    {
-      src: "/gallery/rat-trap.jpg",
-      title: "RAT-TRAP MASONRY",
-      location: "LOW-COST TECH",
-      placeholderLabel: "Rat-Trap Bond & Filler Slab Model",
-    },
-    {
-      src: "/gallery/bamboo.jpg",
-      title: "BAMBOO PAVILION",
-      location: "BIO-COMPOSITES",
-      placeholderLabel: "Bamboo Structural Engineering Model",
-    },
-    {
-      src: "/gallery/mud.jpg",
-      title: "MUD & COB HOUSES",
-      location: "ECO-ARCHITECTURE",
-      placeholderLabel: "Organic Mud Architecture Model",
-    },
-    {
-      src: "/gallery/ideathon.jpg",
-      title: "IDEATHON PRESENTATIONS",
-      location: "STUDENT INNOVATION",
-      placeholderLabel: "Student Sustainability Ideathon Presentations",
-    },
-    {
-      src: "/gallery/expo.jpg",
-      title: "EXPO SHOWCASE",
-      location: "SUSTAINABLE EXPO",
-      placeholderLabel: "Sustainable Materials & Technologies Expo",
-    },
+    { src: "/gallery/nanavu1.jpeg" },
+    { src: "/gallery/nanavu2.jpeg" },
+    { src: "/gallery/nanavu3.jpeg" },
+    { src: "/gallery/nanavu4.jpeg" },
+    { src: "/gallery/nanavu5.jpeg" },
+    { src: "/gallery/nanavu6.jpeg" },
+    { src: "/gallery/nanavu7.jpeg" },
+    { src: "/gallery/nanavu8.jpeg" },
   ];
 
   useLayoutEffect(() => {
@@ -115,7 +87,7 @@ function Gallery() {
       <div className="mb-12 md:mb-16">
         <div className="flex items-center gap-4 mb-6">
           <span className="text-xs tracking-[0.3em] text-[#287A73]">
-            09 / GALLERY
+            07 / GALLERY
           </span>
 
           <div className="h-px w-16 bg-[#287A73]/40" />
@@ -186,19 +158,17 @@ function Gallery() {
       >
         {images.map((image, index) => (
           <div
-            key={`${image.title}-${index}`}
+            key={index}
             className={`
               group
               relative
 
               ${
-                index === 1
-                  ? "md:mt-16"
-                  : index === 3
-                  ? "md:mt-10"
-                  : index === 5
-                  ? "md:mt-20"
-                  : ""
+                index === 1 ? "md:mt-16"
+                : index === 3 ? "md:mt-10"
+                : index === 5 ? "md:mt-20"
+                : index === 7 ? "md:mt-12"
+                : ""
               }
             `}
           >
@@ -214,7 +184,7 @@ function Gallery() {
             >
               <img
                 src={image.src}
-                alt={image.title}
+                alt={`Gallery Image ${index + 1}`}
                 className="
                   w-full
                   h-full
@@ -241,34 +211,10 @@ function Gallery() {
                 "
               />
 
-              {/* Number */}
-
-              <span
-                className="
-                  absolute
-                  top-3
-                  left-3
-                  text-[9px]
-                  tracking-[0.2em]
-                  text-white
-                  mix-blend-difference
-                "
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
+              {/* Number removed */}
             </div>
 
-            {/* CAPTION */}
-
-            <div className="flex justify-between items-start mt-2">
-              <h3 className="text-[9px] md:text-[10px] tracking-[0.15em]">
-                {image.title}
-              </h3>
-
-              <span className="text-[8px] tracking-[0.12em] text-[#8C877D]">
-                {image.location}
-              </span>
-            </div>
+            {/* CAPTION REMOVED FOR NOW */}
           </div>
         ))}
       </div>
@@ -282,7 +228,7 @@ function Gallery() {
           </span>
 
           <span className="text-xs tracking-[0.25em] text-[#287A73]">
-            10 / →
+            08 / JOIN NANAVU →
           </span>
         </div>
       </div>

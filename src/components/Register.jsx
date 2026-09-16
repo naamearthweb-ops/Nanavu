@@ -70,64 +70,22 @@ function Register() {
           organization: formData.organization,
           branch: formData.branch,
           year_of_study: formData.year === 'Other' ? formData.otherYear : formData.year,
-          password: formData.password
+          password: formData.password,
+          bypass_payment: true // TEMPORARY: set to true to bypass Razorpay
         }),
       });
 
       const order = await res.json();
       if (!res.ok) throw new Error(order.message || "Failed to create order");
 
-      // 2. Open Razorpay Checkout
-      const options = {
-        key: import.meta.env.VITE_RAZORPAY_KEY_ID, // Frontend key
-        amount: order.amount,
-        currency: order.currency,
-        name: "NANAVU '26",
-        description: `Registration Pass`,
-        order_id: order.id,
-        handler: async function (response) {
-          try {
-            // 3. Verify payment on backend
-            const verifyRes = await fetch("/api/verify-payment", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                razorpay_order_id: response.razorpay_order_id,
-                razorpay_payment_id: response.razorpay_payment_id,
-                razorpay_signature: response.razorpay_signature
-              }),
-            });
-            const verifyData = await verifyRes.json();
-            
-            if (verifyRes.ok) {
-              // Sign in the user automatically
-              await supabase.auth.signInWithPassword({
-                email: formData.email,
-                password: formData.password
-              });
-              setSuccess(true);
-            } else {
-              setError(verifyData.message || "Payment verification failed");
-            }
-          } catch (err) {
-            setError("Error verifying payment.");
-          }
-        },
-        prefill: {
-          name: formData.name,
-          email: formData.email,
-          contact: formData.phone,
-        },
-        theme: {
-          color: "#287A73",
-        },
-      };
-
-      const rzp = new window.Razorpay(options);
-      rzp.on("payment.failed", function (response) {
-        setError(response.error.description || "Payment failed");
+      // TEMPORARY BYPASS: Directly log in
+      await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password
       });
-      rzp.open();
+      setSuccess(true);
+      setLoading(false);
+      return;
     } catch (err) {
       setError(err.message);
     } finally {
@@ -238,7 +196,7 @@ function Register() {
             disabled={loading}
             className="mt-6 bg-[#287A73] text-[#F3EFE6] hover:bg-[#287A73]/80 disabled:opacity-50 py-4 rounded-xl text-xs tracking-widest uppercase font-medium transition-all"
           >
-            {loading ? "Processing..." : `Proceed to Pay ₹${FIXED_AMOUNT}`}
+            {loading ? "Processing..." : `Register`}
           </button>
           
           <div className="text-center mt-2">

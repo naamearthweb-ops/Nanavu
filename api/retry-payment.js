@@ -41,30 +41,40 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'You have already paid.' });
     }
 
-    // 2. Create Razorpay Order
-    const razorpay = new Razorpay({
-      key_id: process.env.RAZORPAY_KEY_ID,
-      key_secret: process.env.RAZORPAY_KEY_SECRET,
-    });
+    const bypass_payment = req.body.bypass_payment;
+    let order;
 
-    const options = {
-      amount: amount.toString(),
-      currency,
-      receipt: receipt || `retry_rcpt_${Date.now()}`,
-    };
+    if (bypass_payment) {
+      order = { id: `bypass_${Date.now()}`, amount, currency };
+    } else {
+      // 2. Create Razorpay Order
+      const razorpay = new Razorpay({
+        key_id: process.env.RAZORPAY_KEY_ID,
+        key_secret: process.env.RAZORPAY_KEY_SECRET,
+      });
 
-    const order = await razorpay.orders.create(options);
+      const options = {
+        amount: amount.toString(),
+        currency,
+        receipt: receipt || `retry_rcpt_${Date.now()}`,
+      };
+
+      order = await razorpay.orders.create(options);
+    }
     
     if (!order) {
       return res.status(500).json({ message: 'Error creating order' });
     }
+
+    const payment_status = bypass_payment ? 'PAID' : 'PENDING';
 
     // 3. Update PENDING Registration record with new order ID
     const { error: dbError } = await supabase
       .from('registrations')
       .update({
         razorpay_order_id: order.id,
-        amount_paid_inr: amount / 100
+        amount_paid_inr: amount / 100,
+        payment_status: payment_status
       })
       .eq('user_id', user.id);
 
