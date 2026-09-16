@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -195,10 +196,8 @@ function JoinNanavu() {
           </p>
 
           {/* REGISTRATION CTA */}
-          <a
-            href="https://forms.gle/Xi85n43efPGctmzh9"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/register"
             className="
               group
               mt-8
@@ -234,7 +233,7 @@ function JoinNanavu() {
             >
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
 

@@ -342,26 +342,52 @@ function Introduction() {
               className="
                 mt-10
                 max-w-2xl
-                text-base
-                md:text-lg
+                text-lg
+                md:text-xl
                 leading-relaxed
                 text-nanavu-deepstone
               "
             >
-              NANAVU is a national-level sustainable conclave exploring how sustainable and natural construction can become a practical, affordable, accessible, and rewarding pathway for the next generation of professionals.
+              NANAVU is a national-level Sustainability Conclave exploring how sustainable construction can be empowered as a practical, affordable, accessible, and rewarding pathway for the next generation of professionals.
             </p>
 
             <p
               className="
                 mt-6
                 max-w-2xl
-                text-base
-                md:text-lg
+                text-lg
+                md:text-xl
                 leading-relaxed
                 text-nanavu-deepstone
               "
             >
-              Moving beyond sustainability as a theoretical concept, NANAVU creates a vibrant platform for knowledge exchange, practical learning, innovation, and industry-wide collaboration.
+              Bringing together education, industry, research, practice, and policy, NANAVU creates a platform to explore new materials, technologies, practices, and career opportunities that can make sustainable construction a preferred choice-without compromising quality, performance, or value.
+            </p>
+
+            <p
+              className="
+                mt-6
+                max-w-2xl
+                text-lg
+                md:text-xl
+                leading-relaxed
+                text-nanavu-deepstone
+              "
+            >
+              Through panel discussions, technical talks, and student innovation, the Conclave aims to connect education with practice and turn ideas into collaboration, action, and long-term impact.
+            </p>
+
+            <p
+              className="
+                mt-6
+                max-w-2xl
+                text-lg
+                md:text-xl
+                leading-relaxed
+                text-nanavu-deepstone
+              "
+            >
+              NANAVU contributes to the Kerala Carbon Neutral Pathway 2050 and India’s commitment to net-zero emissions by 2070.
             </p>
 
           </div>
@@ -420,7 +446,6 @@ function Introduction() {
           className="
             grid
             grid-cols-1
-            md:grid-cols-2
             gap-16
             md:gap-24
             max-w-6xl
@@ -451,7 +476,7 @@ function Introduction() {
                 md:text-2xl
                 leading-[1.25]
                 font-light
-                max-w-lg
+                max-w-3xl
               "
             >
               To nurture a future where sustainable construction is accessible, practical, valued, and a rewarding professional pathway for young architects and engineers.
@@ -464,7 +489,7 @@ function Introduction() {
 
           <div className="mission-content">
 
-            <h3
+            {/* <h3
               className="
                 text-4xl
                 md:text-6xl
@@ -487,7 +512,7 @@ function Introduction() {
               "
             >
               To unite education, industry, research, practice, and policy—empowering students with hands-on knowledge, natural materials, and regenerative building practices.
-            </p>
+            </p> */}
 
           </div>
 

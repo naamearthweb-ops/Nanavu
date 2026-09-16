@@ -1,0 +1,6 @@
+auth for agents [www.vestauth.com]
+Connected to PostgreSQL.
+Admins table created/verified.
+Auth user for naamearthweb@gmail.com ensured.
+Successfully added naamearthweb@gmail.com as SUPER_ADMIN.
+If this was a new account, the temporary password is: NanavuSuperAdmin2026!

@@ -117,6 +117,40 @@ function Partners() {
         </div>
       </div>
 
+      {/* SUPPORTED BY SECTION */}
+      <div className="mb-32 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 text-center md:text-left">
+        {/* LOGO PLACEHOLDER */}
+        <a 
+          href="https://envt.kerala.gov.in" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-32 h-32 md:w-40 md:h-40 shrink-0 border border-[#29312F]/10 flex items-center justify-center rounded-full bg-white/50 shadow-sm hover:scale-105 transition-transform duration-300 cursor-pointer"
+        >
+          <span className="text-[10px] tracking-[0.2em] text-[#8C877D] uppercase font-medium">Logo</span>
+        </a>
+        
+        {/* CONTENT */}
+        <div className="flex flex-col items-center md:items-start group">
+          <p className="text-xs tracking-[0.3em] text-[#287A73] font-medium uppercase mb-4">
+            Supported By
+          </p>
+          <h3 className="text-3xl md:text-5xl font-light tracking-tight text-[#29312F] mb-4">
+            Ministry of Climate Change
+          </h3>
+          <p className="text-base md:text-lg text-[#8C877D] font-light mb-8 max-w-lg">
+            Under the visionary leadership of <span className="font-medium text-[#29312F]">Shri Sunny Joseph</span>
+          </p>
+          <a 
+            href="https://envt.kerala.gov.in" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] text-[#287A73] hover:text-[#1d5c56] transition-all duration-300 border-b border-[#287A73]/30 hover:border-[#1d5c56] pb-1 uppercase font-medium group-hover:gap-3"
+          >
+            Visit envt.kerala.gov.in ↗
+          </a>
+        </div>
+      </div>
+
       {/* LOGOS & DETAILS GRID (CLICKABLE PARTNER LINKS) */}
       <div
         ref={logosRef}

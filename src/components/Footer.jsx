@@ -37,7 +37,7 @@ function Footer() {
           <div className="space-y-2 text-xs text-[#F3EFE6]/80 font-light">
             <p><strong className="text-[#D8C7A5]">Coordinator:</strong> Prof. Basithali E.K.</p>
             <p><strong className="text-[#D8C7A5]">Phone:</strong> +91 9847811979</p>
-            <p><strong className="text-[#D8C7A5]">Email:</strong> nanavuu26@gmail.com</p>
+            <p><strong className="text-[#D8C7A5]">Email:</strong> nanavu.tkm@gmail.com </p>
             <p className="text-[10px] text-[#8C877D] mt-3">TKM College of Engineering, Kollam, Kerala</p>
           </div>
         </div>
