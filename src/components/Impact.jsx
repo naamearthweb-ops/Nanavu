@@ -57,6 +57,7 @@ function Impact() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // Title animation
+      // changed
       gsap.from(titleRef.current, {
         y: 50,
         opacity: 0,
