@@ -172,7 +172,7 @@ function Impact() {
           md:mb-16
         "
       >
-        <div className="md:col-span-4">
+        {/* <div className="md:col-span-4">
           <span className="text-xs tracking-[0.25em] text-[#8C877D] uppercase font-medium">
             BEYOND THE CONCLAVE
           </span>
@@ -191,11 +191,11 @@ function Impact() {
           >
             We believe a sustainable conclave should leave a lasting footprint—an actionable technique, a professional connection, and a tangible shift towards carbon-neutral practices.
           </p>
-        </div>
+        </div> */}
       </div>
 
       {/* IMPACT NUMBERS */}
-      <div
+      {/* <div
         ref={statsRef}
         className="
           grid
@@ -250,14 +250,15 @@ function Impact() {
             </p>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* IMPACT AREAS */}
-      <div className="mb-5">
+      {/* <div className="mb-5">
         <span className="text-xs tracking-[0.3em] text-[#287A73] font-medium uppercase">
           WHERE IT MATTERS
         </span>
-      </div>
+      </div> */}
+      
 
       <div
         ref={impactRef}
@@ -346,7 +347,7 @@ function Impact() {
       {/* NEXT SECTION INDICATOR */}
       <div className="mt-10 md:mt-12 border-t border-[#F3EFE6]/15 pt-4 flex items-center justify-between">
         <span className="text-xs tracking-[0.3em] text-[#8C877D] uppercase">
-          MEASURED IN MOMENTS
+          {/* MEASURED IN MOMENTS */}
         </span>
 
         <span className="text-xs tracking-[0.25em] text-[#287A73]">

@@ -15,7 +15,7 @@ function PeopleBehind() {
     },
     {
       name: "Jb. Shahal Hassan Musaliar",
-      role: "Chairman, Governing Body TKM Trust",
+      role: "Chairman, TKM Trust",
       image: "https://img1.wsimg.com/isteam/ip/dbca240c-c790-439b-bfb4-1ad9310347f4/1-1.png/:/cr=t:1.59%25,l:0%25,w:100%25,h:96.82%25/rs=w:472,h:629,cg:true"
     },
   ];
