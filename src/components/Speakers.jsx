@@ -13,7 +13,7 @@ function Speakers() {
       number: "01",
       name: "AR. VINU DANIEL",
       role: "FOUNDER, WALLMAKERS · TIME100 NEXT 2023",
-      location: "PANEL SPEAKER",
+      location: "SPEAKER",
       image: "https://www.asiarealestatesummit.com/wp-content/uploads/2023/10/Ar.-Vinu-Daniel_Temp-e1696505956368.png",
       description: "Royal Academy Dorfman Award winner known for eco-responsive structures, Compressed Stabilised Earth Blocks (CSEB), scrap material upcycling, and mud masonry.",
       detailedDescription: [
@@ -26,7 +26,7 @@ function Speakers() {
       number: "02",
       name: "AR. EUGENE PANDALA",
       role: "FOUNDER, CSBNE · LAURIE BAKER AWARDEE",
-      location: "PANEL SPEAKER",
+      location: "SPEAKER",
       image: "https://upload.wikimedia.org/wikipedia/commons/1/12/Eugene_Pandala.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
       description: "Pioneer of mud architecture, cob building, and eco-tourism design in India. Designer of Banasura Hill Resort—Asia's largest earth resort.",
       detailedDescription: [
@@ -39,7 +39,7 @@ function Speakers() {
       number: "03",
       name: "DR. BENNY KURIAKOSE",
       role: "MASTER ARCHITECT & HERITAGE CONSERVATOR",
-      location: "KEYNOTE SPEAKER",
+      location: "SPEAKER",
       image: "https://www.architectandinteriorsindia.com/cloud/2021/11/15/benny.jpg",
       description: "Baker disciple, Charles Wallace Scholar, and creator of DakshinaChitra & Muziris Heritage Project. Leading authority on disaster rehabilitation & vernacular architecture.",
       detailedDescription: [
@@ -52,7 +52,7 @@ function Speakers() {
       number: "04",
       name: "K. MADHAVAN NAMBOODIRI",
       role: "GREEN BUILDER · WATER MANAGEMENT SPECIALIST",
-      location: "TECHNICAL SPEAKER",
+      location: "SPEAKER",
       image: "madhavan.png",
       description: "Retired civil engineer, water management specialist, and green builder advancing sustainable, low-cost earth architecture in Kerala.",
       detailedDescription: [
@@ -65,7 +65,7 @@ function Speakers() {
       number: "05",
       name: "AR. P.B. SAJAN",
       role: "CHIEF ARCHITECT & JOINT DIRECTOR, COSTFORD",
-      location: "TECHNICAL SPEAKER",
+      location: "SPEAKER",
       image: "https://vescoa.ves.ac.in/wp-content/uploads/2023/07/12.-Ar.-P.-B.-Sajan.jpg",
       description: "HUDCO Award winner and disciple of Laurie Baker. Champion of cost-effective green housing, rat-trap bond masonry, bamboo structures, and filler slabs.",
       detailedDescription: [

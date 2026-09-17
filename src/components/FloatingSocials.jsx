@@ -43,7 +43,7 @@ function FloatingSocials() {
       </a>
 
       <a 
-        href="#" 
+        href="https://whatsapp.com/channel/0029Vb8prHh4Y9lf59ANBy2B" 
         target="_blank" 
         rel="noopener noreferrer"
         className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#25D366] shadow-lg shadow-green-500/20 flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"

@@ -9,15 +9,15 @@ function PeopleBehind() {
 
   const advisors = [
     {
+      name: "Shri Sunny Joseph",
+      role: "Minister of Climate Change",
+      image: "https://envt.kerala.gov.in/wp-content/uploads/2026/06/minister_envt.png"
+    },
+    {
       name: "Jb. Shahal Hassan Musaliar",
       role: "Chairman, Governing Body TKM Trust",
       image: "https://img1.wsimg.com/isteam/ip/dbca240c-c790-439b-bfb4-1ad9310347f4/1-1.png/:/cr=t:1.59%25,l:0%25,w:100%25,h:96.82%25/rs=w:472,h:629,cg:true"
     },
-    {
-      name: "Shri Sunny Joseph",
-      role: "Minister of Climate Change",
-      image: "https://envt.kerala.gov.in/wp-content/uploads/2026/06/minister_envt.png"
-    }
   ];
 
   const directors = [
@@ -28,13 +28,14 @@ function PeopleBehind() {
     },
     {
       name: "Haritha C",
-      role: "Associate Professor, Arch Department TKM",
+      role: "Chairperson, Campus Sustainability Council(CSC), TKMCE Kollam",
       image: "https://dap.tkmce.ac.in/wp-content/uploads/2025/02/HARITHA-C.webp"
     },
     {
       name: "Basithali E. K.",
       role: "Founder of naamearth",
-      image: "https://www.naamearth.in/images/people/basith_ali.jpg"
+      image: "https://www.naamearth.in/images/people/basith_ali.jpg",
+      imgClass: "scale-200"
     }
   ];
 
@@ -120,7 +121,7 @@ function PeopleBehind() {
                 <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-white/5 border border-white/10 mb-6 overflow-hidden flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                   {/* PROFILE PLACEHOLDER */}
                   {person.image ? (
-                    <img src={person.image} alt={person.name} className="w-full h-full object-cover" />
+                    <img src={person.image} alt={person.name} className={`w-full h-full object-cover ${person.imgClass || ""}`} />
                   ) : (
                     <span className="text-4xl text-white/20 font-light uppercase">{person.name.charAt(0)}</span>
                   )}
