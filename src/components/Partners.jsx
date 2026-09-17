@@ -124,9 +124,9 @@ function Partners() {
           href="https://envt.kerala.gov.in" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-32 h-32 md:w-40 md:h-40 shrink-0 border border-[#29312F]/10 flex items-center justify-center rounded-full bg-white/50 shadow-sm hover:scale-105 transition-transform duration-300 cursor-pointer"
+          className="w-32 h-32 md:w-40 md:h-40 shrink-0 border border-[#29312F]/10 flex items-center justify-center rounded-full bg-white/50 shadow-sm hover:scale-105 transition-transform duration-300 cursor-pointer overflow-hidden"
         >
-          <span className="text-[10px] tracking-[0.2em] text-[#8C877D] uppercase font-medium">Logo</span>
+          <img src="/envtkeralaemblem.png" alt="Ministry Logo" className="w-full h-full object-contain p-6" />
         </a>
         
         {/* CONTENT */}

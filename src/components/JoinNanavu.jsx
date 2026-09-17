@@ -80,7 +80,6 @@ function JoinNanavu() {
       className="
         relative
         overflow-hidden
-        bg-nanavu-offwhite
         text-nanavu-charcoal
         px-6
         md:px-12
@@ -90,6 +89,11 @@ function JoinNanavu() {
         pb-12
         md:pb-16
       "
+      style={{
+        backgroundImage: 'linear-gradient(rgba(243, 239, 230, 0.75), rgba(243, 239, 230, 0.75)), url("/gallery/nanavu2.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
     >
       {/* HEADER */}
       <div

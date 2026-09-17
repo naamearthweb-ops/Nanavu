@@ -24,14 +24,17 @@ function PeopleBehind() {
     {
       name: "Dr. Sadiq A",
       role: "Principal of TKMCE Kollam",
+      image: "https://tkmce.ac.in/images/Dr.%20SADIQ,%20A%20(1).jpg"
     },
     {
-      name: "Ar. Haritha",
-      role: "Architecture",
+      name: "Haritha C",
+      role: "Associate Professor, Arch Department TKM",
+      image: "https://dap.tkmce.ac.in/wp-content/uploads/2025/02/HARITHA-C.webp"
     },
     {
-      name: "Basith Ali",
-      role: "NAAM Earth Founder",
+      name: "Basithali E. K.",
+      role: "Founder of naamearth",
+      image: "https://www.naamearth.in/images/people/basith_ali.jpg"
     }
   ];
 
@@ -84,13 +87,13 @@ function PeopleBehind() {
           <h3 className="text-xl md:text-2xl font-light text-[#D8C7A5] mb-12 border-b border-white/10 pb-4 text-center md:text-left">
             Conclave Advisors
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-16">
+          <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-12 md:gap-24">
             {advisors.map((person, idx) => (
-              <div key={idx} className="person-card group flex flex-col items-center md:items-start text-center md:text-left">
+              <div key={idx} className="person-card group flex flex-col items-center text-center max-w-sm">
                 <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-white/5 border border-white/10 mb-6 overflow-hidden flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                   {/* PROFILE PLACEHOLDER */}
                   {person.image ? (
-                    <img src={person.image} alt={person.name} className="w-full h-full object-cover" />
+                    <img src={person.image} alt={person.name} className={`w-full h-full ${person.contain ? 'object-contain p-6' : 'object-cover'}`} />
                   ) : (
                     <span className="text-4xl text-white/20 font-light uppercase">{person.name.charAt(0)}</span>
                   )}

@@ -180,12 +180,17 @@ function Introduction() {
         intro-section
         relative
         overflow-hidden
-        bg-nanavu-offwhite
         text-nanavu-charcoal
         px-8
         md:px-16
         py-32
       "
+      style={{
+        backgroundImage: 'linear-gradient(rgba(243, 239, 230, 0.85), rgba(243, 239, 230, 0.85)), url("/nanavu1.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
     >
 
       {/* ==========================================
@@ -479,8 +484,7 @@ function Introduction() {
                 max-w-3xl
               "
             >
-              To nurture a future where sustainable construction is accessible, practical, valued, and a rewarding professional pathway for young architects and engineers.
-            </p>
+              To nurture a future where sustainable construction is accessible, practical, valued, and a rewarding professional pathway. </p>
 
           </div>
 
