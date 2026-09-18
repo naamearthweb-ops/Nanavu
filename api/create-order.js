@@ -12,11 +12,17 @@ export default async function handler(req, res) {
   }
 
   const { 
-    amount, currency = 'INR', receipt, 
+    userType = 'student', optIdeathon = false, currency = 'INR', receipt, 
     email, password, full_name, phone, whatsapp, organization, branch, year_of_study 
   } = req.body;
 
-  if (!amount || amount < 100) {
+  let calculatedAmount = userType === 'student' ? 300 : 600;
+  if (optIdeathon) {
+    calculatedAmount += 150;
+  }
+  const amount = calculatedAmount * 100; // in paise
+
+  if (amount < 100) {
     return res.status(400).json({ message: 'Amount must be at least 100 paise' });
   }
 
@@ -104,8 +110,9 @@ export default async function handler(req, res) {
         .from('registrations')
         .update({
           razorpay_order_id: order.id,
-          amount_paid_inr: amount / 100,
-          payment_status: payment_status
+          amount_paid_inr: calculatedAmount,
+          payment_status: payment_status,
+          ideathon_opt_in: optIdeathon
         })
         .eq('user_id', userId);
 
@@ -126,8 +133,9 @@ export default async function handler(req, res) {
             branch,
             year_of_study,
             razorpay_order_id: order.id,
-            amount_paid_inr: amount / 100,
-            payment_status: payment_status
+            amount_paid_inr: calculatedAmount,
+            payment_status: payment_status,
+            ideathon_opt_in: optIdeathon
           }
         ]);
 

@@ -10,7 +10,7 @@ function PeopleBehind() {
   const advisors = [
     {
       name: "P. K. Kunhalikutty",
-      role: "Minister of AI & Entrepreneurship",
+      role: "Minister of Industries & IT",
       image: "https://www.iumlkerala.org/frontend/img/mla/pkkunhalikkutty.jpg",
       imgClass: "scale-150 translate-y-10"
     },

@@ -90,7 +90,7 @@ function JoinNanavu() {
         md:pb-16
       "
       style={{
-        backgroundImage: 'linear-gradient(rgba(243, 239, 230, 0.75), rgba(243, 239, 230, 0.75)), url("/gallery/nanavu2.jpeg")',
+        backgroundImage: 'linear-gradient(rgba(243, 239, 230, 0.75), rgba(243, 239, 230, 0.75)), url("/gallery/nanavu3.jpeg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
@@ -201,7 +201,8 @@ function JoinNanavu() {
 
           {/* REGISTRATION CTA */}
           <Link
-            to="/register"
+            // to="/register"
+            to="https://forms.gle/Xi85n43efPGctmzh9"
             className="
               group
               mt-8

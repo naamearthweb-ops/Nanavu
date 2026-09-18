@@ -118,36 +118,74 @@ function Partners() {
       </div>
 
       {/* SUPPORTED BY SECTION */}
-      <div className="mb-32 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 text-center md:text-left">
-        {/* LOGO PLACEHOLDER */}
-        <a 
-          href="https://envt.kerala.gov.in" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="w-32 h-32 md:w-40 md:h-40 shrink-0 border border-[#29312F]/10 flex items-center justify-center rounded-full bg-white/50 shadow-sm hover:scale-105 transition-transform duration-300 cursor-pointer overflow-hidden"
-        >
-          <img src="/envtkeralaemblem.png" alt="Ministry Logo" className="w-full h-full object-contain p-6" />
-        </a>
+      <div className="mb-32 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-10">
         
-        {/* CONTENT */}
-        <div className="flex flex-col items-center md:items-start group">
-          <p className="text-xs tracking-[0.3em] text-[#287A73] font-medium uppercase mb-4">
-            Supported By
-          </p>
-          <h3 className="text-3xl md:text-5xl font-light tracking-tight text-[#29312F] mb-4">
-            Ministry of Climate Change
-          </h3>
-          <p className="text-base md:text-lg text-[#8C877D] font-light mb-8 max-w-lg">
-            Under the visionary leadership of <span className="font-medium text-[#29312F]">Shri Sunny Joseph</span>
-          </p>
+        {/* FIRST ELEMENT: Ministry of AI and Entrepreneurship */}
+        <div className="flex flex-col items-center justify-start gap-8 text-center px-4">
+          {/* LOGO PLACEHOLDER */}
+          <a 
+            href="#" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-28 h-28 md:w-36 md:h-36 shrink-0 border border-[#29312F]/10 flex items-center justify-center rounded-full bg-white/50 shadow-sm hover:scale-105 transition-transform duration-300 cursor-pointer overflow-hidden"
+          >
+            <img src="/envtkeralaemblem.png" alt="Ministry Logo" className="w-full h-full object-contain p-5" />
+          </a>
+          
+          {/* CONTENT */}
+          <div className="flex flex-col items-center group">
+            <p className="text-xs tracking-[0.3em] text-[#287A73] font-medium uppercase mb-4">
+              Supported By
+            </p>
+            <h3 className="text-2xl md:text-4xl font-light tracking-tight text-[#29312F] mb-4">
+              Ministry of Industries & IT
+            </h3>
+            <p className="text-sm md:text-base text-[#8C877D] font-light mb-8 max-w-xs md:max-w-sm">
+              Under the visionary leadership of <span className="font-medium text-[#29312F]">Shri E K Kunhalikutty</span>
+            </p>
+            {/* <a 
+              href="#" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] text-[#287A73] hover:text-[#1d5c56] transition-all duration-300 border-b border-[#287A73]/30 hover:border-[#1d5c56] pb-1 uppercase font-medium group-hover:gap-3"
+            >
+              Visit kerala.gov.in ↗
+            </a> */}
+          </div>
+        </div>
+
+        {/* SECOND ELEMENT: Ministry of Climate Change */}
+        <div className="flex flex-col items-center justify-start gap-8 text-center px-4">
+          {/* LOGO PLACEHOLDER */}
           <a 
             href="https://envt.kerala.gov.in" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] text-[#287A73] hover:text-[#1d5c56] transition-all duration-300 border-b border-[#287A73]/30 hover:border-[#1d5c56] pb-1 uppercase font-medium group-hover:gap-3"
+            className="w-28 h-28 md:w-36 md:h-36 shrink-0 border border-[#29312F]/10 flex items-center justify-center rounded-full bg-white/50 shadow-sm hover:scale-105 transition-transform duration-300 cursor-pointer overflow-hidden"
           >
-            Visit envt.kerala.gov.in ↗
+            <img src="/envtkeralaemblem.png" alt="Ministry Logo" className="w-full h-full object-contain p-5" />
           </a>
+          
+          {/* CONTENT */}
+          <div className="flex flex-col items-center group">
+            <p className="text-xs tracking-[0.3em] text-[#287A73] font-medium uppercase mb-4">
+              Supported By
+            </p>
+            <h3 className="text-2xl md:text-4xl font-light tracking-tight text-[#29312F] mb-4">
+              Ministry of Environment & Climate Change
+            </h3>
+            <p className="text-sm md:text-base text-[#8C877D] font-light mb-8 max-w-xs md:max-w-sm">
+              Under the visionary leadership of <span className="font-medium text-[#29312F]">Shri Sunny Joseph</span>
+            </p>
+            {/* <a 
+              href="https://envt.kerala.gov.in" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] text-[#287A73] hover:text-[#1d5c56] transition-all duration-300 border-b border-[#287A73]/30 hover:border-[#1d5c56] pb-1 uppercase font-medium group-hover:gap-3"
+            >
+              Visit envt.kerala.gov.in ↗
+            </a> */}
+          </div>
         </div>
       </div>
 

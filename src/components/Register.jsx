@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 
-const FIXED_AMOUNT = 350; // Fixed amount in INR
+
 
 function Register() {
   const navigate = useNavigate();
@@ -25,6 +25,12 @@ function Register() {
   const [user, setUser] = useState(null);
   const [hasRegistered, setHasRegistered] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
+
+  const [userType, setUserType] = useState("student");
+  const [optIdeathon, setOptIdeathon] = useState(false);
+
+  const baseAmount = userType === "student" ? 300 : 600;
+  const displayAmount = baseAmount + (optIdeathon ? 150 : 0);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -55,12 +61,12 @@ function Register() {
 
     try {
       // 1. Create order on backend
-      const amount = FIXED_AMOUNT * 100; // in paise
       const res = await fetch("/api/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          amount,
+          userType,
+          optIdeathon,
           currency: "INR",
           receipt: `rcpt_${Date.now()}`,
           full_name: formData.name,
@@ -70,25 +76,67 @@ function Register() {
           organization: formData.organization,
           branch: formData.branch,
           year_of_study: formData.year === 'Other' ? formData.otherYear : formData.year,
-          password: formData.password,
-          bypass_payment: true // TEMPORARY: set to true to bypass Razorpay
+          password: formData.password
         }),
       });
 
       const order = await res.json();
       if (!res.ok) throw new Error(order.message || "Failed to create order");
 
-      // TEMPORARY BYPASS: Directly log in
-      await supabase.auth.signInWithPassword({
-        email: formData.email,
-        password: formData.password
+      // 2. Open Razorpay Checkout
+      const options = {
+        key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+        amount: order.amount,
+        currency: order.currency,
+        name: "Nanavu '26",
+        description: "Registration Fee",
+        order_id: order.id,
+        handler: async function (response) {
+          try {
+            setLoading(true);
+            const verifyRes = await fetch("/api/verify-payment", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+              }),
+            });
+            const verifyData = await verifyRes.json();
+            if (!verifyRes.ok) throw new Error(verifyData.message || "Payment verification failed");
+
+            // Payment verified, now login
+            await supabase.auth.signInWithPassword({
+              email: formData.email,
+              password: formData.password
+            });
+            setSuccess(true);
+          } catch (err) {
+            setError(err.message);
+          } finally {
+            setLoading(false);
+          }
+        },
+        prefill: {
+          name: formData.name,
+          email: formData.email,
+          contact: formData.phone
+        },
+        theme: {
+          color: "#287A73"
+        }
+      };
+
+      const rzp1 = new window.Razorpay(options);
+      rzp1.on('payment.failed', function (response){
+        setError(response.error.description);
+        setLoading(false);
       });
-      setSuccess(true);
-      setLoading(false);
-      return;
+      rzp1.open();
+      
     } catch (err) {
       setError(err.message);
-    } finally {
       setLoading(false);
     }
   };
@@ -191,12 +239,52 @@ function Register() {
             </div>
           </div>
 
+          <div className="flex flex-col gap-4 mt-2 mb-2 p-4 border border-[#287A73]/30 rounded-xl bg-[#1E2523]">
+            <label className="text-xs tracking-widest text-[#8C877D] uppercase">Registration Type</label>
+            <div className="flex flex-col md:flex-row gap-4">
+              <label className="flex items-center gap-2 cursor-pointer text-sm">
+                <input 
+                  type="radio" 
+                  name="userType" 
+                  value="student" 
+                  checked={userType === "student"}
+                  onChange={() => setUserType("student")}
+                  className="accent-[#287A73]"
+                />
+                Student (₹300)
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer text-sm">
+                <input 
+                  type="radio" 
+                  name="userType" 
+                  value="other" 
+                  checked={userType === "other"}
+                  onChange={() => setUserType("other")}
+                  className="accent-[#287A73]"
+                />
+                Professional/Other (₹600)
+              </label>
+            </div>
+
+            <div className="h-px bg-white/10 w-full my-2"></div>
+
+            <label className="flex items-center gap-3 cursor-pointer text-sm">
+              <input 
+                type="checkbox" 
+                checked={optIdeathon}
+                onChange={(e) => setOptIdeathon(e.target.checked)}
+                className="accent-[#287A73] w-4 h-4 rounded"
+              />
+              <span>Opt-in for Ideathon Add-on <span className="text-[#287A73] font-medium">(+₹150)</span></span>
+            </label>
+          </div>
+
           <button 
             type="submit" 
             disabled={loading}
             className="mt-6 bg-[#287A73] text-[#F3EFE6] hover:bg-[#287A73]/80 disabled:opacity-50 py-4 rounded-xl text-xs tracking-widest uppercase font-medium transition-all"
           >
-            {loading ? "Processing..." : `Register`}
+            {loading ? "Processing..." : `Pay ₹${displayAmount} & Register`}
           </button>
           
           <div className="text-center mt-2">

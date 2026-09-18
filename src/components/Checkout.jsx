@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 
-const FIXED_AMOUNT = 350;
+
 
 function Checkout() {
   const navigate = useNavigate();
@@ -12,6 +12,12 @@ function Checkout() {
   const [session, setSession] = useState(null);
   const [registration, setRegistration] = useState(null);
   const [success, setSuccess] = useState(false);
+
+  const [userType, setUserType] = useState("student");
+  const [optIdeathon, setOptIdeathon] = useState(false);
+
+  const baseAmount = userType === "student" ? 300 : 600;
+  const displayAmount = baseAmount + (optIdeathon ? 150 : 0);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -37,6 +43,8 @@ function Checkout() {
           return;
         }
         setRegistration(data);
+        setUserType(data.amount_paid_inr === 600 || data.amount_paid_inr === 750 ? "other" : "student");
+        setOptIdeathon(data.ideathon_opt_in || false);
       }
       setCheckingAuth(false);
     };
@@ -57,23 +65,65 @@ function Checkout() {
           "Authorization": `Bearer ${session.access_token}`
         },
         body: JSON.stringify({
-          amount: FIXED_AMOUNT * 100,
+          userType,
+          optIdeathon,
           currency: "INR",
           receipt: `rcpt_${Date.now()}`,
-          bypass_payment: true // TEMPORARY BYPASS
         }),
       });
 
       const order = await res.json();
       if (!res.ok) throw new Error(order.message || "Failed to create order");
 
-      // TEMPORARY BYPASS LOGIC
-      setSuccess(true);
-      setLoading(false);
-      return;
+      // 2. Open Razorpay Checkout
+      const options = {
+        key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+        amount: order.amount,
+        currency: order.currency,
+        name: "Nanavu '26",
+        description: "Registration Fee (Retry)",
+        order_id: order.id,
+        handler: async function (response) {
+          try {
+            setLoading(true);
+            const verifyRes = await fetch("/api/verify-payment", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+              }),
+            });
+            const verifyData = await verifyRes.json();
+            if (!verifyRes.ok) throw new Error(verifyData.message || "Payment verification failed");
+
+            setSuccess(true);
+          } catch (err) {
+            setError(err.message);
+          } finally {
+            setLoading(false);
+          }
+        },
+        prefill: {
+          name: registration.full_name,
+          email: registration.email,
+          contact: registration.phone
+        },
+        theme: {
+          color: "#287A73"
+        }
+      };
+
+      const rzp1 = new window.Razorpay(options);
+      rzp1.on('payment.failed', function (response){
+        setError(response.error.description);
+        setLoading(false);
+      });
+      rzp1.open();
+
     } catch (err) {
       setError(err.message);
-    } finally {
       setLoading(false);
     }
   };
@@ -126,7 +176,7 @@ function Checkout() {
             </div>
             <div className="flex justify-between items-center border-b border-white/10 pb-4 mb-4">
               <span className="text-sm text-[#8C877D] uppercase tracking-widest">Amount</span>
-              <span className="text-xl text-white font-medium">₹{FIXED_AMOUNT}</span>
+              <span className="text-xl text-white font-medium">₹{displayAmount}</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-sm text-[#8C877D] uppercase tracking-widest">Status</span>
@@ -135,6 +185,46 @@ function Checkout() {
                 Pending
               </span>
             </div>
+          </div>
+
+          <div className="flex flex-col gap-4 mt-2 mb-2 p-4 border border-[#287A73]/30 rounded-xl bg-[#1E2523]">
+            <label className="text-xs tracking-widest text-[#8C877D] uppercase">Modify Registration Type</label>
+            <div className="flex flex-col md:flex-row gap-4">
+              <label className="flex items-center gap-2 cursor-pointer text-sm">
+                <input 
+                  type="radio" 
+                  name="userType" 
+                  value="student" 
+                  checked={userType === "student"}
+                  onChange={() => setUserType("student")}
+                  className="accent-[#287A73]"
+                />
+                Student (₹300)
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer text-sm">
+                <input 
+                  type="radio" 
+                  name="userType" 
+                  value="other" 
+                  checked={userType === "other"}
+                  onChange={() => setUserType("other")}
+                  className="accent-[#287A73]"
+                />
+                Professional/Other (₹600)
+              </label>
+            </div>
+
+            <div className="h-px bg-white/10 w-full my-2"></div>
+
+            <label className="flex items-center gap-3 cursor-pointer text-sm">
+              <input 
+                type="checkbox" 
+                checked={optIdeathon}
+                onChange={(e) => setOptIdeathon(e.target.checked)}
+                className="accent-[#287A73] w-4 h-4 rounded"
+              />
+              <span>Opt-in for Ideathon Add-on <span className="text-[#287A73] font-medium">(+₹150)</span></span>
+            </label>
           </div>
 
           <button 
