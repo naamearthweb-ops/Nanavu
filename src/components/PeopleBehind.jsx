@@ -10,12 +10,13 @@ function PeopleBehind() {
   const advisors = [
     {
       name: "P. K. Kunhalikutty",
-      role: "Minister for AI & Entrepreneurship",
-      image: "https://www.brandkeralaonline.com/wp-content/uploads/2026/05/PK-Kunhalikutty-Minister-Industries-IT-AI-1-1140x570.jpg"
+      role: "Minister of AI & Entrepreneurship",
+      image: "https://www.iumlkerala.org/frontend/img/mla/pkkunhalikkutty.jpg",
+      imgClass: "scale-150 translate-y-10"
     },
     {
       name: "Shri Sunny Joseph",
-      role: "Minister of Environment & Climate Change",
+      role: "Ministry of Environment & Climate Change",
       image: "https://envt.kerala.gov.in/wp-content/uploads/2026/06/minister_envt.png"
     },
     {
@@ -29,7 +30,8 @@ function PeopleBehind() {
     {
       name: "Dr. Sadiq A",
       role: "Principal of TKMCE Kollam",
-      image: "https://tkmce.ac.in/images/Dr.%20SADIQ,%20A%20(1).jpg"
+      image: "https://tkmce.ac.in/images/Dr.%20SADIQ,%20A%20(1).jpg",
+      imgClass: "scale-[1.1] object-top"
     },
     {
       name: "Haritha C",
@@ -99,7 +101,7 @@ function PeopleBehind() {
                 <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-white/5 border border-white/10 mb-6 overflow-hidden flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                   {/* PROFILE PLACEHOLDER */}
                   {person.image ? (
-                    <img src={person.image} alt={person.name} className={`w-full h-full ${person.contain ? 'object-contain p-6' : 'object-cover'}`} />
+                    <img src={person.image} alt={person.name} className={`w-full h-full ${person.contain ? 'object-contain p-6' : 'object-cover'} ${person.imgClass || ""}`} />
                   ) : (
                     <span className="text-4xl text-white/20 font-light uppercase">{person.name.charAt(0)}</span>
                   )}
