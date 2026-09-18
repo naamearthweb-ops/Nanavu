@@ -35,21 +35,21 @@ function Speakers() {
         "His notable projects include Bodhi, his first major mud-house project, and The Raviz in Kollam, a deluxe resort blending traditional Travancore architecture with natural materials. Pandala was awarded the first Laurie Baker Award by the Lalit Kala Akademi in 2011 for his unwavering commitment to sustainable building."
       ]
     },
+    // {
+    //   number: "03",
+    //   name: "DR. BENNY KURIAKOSE",
+    //   role: "MASTER ARCHITECT & HERITAGE CONSERVATOR",
+    //   location: "SPEAKER",
+    //   image: "https://www.architectandinteriorsindia.com/cloud/2021/11/15/benny.jpg",
+    //   description: "Baker disciple, Charles Wallace Scholar, and creator of DakshinaChitra & Muziris Heritage Project. Leading authority on disaster rehabilitation & vernacular architecture.",
+    //   detailedDescription: [
+    //     "Dr. Benny Kuriakose is a distinguished Indian architect and consultant renowned for his expertise in architectural conservation and vernacular architecture. His career began in 1984 under the tutelage of the legendary Laurie Baker.",
+    //     "A Charles Wallace Scholar, he holds a master’s degree in Conservation Studies from the University of York and a doctorate from IIT Madras. His work emphasizes climate-responsive design, environmental sustainability, and cost-effectiveness, deeply rooted in the traditional architectural practices of South India.",
+    //     "Dr. Kuriakose has served as a consultant for UNESCO, UNDP, and various state governments. He is the mastermind behind landmark projects like DakshinaChitra, the Muziris Heritage Project, and several disaster-relief rehabilitation settlements. He was honored with the Inside Outside Designer of the Year award in 2001."
+    //   ]
+    // },
     {
       number: "03",
-      name: "DR. BENNY KURIAKOSE",
-      role: "MASTER ARCHITECT & HERITAGE CONSERVATOR",
-      location: "SPEAKER",
-      image: "https://www.architectandinteriorsindia.com/cloud/2021/11/15/benny.jpg",
-      description: "Baker disciple, Charles Wallace Scholar, and creator of DakshinaChitra & Muziris Heritage Project. Leading authority on disaster rehabilitation & vernacular architecture.",
-      detailedDescription: [
-        "Dr. Benny Kuriakose is a distinguished Indian architect and consultant renowned for his expertise in architectural conservation and vernacular architecture. His career began in 1984 under the tutelage of the legendary Laurie Baker.",
-        "A Charles Wallace Scholar, he holds a master’s degree in Conservation Studies from the University of York and a doctorate from IIT Madras. His work emphasizes climate-responsive design, environmental sustainability, and cost-effectiveness, deeply rooted in the traditional architectural practices of South India.",
-        "Dr. Kuriakose has served as a consultant for UNESCO, UNDP, and various state governments. He is the mastermind behind landmark projects like DakshinaChitra, the Muziris Heritage Project, and several disaster-relief rehabilitation settlements. He was honored with the Inside Outside Designer of the Year award in 2001."
-      ]
-    },
-    {
-      number: "04",
       name: "K. MADHAVAN NAMBOODIRI",
       role: "GREEN BUILDER · WATER MANAGEMENT SPECIALIST",
       location: "SPEAKER",
@@ -62,7 +62,7 @@ function Speakers() {
       ]
     },
     {
-      number: "05",
+      number: "04",
       name: "AR. P.B. SAJAN",
       role: "CHIEF ARCHITECT & JOINT DIRECTOR, COSTFORD",
       location: "SPEAKER",
@@ -275,7 +275,6 @@ function Speakers() {
             md:grid
             grid-cols-1
             md:grid-cols-2
-            lg:grid-cols-3
             gap-8
             items-start
           "

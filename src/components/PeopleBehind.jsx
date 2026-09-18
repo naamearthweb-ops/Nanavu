@@ -9,8 +9,13 @@ function PeopleBehind() {
 
   const advisors = [
     {
+      name: "P. K. Kunhalikutty",
+      role: "Minister for AI & Entrepreneurship",
+      image: "https://www.brandkeralaonline.com/wp-content/uploads/2026/05/PK-Kunhalikutty-Minister-Industries-IT-AI-1-1140x570.jpg"
+    },
+    {
       name: "Shri Sunny Joseph",
-      role: "Minister of Climate Change",
+      role: "Minister of Environment & Climate Change",
       image: "https://envt.kerala.gov.in/wp-content/uploads/2026/06/minister_envt.png"
     },
     {
