@@ -122,6 +122,8 @@ function Navbar() {
   if (!session) {
     menuItems.push({ name: "REGISTER", link: "/register" });
     menuItems.push({ name: "SIGN IN", link: "/login" });
+  } else if (!registration || registration.payment_status !== 'PAID') {
+    menuItems.push({ name: "COMPLETE REGISTRATION", link: "/checkout" });
   }
 
   return (
@@ -219,14 +221,14 @@ function Navbar() {
                         Registered
                       </span>
                     ) : registration?.payment_status === 'PENDING' ? (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-[10px] tracking-widest uppercase">
+                      <Link to="/checkout" onClick={() => setMenuOpen(false)} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-[10px] tracking-widest uppercase hover:bg-yellow-500/20 cursor-pointer transition">
                         <span className="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse" />
-                        Payment Pending
-                      </span>
+                        Payment Pending - Pay Now
+                      </Link>
                     ) : (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/50 text-[10px] tracking-widest uppercase">
-                        Unregistered
-                      </span>
+                      <Link to="/checkout" onClick={() => setMenuOpen(false)} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/50 text-[10px] tracking-widest uppercase hover:bg-white/10 hover:text-white/80 cursor-pointer transition">
+                        Unregistered - Pay Now
+                      </Link>
                     )}
                     
                     <button 

@@ -39,8 +39,7 @@ function Register() {
     const checkAuth = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session?.user) {
-        alert("You are already signed in.");
-        navigate("/");
+        navigate("/checkout");
         return;
       }
       setCheckingAuth(false);
