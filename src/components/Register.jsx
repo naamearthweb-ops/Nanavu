@@ -190,6 +190,23 @@ function Register() {
           </p>
         </div>
 
+        {/* INFO BOX */}
+        <div className="mb-8 bg-[#287A73]/10 border border-[#287A73]/30 rounded-2xl p-6 text-sm text-[#F3EFE6] leading-relaxed flex flex-col gap-6 shadow-xl text-center md:text-left">
+          <div>
+            <h3 className="font-medium text-[#287A73] tracking-widest uppercase mb-2 text-xs">Delegate Pass & Access</h3>
+            <p className="text-[#8C877D] text-xs leading-relaxed">
+              Entry to the event is permitted only with a valid delegate pass or registration confirmation. The delegate pass provides access to all event tracks except Concept Pitching.
+            </p>
+          </div>
+          <div className="h-px bg-[#287A73]/20 w-full"></div>
+          <div>
+            <h3 className="font-medium text-[#287A73] tracking-widest uppercase mb-2 text-xs">Concept Pitching</h3>
+            <p className="text-[#8C877D] text-xs leading-relaxed">
+              Concept Pitching is a team-based event and requires separate registration. All team members must have a valid delegate pass in addition to registering for Concept Pitching.
+            </p>
+          </div>
+        </div>
+
         <form onSubmit={handlePayment} className="bg-[#29312F] p-8 rounded-2xl border border-white/10 flex flex-col gap-6 shadow-xl">
           {error && <div className="p-4 bg-red-500/20 border border-red-500/50 text-red-200 text-sm rounded-lg">{error}</div>}
           

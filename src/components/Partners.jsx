@@ -44,6 +44,27 @@ function Partners() {
     },
   ];
 
+  const associatePartners = [
+    {
+      name: "COEARTH FOUNDATION",
+      image: "https://scontent.cdninstagram.com/v/t51.2885-19/118232603_1017576338674128_5412317092891467450_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=108&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=ssFyPeqQnMgQ7kNvwFYfWd9&_nc_oc=AdrX7UW-zIsDJiUqUsPUpZmAxvVh7OZzMzhejfw51MJfkAWmiH1IEIhXpTDDHeqn3NiWAIxMK3uextRXGqzhiLAV&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_ss=7b689&oh=00_AQJqNxgFqzhgB9G_KnZmH2aMtarZL7NzpMZ6Ovjes0LOJQ&oe=6AB5A81A",
+      url: "https://www.instagram.com/coearthfoundation/",
+      description: "A nonprofit organisation focused on sustainable architecture, construction, environment, and the built environment, bringing together students and professionals through workshops, training, research, and collaborative initiatives.",
+    },
+    {
+      name: "SSA TKMCE",
+      image: "https://scontent.cdninstagram.com/v/t51.82787-19/546223143_18075505496320842_5023859323970534395_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=100&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=RPNX2d-HVJkQ7kNvwFpvvKh&_nc_oc=AdqVqEZp1dp7Jmy6tMbi4wqvr-LPEKV1DMFqCt-Eq2xKVPsrBTOhZFBI66RcF-b8vasEdWjsrf9QbGExq3p7dIlv&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=68mJVLlmeI3R2qTlsMA4Ew&_nc_ss=7b689&oh=00_AQIpucsccN1gonreSwlFAyLldJxuIk3Qw-kyrGKvnqopQA&oe=6AB5ABD0",
+      url: "https://www.instagram.com/ssa.tkmce/",
+      description: "The Society of Student Architects at TKMCE, serving as a platform for architecture students to engage in design, workshops, competitions, talks, exhibitions, and national-level architecture activities.",
+    },
+    {
+      name: "IEI CIVIL TKMCE",
+      image: "/iei_logo.jpeg",
+      url: "https://www.instagram.com/iei.civil.tkmce/",
+      description: "The Civil Engineering Student Chapter of the Institution of Engineers (India) at TKMCE, promoting technical knowledge and professional development through seminars, workshops, competitions, presentations, and industry-oriented activities.",
+    }
+  ];
+
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(titleRef.current, {
@@ -291,6 +312,37 @@ function Partners() {
             </div>
           </a>
         ))}
+      </div>
+
+      {/* ASSOCIATE PARTNERS & COMMUNITIES */}
+      <div className="mt-32 max-w-5xl mx-auto border-t border-[#29312F]/20 pt-16">
+        <h3 className="text-center text-xs tracking-[0.3em] text-[#287A73] font-medium uppercase mb-12">
+          Associate Partners & Communities
+        </h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center px-4">
+          {associatePartners.map((partner, index) => (
+            <div key={index} className="flex flex-col items-center group">
+              {partner.image && (
+                <a href={partner.url || "#"} target="_blank" rel="noopener noreferrer" className="mb-5 w-20 h-20 rounded-full overflow-hidden border border-[#29312F]/10 hover:scale-105 transition-transform duration-300 shadow-sm bg-white flex shrink-0">
+                  <img src={partner.image} alt={partner.name} className="w-full h-full object-cover" />
+                </a>
+              )}
+              <h4 className="text-sm md:text-base font-medium tracking-tight text-[#29312F] group-hover:text-[#287A73] transition-colors mb-3">
+                {partner.url ? (
+                  <a href={partner.url} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-1.5 justify-center">
+                    {partner.name} <span className="text-[10px]">↗</span>
+                  </a>
+                ) : (
+                  partner.name
+                )}
+              </h4>
+              <p className="text-xs leading-relaxed text-[#8C877D]">
+                {partner.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* FOOTER */}

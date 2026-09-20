@@ -22,19 +22,19 @@ function Speakers() {
         "He is celebrated for his commitment to utilizing unconventional and recycled materials, including mud, debris, discarded tires, and plastic bottles, drastically minimizing the carbon footprint of his buildings. In 2022, he was awarded the prestigious Royal Academy Dorfman Award, and in 2023, he was named one of the influential figures in the TIME100 Next list."
       ]
     },
-    {
-      number: "02",
-      name: "AR. EUGENE PANDALA",
-      role: "FOUNDER, CSBNE · LAURIE BAKER AWARDEE",
-      location: "SPEAKER",
-      image: "https://upload.wikimedia.org/wikipedia/commons/1/12/Eugene_Pandala.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
-      description: "Pioneer of mud architecture, cob building, and eco-tourism design in India. Designer of Banasura Hill Resort—Asia's largest earth resort.",
-      detailedDescription: [
-        "Eugene Pandala is a prominent Indian architect, urban designer, and heritage conservator recognized for his pioneering work in environmental sustainability and mud architecture. He holds a Master's in Urban Design from the School of Planning and Architecture, New Delhi.",
-        "Inspired by legendary architect Hassan Fathy, Pandala advocates for a 'glorious return to tradition' by utilizing natural, locally available materials such as mud, laterite, timber, and stone. His buildings are often described as extensions of the earth, featuring organic forms that harmonize with nature.",
-        "His notable projects include Bodhi, his first major mud-house project, and The Raviz in Kollam, a deluxe resort blending traditional Travancore architecture with natural materials. Pandala was awarded the first Laurie Baker Award by the Lalit Kala Akademi in 2011 for his unwavering commitment to sustainable building."
-      ]
-    },
+    // {
+    //   number: "02",
+    //   name: "AR. EUGENE PANDALA",
+    //   role: "FOUNDER, CSBNE · LAURIE BAKER AWARDEE",
+    //   location: "SPEAKER",
+    //   image: "https://upload.wikimedia.org/wikipedia/commons/1/12/Eugene_Pandala.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+    //   description: "Pioneer of mud architecture, cob building, and eco-tourism design in India. Designer of Banasura Hill Resort—Asia's largest earth resort.",
+    //   detailedDescription: [
+    //     "Eugene Pandala is a prominent Indian architect, urban designer, and heritage conservator recognized for his pioneering work in environmental sustainability and mud architecture. He holds a Master's in Urban Design from the School of Planning and Architecture, New Delhi.",
+    //     "Inspired by legendary architect Hassan Fathy, Pandala advocates for a 'glorious return to tradition' by utilizing natural, locally available materials such as mud, laterite, timber, and stone. His buildings are often described as extensions of the earth, featuring organic forms that harmonize with nature.",
+    //     "His notable projects include Bodhi, his first major mud-house project, and The Raviz in Kollam, a deluxe resort blending traditional Travancore architecture with natural materials. Pandala was awarded the first Laurie Baker Award by the Lalit Kala Akademi in 2011 for his unwavering commitment to sustainable building."
+    //   ]
+    // },
     // {
     //   number: "03",
     //   name: "DR. BENNY KURIAKOSE",
@@ -49,7 +49,7 @@ function Speakers() {
     //   ]
     // },
     {
-      number: "03",
+      number: "02",
       name: "K. MADHAVAN NAMBOODIRI",
       role: "GREEN BUILDER · WATER MANAGEMENT SPECIALIST",
       location: "SPEAKER",
@@ -62,7 +62,7 @@ function Speakers() {
       ]
     },
     {
-      number: "04",
+      number: "03",
       name: "AR. P.B. SAJAN",
       role: "CHIEF ARCHITECT & JOINT DIRECTOR, COSTFORD",
       location: "SPEAKER",
@@ -72,6 +72,51 @@ function Speakers() {
         "Ar. P.B. Sajan is a prominent architect who serves as the Joint Director and Chief Architect at COSTFORD (Centre of Science and Technology for Rural Development).",
         "A dedicated disciple of the master architect Laurie Baker, Sajan worked closely with him for nearly 25 years. He plays a crucial role in promoting and implementing Baker's architectural theories, specializing in sustainable, green, and cost-effective building technologies.",
         "His work seamlessly integrates human systems with natural systems, extensively utilizing materials like mud, bamboo, and recycled items. Recognized nationally with awards from HUDCO for his innovative green building models, he continues to educate and inspire the next generation through the Laurie Baker Centre for Habitat Studies."
+      ]
+    },
+    {
+      number: "04",
+      name: "AR. MANASI PULIYAPPATTA",
+      role: "CO-FOUNDER, BHOOMIJA",
+      location: "SPEAKER",
+      image: "https://www.bhoomija.com/images/manasi_guru1.jpg",
+      imageStyle: { objectPosition: "85% 30%" },
+      wrapperStyle: { transform: "scale(1.25)" },
+      description: "Co-founder of Bhoomija, dedicated to creating nature inclusive, people friendly, and context sensible architecture.",
+      detailedDescription: [
+        "Team Bhoomija was born in the year of 2011, out of the love and passion for architecture shared by the couple Ar. Guruprasad Rane & Ar. Manasi Puliyappatta.",
+        "Being a Maharashtrian born and brought up in Mumbai, Guruprasad Rane came to Kerala in 2003 after Graduating from L.S.Raheja School of Architecture and chose to practice under Ar. G.Shankar (Habitat Technology Group, Trivandum), to explore alternate and sustainable building practices.",
+        "Meanwhile, Manasi also joined the same workplace after her B.Arch from M.E.S. Kuttipuram, driven by the same interest. Somewhere their dreams met and they decided to walk together in life as well as their profession.",
+        "Bhoomija sprouted from this common ground as an extension of their dream of creating nature inclusive, people friendly, context sensible architecture."
+      ]
+    },
+    {
+      number: "05",
+      name: "AR. KUKKU JOSEPH JOSE",
+      role: "SENIOR ARCHITECT, AJIT ASSOCIATES + ACD",
+      location: "SPEAKER",
+      image: "https://www.asadi.edu.in/uploads/team/8D1B758QtAzKusH3DhMG0pbyyOhkQvtAArva1aIl230616054545.jpg",
+      description: "Specialized in design thinking methodology, climate responsive designs, and sustainable energy.",
+      detailedDescription: [
+        "Architect Kukku Joseph is specialized in design thinking methodology to design products, services and environments.",
+        "His interest areas revolve around Climate Responsive Designs and Sustainable Energy. He has industry experience in developing energy efficient and climate responsive designs.",
+        "He is also an active member in several governmental and non-government organizations which has helped the team while leading the Shanthipuram Colony development Project in ASADI."
+      ]
+    },
+    {
+      number: "06",
+      name: "DR. V. SUBHASH CHANDRA BOSE",
+      role: "FORMER DIRECTOR, WATER RESOURCES DEPT",
+      location: "SPEAKER",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7p4y8zR2toQN8U7QEJ7SQiECtn4yS16D8m1XreyW2Pa3CcusdbXeNL3VS&s=10",
+      imageStyle: { objectPosition: "40% 0%" },
+      wrapperStyle: { transform: "scale(1.2)" },
+      description: "Former Director of the Water Resources Department, author of 16 books, and leading consultant for various green global agencies.",
+      detailedDescription: [
+        "Dr. V. Subhash Chandra Bose is the Former Director of the Water Resources Department sponsored by the Ministry of Jalashakti, GOI.",
+        "He holds multiple prestigious degrees including MSc, BEd, LLB, MBA, MSW, PGJMC, and a PhD. He has worked with notable organizations such as NCESS, KSREC, KSLUB, Western Ghat Cell, and the Rain Centre.",
+        "An active voice in environmental consultancy, he is the CEO and Chief Editor of two digital channels, Subhashitham and Green Global, providing consultancy for various agencies.",
+        "Over his career, he has published 16 books and 2,000 articles, and has delivered 20,000 speeches across Kerala, India, and abroad, frequently appearing as a guest on several channels."
       ]
     },
   ];
@@ -274,7 +319,7 @@ function Speakers() {
             hidden
             md:grid
             grid-cols-1
-            md:grid-cols-2
+            md:grid-cols-3
             gap-8
             items-start
           "
@@ -287,7 +332,7 @@ function Speakers() {
                 speaker-item
                 group
                 cursor-pointer
-                ${index % 2 === 1 ? "mt-20" : ""}
+                ${index % 3 === 1 ? "mt-12" : index % 3 === 2 ? "mt-24" : ""}
               `}
             >
               {/* IMAGE */}
@@ -301,20 +346,23 @@ function Speakers() {
                   bg-nanavu-sand
                 "
               >
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="
-                    speaker-image
-                    w-full
-                    h-full
-                    object-cover
-                    transition-transform
-                    duration-[900ms]
-                    ease-[cubic-bezier(0.22,1,0.36,1)]
-                    group-hover:scale-110
-                  "
-                />
+                <div className="w-full h-full" style={speaker.wrapperStyle || {}}>
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    style={speaker.imageStyle || {}}
+                    className="
+                      speaker-image
+                      w-full
+                      h-full
+                      object-cover
+                      transition-transform
+                      duration-[900ms]
+                      ease-[cubic-bezier(0.22,1,0.36,1)]
+                      group-hover:scale-110
+                    "
+                  />
+                </div>
 
                 {/* HOVER OVERLAY */}
 
@@ -493,19 +541,22 @@ function Speakers() {
                   bg-nanavu-sand
                 "
               >
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className="
-                    w-full
-                    h-full
-                    object-cover
-                    transition-transform
-                    duration-[800ms]
-                    ease-out
-                    group-hover:scale-110
-                  "
-                />
+                <div className="w-full h-full" style={speaker.wrapperStyle || {}}>
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    style={speaker.imageStyle || {}}
+                    className="
+                      w-full
+                      h-full
+                      object-cover
+                      transition-transform
+                      duration-[800ms]
+                      ease-out
+                      group-hover:scale-110
+                    "
+                  />
+                </div>
 
                 {/* OVERLAY */}
 
@@ -682,11 +733,14 @@ function Speakers() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               {/* IMAGE COLUMN */}
               <div className="md:col-span-5 relative aspect-[4/5] rounded-2xl overflow-hidden bg-nanavu-sand">
-                <img
-                  src={activeSpeaker.image}
-                  alt={activeSpeaker.name}
-                  className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full" style={activeSpeaker.wrapperStyle || {}}>
+                  <img
+                    src={activeSpeaker.image}
+                    alt={activeSpeaker.name}
+                    style={activeSpeaker.imageStyle || {}}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <span className="absolute top-4 left-4 text-[9px] tracking-[0.3em] text-[#F3EFE6] bg-black/50 backdrop-blur-md px-2.5 py-1 rounded">
                   SPEAKER {activeSpeaker.number}
                 </span>

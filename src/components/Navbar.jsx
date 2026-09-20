@@ -99,9 +99,15 @@ function Navbar() {
     };
   }, [menuOpen]);
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
+  const handleLogout = async (e) => {
+    if (e) e.preventDefault();
+    try {
+      await supabase.auth.signOut();
+    } catch (err) {
+      console.error("Logout error:", err);
+    }
     setMenuOpen(false);
+    window.location.href = "/";
   };
 
   let menuItems = [
