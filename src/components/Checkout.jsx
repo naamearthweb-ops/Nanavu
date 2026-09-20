@@ -122,9 +122,9 @@ function Checkout() {
           }
         },
         prefill: {
-          name: registration.full_name,
-          email: registration.email,
-          contact: registration.phone
+          name: registration?.full_name || session?.user?.user_metadata?.full_name || "User",
+          email: registration?.email || session?.user?.email || "",
+          contact: registration?.phone || ""
         },
         theme: {
           color: "#287A73"
@@ -145,7 +145,12 @@ function Checkout() {
   };
 
   if (checkingAuth) {
-    return <section className="min-h-screen bg-[#1E2523]" />;
+    return (
+      <section className="min-h-screen bg-[#1E2523] flex flex-col items-center justify-center gap-4">
+        <div className="w-10 h-10 border-4 border-[#287A73]/30 border-t-[#287A73] rounded-full animate-spin"></div>
+        <p className="text-xs text-[#8C877D] tracking-widest uppercase">Loading Checkout...</p>
+      </section>
+    );
   }
 
   if (success) {
@@ -188,7 +193,7 @@ function Checkout() {
           <div className="bg-white/5 border border-white/10 rounded-xl p-6">
             <div className="flex justify-between items-center border-b border-white/10 pb-4 mb-4">
               <span className="text-sm text-[#8C877D] uppercase tracking-widest">Name</span>
-              <span className="text-sm text-white font-medium">{registration?.full_name}</span>
+              <span className="text-sm text-white font-medium">{registration?.full_name || session?.user?.user_metadata?.full_name || session?.user?.email || "Attendee"}</span>
             </div>
             <div className="flex justify-between items-center border-b border-white/10 pb-4 mb-4">
               <span className="text-sm text-[#8C877D] uppercase tracking-widest">Amount</span>
