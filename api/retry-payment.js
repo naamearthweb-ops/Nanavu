@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     return res.status(401).json({ message: 'Invalid or expired token' });
   }
 
-  const { userType = 'student', optIdeathon = false, currency = 'INR', receipt } = req.body; 
+  const { userType = 'student', optIdeathon = false, teamName, currency = 'INR', receipt } = req.body; 
 
   try {
     // 1. Verify user is actually PENDING
@@ -42,8 +42,51 @@ export default async function handler(req, res) {
     }
 
     let calculatedAmount = userType === 'student' ? 300 : 600;
+    let teamId = null;
+    
     if (optIdeathon) {
-      calculatedAmount += 150;
+      calculatedAmount += 50;
+      
+      if (!teamName || teamName.trim() === '') {
+        return res.status(400).json({ message: 'Team Name is required for Concept Pitching.' });
+      }
+      
+      const cleanTeamName = teamName.trim();
+      const { data: existingTeam } = await supabase
+        .from('teams')
+        .select('id')
+        .eq('name', cleanTeamName)
+        .single();
+        
+      if (existingTeam) {
+        teamId = existingTeam.id;
+        const { count } = await supabase
+          .from('registrations')
+          .select('id', { count: 'exact', head: true })
+          .eq('team_id', teamId)
+          .eq('payment_status', 'PAID');
+          
+        if (count >= 4) {
+          return res.status(400).json({ message: 'This team already has the maximum of 4 PAID members.' });
+        }
+      } else {
+        const { data: newTeam, error: teamError } = await supabase
+          .from('teams')
+          .insert([{ name: cleanTeamName }])
+          .select('id')
+          .single();
+          
+        if (teamError) {
+           const { data: retryTeam } = await supabase.from('teams').select('id').eq('name', cleanTeamName).single();
+           if (retryTeam) {
+             teamId = retryTeam.id;
+           } else {
+             return res.status(500).json({ message: 'Failed to create team', error: teamError.message });
+           }
+        } else {
+          teamId = newTeam.id;
+        }
+      }
     }
     const amount = calculatedAmount * 100;
     
@@ -72,6 +115,7 @@ export default async function handler(req, res) {
         razorpay_order_id: order.id,
         amount_paid_inr: calculatedAmount,
         ideathon_opt_in: optIdeathon,
+        team_id: teamId,
         payment_status: 'PENDING'
       })
       .eq('user_id', user.id);

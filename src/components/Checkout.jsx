@@ -15,9 +15,12 @@ function Checkout() {
 
   const [userType, setUserType] = useState("student");
   const [optIdeathon, setOptIdeathon] = useState(false);
+  const [teamName, setTeamName] = useState("");
+  const [availableTeams, setAvailableTeams] = useState([]);
+  const [showTeamDropdown, setShowTeamDropdown] = useState(false);
 
   const baseAmount = userType === "student" ? 300 : 600;
-  const displayAmount = baseAmount + (optIdeathon ? 150 : 0);
+  const displayAmount = baseAmount + (optIdeathon ? 50 : 0);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -32,7 +35,7 @@ function Checkout() {
 
       const { data, error } = await supabase
         .from('registrations')
-        .select('*')
+        .select('*, teams(name)')
         .eq('user_id', session.user.id)
         .single();
         
@@ -45,12 +48,24 @@ function Checkout() {
         setRegistration(data);
         setUserType(data.amount_paid_inr === 600 || data.amount_paid_inr === 750 ? "other" : "student");
         setOptIdeathon(data.ideathon_opt_in || false);
+        if (data.teams?.name) setTeamName(data.teams.name);
       }
       setCheckingAuth(false);
     };
 
     fetchUserData();
   }, [navigate]);
+
+  useEffect(() => {
+    if (optIdeathon && availableTeams.length === 0) {
+      fetch("/api/teams")
+        .then(res => res.json())
+        .then(data => {
+          if (data.teams) setAvailableTeams(data.teams);
+        })
+        .catch(err => console.error("Failed to fetch teams"));
+    }
+  }, [optIdeathon, availableTeams.length]);
 
   const handlePayment = async () => {
     setLoading(true);
@@ -67,6 +82,7 @@ function Checkout() {
         body: JSON.stringify({
           userType,
           optIdeathon,
+          teamName,
           currency: "INR",
           receipt: `rcpt_${Date.now()}`,
         }),
@@ -223,8 +239,55 @@ function Checkout() {
                 onChange={(e) => setOptIdeathon(e.target.checked)}
                 className="accent-[#287A73] w-4 h-4 rounded"
               />
-              <span>Opt-in for Ideathon Add-on <span className="text-[#287A73] font-medium">(+₹150)</span></span>
+              <span>Opt-in for Concept Pitching Add-on <span className="text-[#287A73] font-medium">(+₹50)</span></span>
             </label>
+
+            {optIdeathon && (
+              <div className="mt-4 flex flex-col gap-2 relative">
+                <label className="text-xs tracking-widest text-[#8C877D] uppercase">Team Name</label>
+                <div className="relative">
+                  <input 
+                    type="text" 
+                    value={teamName}
+                    onChange={(e) => {
+                      setTeamName(e.target.value);
+                      setShowTeamDropdown(true);
+                    }}
+                    onFocus={() => setShowTeamDropdown(true)}
+                    onBlur={() => setTimeout(() => setShowTeamDropdown(false), 200)}
+                    placeholder="Create a new team or search..."
+                    className="w-full bg-[#1E2523] border border-[#287A73]/50 p-3 rounded-lg text-sm text-[#F3EFE6] focus:border-[#287A73] outline-none transition"
+                  />
+                  {showTeamDropdown && (
+                    <div className="absolute top-full left-0 right-0 mt-1 bg-[#1E2523] border border-[#287A73]/30 rounded-lg max-h-40 overflow-y-auto z-50 shadow-xl">
+                      {availableTeams
+                        .filter(t => t.toLowerCase().includes(teamName.toLowerCase()))
+                        .map((team, idx) => (
+                          <div 
+                            key={idx} 
+                            onClick={() => {
+                              setTeamName(team);
+                              setShowTeamDropdown(false);
+                            }}
+                            className="p-3 text-sm text-[#F3EFE6] hover:bg-[#287A73]/20 cursor-pointer transition"
+                          >
+                            {team}
+                          </div>
+                      ))}
+                      {teamName && !availableTeams.find(t => t.toLowerCase() === teamName.toLowerCase()) && (
+                        <div className="p-3 text-sm text-[#4ADE80] border-t border-[#287A73]/30">
+                          Create new team: "{teamName}"
+                        </div>
+                      )}
+                      {!teamName && availableTeams.length === 0 && (
+                        <div className="p-3 text-sm text-[#8C877D] italic">Type to create the first team!</div>
+                      )}
+                    </div>
+                  )}
+                </div>
+                <p className="text-[10px] text-[#8C877D]">Max 4 members per team. If a team is full, you cannot join it.</p>
+              </div>
+            )}
           </div>
 
           <button 

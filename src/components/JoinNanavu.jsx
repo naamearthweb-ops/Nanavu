@@ -201,8 +201,8 @@ function JoinNanavu() {
 
           {/* REGISTRATION CTA */}
           <Link
-            // to="/register"
-            to="https://forms.gle/Xi85n43efPGctmzh9"
+            to="/register"
+            // to="https://forms.gle/Xi85n43efPGctmzh9"
             className="
               group
               mt-8

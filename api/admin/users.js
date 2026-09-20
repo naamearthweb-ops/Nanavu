@@ -33,10 +33,10 @@ export default async function handler(req, res) {
       return res.status(403).json({ message: 'Forbidden. Admin access required.' });
     }
 
-    // 2. Fetch all registrations
+    // 2. Fetch all registrations with their team name
     const { data: registrations, error: dbError } = await supabase
       .from('registrations')
-      .select('*')
+      .select('*, teams(name)')
       .order('created_at', { ascending: false });
 
     if (dbError) {

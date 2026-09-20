@@ -12,14 +12,14 @@ export default async function handler(req, res) {
   }
 
   const { 
-    userType = 'student', optIdeathon = false, currency = 'INR', receipt, 
+    userType = 'student', optIdeathon = false, teamName, currency = 'INR', receipt, 
     email, password, full_name, phone, whatsapp, organization, branch, year_of_study 
   } = req.body;
 
   let calculatedAmount = userType === 'student' ? 300 : 600;
-  if (optIdeathon) {
-    calculatedAmount += 150;
-  }
+    if (optIdeathon) {
+      calculatedAmount += 50;
+    }
   const amount = calculatedAmount * 100; // in paise
 
   if (amount < 100) {
@@ -27,6 +27,50 @@ export default async function handler(req, res) {
   }
 
   try {
+    let teamId = null;
+    if (optIdeathon) {
+      if (!teamName || teamName.trim() === '') {
+        return res.status(400).json({ message: 'Team Name is required for Concept Pitching.' });
+      }
+      
+      const cleanTeamName = teamName.trim();
+      const { data: existingTeam } = await supabase
+        .from('teams')
+        .select('id')
+        .eq('name', cleanTeamName)
+        .single();
+        
+      if (existingTeam) {
+        teamId = existingTeam.id;
+        const { count } = await supabase
+          .from('registrations')
+          .select('id', { count: 'exact', head: true })
+          .eq('team_id', teamId)
+          .eq('payment_status', 'PAID');
+          
+        if (count >= 4) {
+          return res.status(400).json({ message: 'This team already has the maximum of 4 PAID members.' });
+        }
+      } else {
+        const { data: newTeam, error: teamError } = await supabase
+          .from('teams')
+          .insert([{ name: cleanTeamName }])
+          .select('id')
+          .single();
+          
+        if (teamError) {
+           const { data: retryTeam } = await supabase.from('teams').select('id').eq('name', cleanTeamName).single();
+           if (retryTeam) {
+             teamId = retryTeam.id;
+           } else {
+             return res.status(500).json({ message: 'Failed to create team', error: teamError.message });
+           }
+        } else {
+          teamId = newTeam.id;
+        }
+      }
+    }
+
     let userId;
     let isExistingPending = false;
 
@@ -112,7 +156,8 @@ export default async function handler(req, res) {
           razorpay_order_id: order.id,
           amount_paid_inr: calculatedAmount,
           payment_status: payment_status,
-          ideathon_opt_in: optIdeathon
+          ideathon_opt_in: optIdeathon,
+          team_id: teamId
         })
         .eq('user_id', userId);
 
@@ -135,7 +180,8 @@ export default async function handler(req, res) {
             razorpay_order_id: order.id,
             amount_paid_inr: calculatedAmount,
             payment_status: payment_status,
-            ideathon_opt_in: optIdeathon
+            ideathon_opt_in: optIdeathon,
+            team_id: teamId
           }
         ]);
 
