@@ -162,7 +162,7 @@ function Partners() {
               Ministry of Industries & IT
             </h3>
             <p className="text-sm md:text-base text-[#8C877D] font-light mb-8 max-w-xs md:max-w-sm">
-              Under the visionary leadership of <span className="font-medium text-[#29312F]">Shri E K Kunhalikutty</span>
+              Under the visionary leadership of <span className="font-medium text-[#29312F]">Shri P. K. Kunhalikutty</span>
             </p>
             {/* <a 
               href="#" 
