@@ -16,7 +16,7 @@ function PeopleBehind() {
     },
     {
       name: "Shri Sunny Joseph",
-      role: "Ministry of Environment & Climate Change",
+      role: "Minister of Environment & Climate Change",
       image: "https://envt.kerala.gov.in/wp-content/uploads/2026/06/minister_envt.png"
     },
     {

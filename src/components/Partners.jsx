@@ -55,12 +55,16 @@ function Partners() {
       name: "SSA TKMCE",
       image: "https://scontent.cdninstagram.com/v/t51.82787-19/546223143_18075505496320842_5023859323970534395_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=100&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=RPNX2d-HVJkQ7kNvwFpvvKh&_nc_oc=AdqVqEZp1dp7Jmy6tMbi4wqvr-LPEKV1DMFqCt-Eq2xKVPsrBTOhZFBI66RcF-b8vasEdWjsrf9QbGExq3p7dIlv&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=68mJVLlmeI3R2qTlsMA4Ew&_nc_ss=7b689&oh=00_AQIpucsccN1gonreSwlFAyLldJxuIk3Qw-kyrGKvnqopQA&oe=6AB5ABD0",
       url: "https://www.instagram.com/ssa.tkmce/",
+      department: "Department of Architecture",
+      departmentUrl: "https://dap.tkmce.ac.in/",
       description: "The Society of Student Architects at TKMCE, serving as a platform for architecture students to engage in design, workshops, competitions, talks, exhibitions, and national-level architecture activities.",
     },
     {
       name: "IEI CIVIL TKMCE",
       image: "/iei_logo.jpeg",
       url: "https://www.instagram.com/iei.civil.tkmce/",
+      department: "Department of Civil",
+      departmentUrl: "https://tkmce.ac.in/civil-engineering",
       description: "The Civil Engineering Student Chapter of the Institution of Engineers (India) at TKMCE, promoting technical knowledge and professional development through seminars, workshops, competitions, presentations, and industry-oriented activities.",
     }
   ];
@@ -328,7 +332,7 @@ function Partners() {
                   <img src={partner.image} alt={partner.name} className="w-full h-full object-cover" />
                 </a>
               )}
-              <h4 className="text-sm md:text-base font-medium tracking-tight text-[#29312F] group-hover:text-[#287A73] transition-colors mb-3">
+              <h4 className="text-sm md:text-base font-medium tracking-tight text-[#29312F] group-hover:text-[#287A73] transition-colors mb-1">
                 {partner.url ? (
                   <a href={partner.url} target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-1.5 justify-center">
                     {partner.name} <span className="text-[10px]">↗</span>
@@ -337,6 +341,11 @@ function Partners() {
                   partner.name
                 )}
               </h4>
+              {partner.department && (
+                <a href={partner.departmentUrl || "#"} target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-wide font-medium text-[#287A73] mb-3 hover:underline uppercase text-center">
+                  {partner.department}
+                </a>
+              )}
               <p className="text-xs leading-relaxed text-[#8C877D]">
                 {partner.description}
               </p>

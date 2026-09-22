@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ImagePlaceholder from "./ImagePlaceholder";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -221,11 +221,18 @@ function Gallery() {
 
       {/* BOTTOM */}
 
-      <div className="mt-16 md:mt-20 border-t border-[#29312F]/20 pt-5">
-        <div className="flex items-center justify-between">
-          <span className="text-xs tracking-[0.3em] text-[#8C877D]">
+      <div className="mt-16 md:mt-20 border-t border-[#29312F]/20 pt-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <span className="text-xs tracking-[0.3em] text-[#8C877D] hidden md:block">
             KEEP EXPLORING
           </span>
+          
+          <Link 
+            to="/gallery" 
+            className="px-8 py-4 border border-[#287A73] text-[#287A73] text-xs font-medium tracking-[0.25em] uppercase hover:bg-[#287A73] hover:text-[#F3EFE6] transition-colors duration-300"
+          >
+            Explore Full Gallery
+          </Link>
 
           <span className="text-xs tracking-[0.25em] text-[#287A73]">
             08 / JOIN NANAVU →

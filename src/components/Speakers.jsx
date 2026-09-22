@@ -11,15 +11,92 @@ function Speakers() {
   const speakers = [
     {
       number: "01",
+      name: "AR. P.B. SAJAN",
+      role: "CHIEF ARCHITECT & JOINT DIRECTOR, COSTFORD",
+      location: "SPEAKER",
+      topic: "Bamboo for Contemporary Architecture: From Concept to Construction",
+      image: "https://vescoa.ves.ac.in/wp-content/uploads/2023/07/12.-Ar.-P.-B.-Sajan.jpg",
+      description: "HUDCO Award winner and disciple of Laurie Baker. Champion of cost-effective green housing, rat-trap bond masonry, bamboo structures, and filler slabs.",
+      detailedDescription: [
+        "Ar. P.B. Sajan is a prominent architect who serves as the Joint Director and Chief Architect at COSTFORD (Centre of Science and Technology for Rural Development).",
+        "A dedicated disciple of the master architect Laurie Baker, Sajan worked closely with him for nearly 25 years. He plays a crucial role in promoting and implementing Baker's architectural theories, specializing in sustainable, green, and cost-effective building technologies.",
+        "His work seamlessly integrates human systems with natural systems, extensively utilizing materials like mud, bamboo, and recycled items. Recognized nationally with awards from HUDCO for his innovative green building models, he continues to educate and inspire the next generation through the Laurie Baker Centre for Habitat Studies."
+      ]
+    },
+    {
+      number: "02",
       name: "AR. VINU DANIEL",
       role: "FOUNDER, WALLMAKERS · TIME100 NEXT 2023",
       location: "SPEAKER",
+      topic: "Can We Build Differently? A Conversation with the Next Generation",
       image: "https://www.asiarealestatesummit.com/wp-content/uploads/2023/10/Ar.-Vinu-Daniel_Temp-e1696505956368.png",
       description: "Royal Academy Dorfman Award winner known for eco-responsive structures, Compressed Stabilised Earth Blocks (CSEB), scrap material upcycling, and mud masonry.",
       detailedDescription: [
         "Vinu Daniel is an acclaimed Indian architect and the founder of Wallmakers, an architectural firm recognized globally for its pioneering work in sustainable, eco-friendly, and cost-effective architecture.",
         "Born in Dubai and educated at the College of Engineering, Trivandrum, his journey into sustainable architecture was deeply influenced by his early work with the Auroville Earth Institute on post-tsunami construction projects. Under the inspiration of Laurie Baker, Daniel focuses on creating spaces that respond to specific site contexts.",
         "He is celebrated for his commitment to utilizing unconventional and recycled materials, including mud, debris, discarded tires, and plastic bottles, drastically minimizing the carbon footprint of his buildings. In 2022, he was awarded the prestigious Royal Academy Dorfman Award, and in 2023, he was named one of the influential figures in the TIME100 Next list."
+      ]
+    },
+    {
+      number: "03",
+      name: "DR. V. SUBHASH CHANDRA BOSE",
+      role: "FORMER DIRECTOR, WATER RESOURCES DEPT",
+      location: "SPEAKER",
+      topic: "The Last Bus for Green Initiatives: Sustainability – Still Out of Syllabus?",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7p4y8zR2toQN8U7QEJ7SQiECtn4yS16D8m1XreyW2Pa3CcusdbXeNL3VS&s=10",
+      imageStyle: { objectPosition: "40% 0%" },
+      wrapperStyle: { transform: "scale(1.2)" },
+      description: "Former Director of the Water Resources Department, author of 16 books, and leading consultant for various green global agencies.",
+      detailedDescription: [
+        "Dr. V. Subhash Chandra Bose is the Former Director of the Water Resources Department sponsored by the Ministry of Jalashakti, GOI.",
+        "He holds multiple prestigious degrees including MSc, BEd, LLB, MBA, MSW, PGJMC, and a PhD. He has worked with notable organizations such as NCESS, KSREC, KSLUB, Western Ghat Cell, and the Rain Centre.",
+        "An active voice in environmental consultancy, he is the CEO and Chief Editor of two digital channels, Subhashitham and Green Global, providing consultancy for various agencies.",
+        "Over his career, he has published 16 books and 2,000 articles, and has delivered 20,000 speeches across Kerala, India, and abroad, frequently appearing as a guest on several channels."
+      ]
+    },
+    {
+      number: "04",
+      name: "AR. MANASI PULIYAPPATTA",
+      role: "CO-FOUNDER, BHOOMIJA",
+      location: "SPEAKER",
+      topic: "Sustainability as a Way of Thinking: The Bhoomija Story",
+      image: "https://www.bhoomija.com/images/manasi_guru1.jpg",
+      imageStyle: { objectPosition: "85% 30%" },
+      wrapperStyle: { transform: "scale(1.25)" },
+      description: "Co-founder of Bhoomija, dedicated to creating nature inclusive, people friendly, and context sensible architecture.",
+      detailedDescription: [
+        "Team Bhoomija was born in the year of 2011, out of the love and passion for architecture shared by the couple Ar. Guruprasad Rane & Ar. Manasi Puliyappatta.",
+        "Being a Maharashtrian born and brought up in Mumbai, Guruprasad Rane came to Kerala in 2003 after Graduating from L.S.Raheja School of Architecture and chose to practice under Ar. G.Shankar (Habitat Technology Group, Trivandum), to explore alternate and sustainable building practices.",
+        "Meanwhile, Manasi also joined the same workplace after her B.Arch from M.E.S. Kuttipuram, driven by the same interest. Somewhere their dreams met and they decided to walk together in life as well as their profession.",
+        "Bhoomija sprouted from this common ground as an extension of their dream of creating nature inclusive, people friendly, context sensible architecture."
+      ]
+    },
+    {
+      number: "05",
+      name: "AR. KUKKU JOSEPH JOSE",
+      role: "FOUNDER: NOW & BUILD NOW",
+      location: "SPEAKER",
+      topic: "Sustainability: Isn't My Responsibility?",
+      image: "kukku.jpeg",
+      description: "Specialized in design thinking methodology, climate responsive designs, and sustainable energy.",
+      detailedDescription: [
+        "Architect Kukku Joseph is specialized in design thinking methodology to design products, services and environments.",
+        "His interest areas revolve around Climate Responsive Designs and Sustainable Energy. He has industry experience in developing energy efficient and climate responsive designs.",
+        "He is also an active member in several governmental and non-government organizations which has helped the team while leading the Shanthipuram Colony development Project in ASADI."
+      ]
+    },
+    {
+      number: "06",
+      name: "Er. K. MADHAVAN NAMBOODIRI",
+      role: "GREEN BUILDER · WATER MANAGEMENT SPECIALIST",
+      location: "SPEAKER",
+      topic: "An Iterative Action Research Initiative in Pursuit of Sustainable Habitat Systems in Kerala",
+      image: "madhavan.png",
+      description: "Retired civil engineer, water management specialist, and green builder advancing sustainable, low-cost earth architecture in Kerala.",
+      detailedDescription: [
+        "K. Madhavan Namboodiri is a retired civil engineer, water management specialist, and green builder from Kuttippuram, Kerala, widely recognized for his contributions to sustainable earth architecture.",
+        "Through the Susthira Bhavanam Foundation, a non-profit organization he founded in 2019, he champions eco-friendly and low-cost building techniques.",
+        "His work offers a practical alternative to resource-heavy concrete construction, promoting homes that are sustainable, affordable, and grounded in earth-based building methods."
       ]
     },
     // {
@@ -47,76 +124,32 @@ function Speakers() {
     //     "A Charles Wallace Scholar, he holds a master’s degree in Conservation Studies from the University of York and a doctorate from IIT Madras. His work emphasizes climate-responsive design, environmental sustainability, and cost-effectiveness, deeply rooted in the traditional architectural practices of South India.",
     //     "Dr. Kuriakose has served as a consultant for UNESCO, UNDP, and various state governments. He is the mastermind behind landmark projects like DakshinaChitra, the Muziris Heritage Project, and several disaster-relief rehabilitation settlements. He was honored with the Inside Outside Designer of the Year award in 2001."
     //   ]
-    // },
+    
     {
-      number: "02",
-      name: "K. MADHAVAN NAMBOODIRI",
-      role: "GREEN BUILDER · WATER MANAGEMENT SPECIALIST",
+      number: "07",
+      name: "DR. SAJEEB R",
+      role: "FORMER PRINCIPAL, TKMCE",
       location: "SPEAKER",
-      image: "madhavan.png",
-      description: "Retired civil engineer, water management specialist, and green builder advancing sustainable, low-cost earth architecture in Kerala.",
+      image: "sajeeb.jpeg",
+      description: "Distinguished academician and structural engineer with expertise in structural dynamics and sustainable construction.",
       detailedDescription: [
-        "K. Madhavan Namboodiri is a retired civil engineer, water management specialist, and green builder from Kuttippuram, Kerala, widely recognized for his contributions to sustainable earth architecture.",
-        "Through the Susthira Bhavanam Foundation, a non-profit organization he founded in 2019, he champions eco-friendly and low-cost building techniques.",
-        "His work offers a practical alternative to resource-heavy concrete construction, promoting homes that are sustainable, affordable, and grounded in earth-based building methods."
+        "Dr. R. Sajeeb is a distinguished academician, structural engineer, and former Principal of TKM College of Engineering, with over three decades of experience in teaching, research, academic leadership, and professional practice.",
+        "An alumnus of TKM College of Engineering and a Kerala University B.Tech. rank holder from the 1991 batch, he pursued his Master’s in Structural Engineering and Ph.D. in Structural Dynamics at the Indian Institute of Science (IISc), Bengaluru.",
+        "His academic and research expertise encompasses structural dynamics, earthquake-resistant design, structural control, sustainable construction, and advanced structural engineering practices. His work reflects a strong interdisciplinary approach to addressing contemporary challenges in the built environment, with an emphasis on resilience, sustainability, and performance-based engineering.",
+        "As an experienced academic leader and mentor, Dr. Sajeeb has contributed significantly to engineering education, research, and the development of young professionals. His extensive experience at the intersection of structural engineering, sustainability, research, and education brings valuable perspective to discussions on the future of sustainable and resilient construction."
       ]
     },
     {
-      number: "03",
-      name: "AR. P.B. SAJAN",
-      role: "CHIEF ARCHITECT & JOINT DIRECTOR, COSTFORD",
+      number: "08",
+      name: "AR. HARITHA C",
+      role: "ASSISTANT PROFESSOR, DEPARTMENT OF ARCHITECTURE",
       location: "SPEAKER",
-      image: "https://vescoa.ves.ac.in/wp-content/uploads/2023/07/12.-Ar.-P.-B.-Sajan.jpg",
-      description: "HUDCO Award winner and disciple of Laurie Baker. Champion of cost-effective green housing, rat-trap bond masonry, bamboo structures, and filler slabs.",
+      image: "https://dap.tkmce.ac.in/wp-content/uploads/2025/02/HARITHA-C.webp",
+      description: "Interested in resource-conscious, need-based architectural solutions. Experienced with sustainable architecture and green building practices.",
       detailedDescription: [
-        "Ar. P.B. Sajan is a prominent architect who serves as the Joint Director and Chief Architect at COSTFORD (Centre of Science and Technology for Rural Development).",
-        "A dedicated disciple of the master architect Laurie Baker, Sajan worked closely with him for nearly 25 years. He plays a crucial role in promoting and implementing Baker's architectural theories, specializing in sustainable, green, and cost-effective building technologies.",
-        "His work seamlessly integrates human systems with natural systems, extensively utilizing materials like mud, bamboo, and recycled items. Recognized nationally with awards from HUDCO for his innovative green building models, he continues to educate and inspire the next generation through the Laurie Baker Centre for Habitat Studies."
-      ]
-    },
-    {
-      number: "04",
-      name: "AR. MANASI PULIYAPPATTA",
-      role: "CO-FOUNDER, BHOOMIJA",
-      location: "SPEAKER",
-      image: "https://www.bhoomija.com/images/manasi_guru1.jpg",
-      imageStyle: { objectPosition: "85% 30%" },
-      wrapperStyle: { transform: "scale(1.25)" },
-      description: "Co-founder of Bhoomija, dedicated to creating nature inclusive, people friendly, and context sensible architecture.",
-      detailedDescription: [
-        "Team Bhoomija was born in the year of 2011, out of the love and passion for architecture shared by the couple Ar. Guruprasad Rane & Ar. Manasi Puliyappatta.",
-        "Being a Maharashtrian born and brought up in Mumbai, Guruprasad Rane came to Kerala in 2003 after Graduating from L.S.Raheja School of Architecture and chose to practice under Ar. G.Shankar (Habitat Technology Group, Trivandum), to explore alternate and sustainable building practices.",
-        "Meanwhile, Manasi also joined the same workplace after her B.Arch from M.E.S. Kuttipuram, driven by the same interest. Somewhere their dreams met and they decided to walk together in life as well as their profession.",
-        "Bhoomija sprouted from this common ground as an extension of their dream of creating nature inclusive, people friendly, context sensible architecture."
-      ]
-    },
-    {
-      number: "05",
-      name: "AR. KUKKU JOSEPH JOSE",
-      role: "SENIOR ARCHITECT, AJIT ASSOCIATES + ACD",
-      location: "SPEAKER",
-      image: "https://www.asadi.edu.in/uploads/team/8D1B758QtAzKusH3DhMG0pbyyOhkQvtAArva1aIl230616054545.jpg",
-      description: "Specialized in design thinking methodology, climate responsive designs, and sustainable energy.",
-      detailedDescription: [
-        "Architect Kukku Joseph is specialized in design thinking methodology to design products, services and environments.",
-        "His interest areas revolve around Climate Responsive Designs and Sustainable Energy. He has industry experience in developing energy efficient and climate responsive designs.",
-        "He is also an active member in several governmental and non-government organizations which has helped the team while leading the Shanthipuram Colony development Project in ASADI."
-      ]
-    },
-    {
-      number: "06",
-      name: "DR. V. SUBHASH CHANDRA BOSE",
-      role: "FORMER DIRECTOR, WATER RESOURCES DEPT",
-      location: "SPEAKER",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7p4y8zR2toQN8U7QEJ7SQiECtn4yS16D8m1XreyW2Pa3CcusdbXeNL3VS&s=10",
-      imageStyle: { objectPosition: "40% 0%" },
-      wrapperStyle: { transform: "scale(1.2)" },
-      description: "Former Director of the Water Resources Department, author of 16 books, and leading consultant for various green global agencies.",
-      detailedDescription: [
-        "Dr. V. Subhash Chandra Bose is the Former Director of the Water Resources Department sponsored by the Ministry of Jalashakti, GOI.",
-        "He holds multiple prestigious degrees including MSc, BEd, LLB, MBA, MSW, PGJMC, and a PhD. He has worked with notable organizations such as NCESS, KSREC, KSLUB, Western Ghat Cell, and the Rain Centre.",
-        "An active voice in environmental consultancy, he is the CEO and Chief Editor of two digital channels, Subhashitham and Green Global, providing consultancy for various agencies.",
-        "Over his career, he has published 16 books and 2,000 articles, and has delivered 20,000 speeches across Kerala, India, and abroad, frequently appearing as a guest on several channels."
+        "Ar. Haritha C is an Assistant Professor in the Department of Architecture. She completed her B.Arch. from NIT Calicut in 2008 and earned her M.Arch. in Sustainable Architecture from CEPT University, Ahmedabad.",
+        "Her professional journey includes working with MES College of Engineering, Kuttippuram, M/s Larsen & Toubro Ltd., Chennai, and Designseeds, Calicut.",
+        "She is particularly interested in resource-conscious, need-based architectural solutions and advancing sustainable building practices."
       ]
     },
   ];
@@ -239,7 +272,7 @@ function Speakers() {
               text-nanavu-teal
             "
           >
-            03 / SPEAKERS
+            03 / RESOURCE PERSONS
           </span>
 
           <span
@@ -266,7 +299,7 @@ function Speakers() {
             font-light
           "
         >
-          SPEAKERS
+          RESOURCE PERSONS
         </h2>
 
         {/* DESCRIPTION */}
@@ -476,6 +509,13 @@ function Speakers() {
                       {speaker.role}
                     </p>
 
+                    {speaker.topic && (
+                      <p className="mt-2 text-[10px] italic font-medium text-nanavu-charcoal/80 leading-snug">
+                        <span className="not-italic font-semibold text-nanavu-teal mr-1">Topic:</span>
+                        "{speaker.topic}"
+                      </p>
+                    )}
+
                     <p
                       className="
                         mt-2
@@ -618,6 +658,13 @@ function Speakers() {
                 >
                   {speaker.role}
                 </p>
+
+                {speaker.topic && (
+                  <p className="mt-2 text-[9px] italic font-medium text-nanavu-charcoal/80 leading-snug">
+                    <span className="not-italic font-semibold text-nanavu-teal mr-1">Topic:</span>
+                    "{speaker.topic}"
+                  </p>
+                )}
               </div>
             </div>
           ))}
@@ -764,6 +811,15 @@ function Speakers() {
                 <p className="mt-2 text-xs md:text-sm tracking-wider text-[#C99A72] font-medium uppercase">
                   {activeSpeaker.role}
                 </p>
+
+                {activeSpeaker.topic && (
+                  <div className="mt-5">
+                    <span className="not-italic text-[#C99A72] uppercase text-[10px] tracking-widest block mb-1 font-semibold">Session Topic</span>
+                    <p className="text-sm md:text-base font-medium italic text-[#287A73]">
+                      "{activeSpeaker.topic}"
+                    </p>
+                  </div>
+                )}
 
                 <div className="mt-6 border-t border-[#29312F]/15 pt-6">
                   {activeSpeaker.detailedDescription.map((paragraph, idx) => (

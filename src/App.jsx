@@ -9,6 +9,7 @@ import Workshops from "./components/Workshops";
 import Partners from "./components/Partners";
 import Impact from "./components/Impact";
 import Gallery from "./components/Gallery";
+import GalleryPage from "./components/GalleryPage";
 import JoinNanavu from "./components/JoinNanavu";
 import Footer from "./components/Footer";
 import Register from "./components/Register";
@@ -52,6 +53,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </Router>
   );
