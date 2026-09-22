@@ -63,7 +63,7 @@ function Partners() {
       name: "IEI CIVIL TKMCE",
       image: "/iei_logo.jpeg",
       url: "https://www.instagram.com/iei.civil.tkmce/",
-      department: "Department of Civil",
+      department: "Department of Civil Engineering",
       departmentUrl: "https://tkmce.ac.in/civil-engineering",
       description: "The Civil Engineering Student Chapter of the Institution of Engineers (India) at TKMCE, promoting technical knowledge and professional development through seminars, workshops, competitions, presentations, and industry-oriented activities.",
     }
