@@ -691,20 +691,27 @@ function Introduction() {
             </a>
             
             {/* NAAMEARTH CARD */}
-            <a href="https://www.naamearth.in" target="_blank" rel="noopener noreferrer" className="organizer-block group p-8 rounded-2xl border border-nanavu-charcoal/10 hover:border-nanavu-teal/50 hover:bg-white/30 hover:shadow-lg hover:shadow-nanavu-teal/10 transition-all duration-500 backdrop-blur-sm flex flex-col h-full relative overflow-hidden block">
+            <a href="https://www.naamearth.in" target="_blank" rel="noopener noreferrer" className="organizer-block group p-8 rounded-2xl border border-nanavu-charcoal/10 hover:border-nanavu-teal/50 hover:shadow-lg hover:shadow-nanavu-teal/10 transition-all duration-500 flex flex-col h-full relative overflow-hidden block">
                {/* LOGO PLACEHOLDER */}
                <div className="absolute top-6 right-6 w-12 h-12 rounded-full border border-nanavu-teal/40 bg-white/50 backdrop-blur-md flex items-center justify-center overflow-hidden z-20 shadow-sm group-hover:scale-105 transition-transform duration-500">
                  <img src="/partners/naamearth-logo.png" alt="NAAMEARTH Logo" className="w-full h-full object-contain p-1.5 opacity-60 group-hover:opacity-100 transition-opacity" />
                </div>
 
-               <div className="w-10 h-10 rounded-full border border-nanavu-teal/40 flex items-center justify-center mb-6 bg-nanavu-teal/10 text-nanavu-teal group-hover:scale-110 transition-transform duration-500">
+               {/* BACKGROUND IMAGE & OVERLAY */}
+               <div 
+                 className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700 bg-cover bg-center grayscale group-hover:grayscale-0"
+                 style={{ backgroundImage: `url("https://www.naamearth.in/images/background/people.jpg")` }}
+               />
+               <div className="absolute inset-0 z-0 bg-[#F3EFE6]/80 group-hover:bg-[#F3EFE6]/60 transition-colors duration-700" />
+
+               <div className="w-10 h-10 rounded-full border border-nanavu-teal/40 flex items-center justify-center mb-6 bg-nanavu-teal/10 text-nanavu-teal group-hover:scale-110 transition-transform duration-500 relative z-10">
                   <span className="text-xs tracking-widest font-medium">03</span>
                </div>
-               <h3 className="text-2xl font-light tracking-wide text-nanavu-teal mb-4 relative z-10 flex items-center gap-2">
+               <h3 className="text-2xl font-light tracking-wide text-nanavu-teal mb-4 relative z-10 drop-shadow-sm flex items-center gap-2">
                  NAAMEARTH <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">↗</span>
                </h3>
-               <p className="text-sm leading-relaxed text-nanavu-deepstone relative z-10">
-                 <span className="font-medium text-nanavu-teal/90">Naamearth</span> is a sustainability-driven initiative dedicated to advancing natural, regenerative, and responsible approaches to sustainability. It combines traditional knowledge, contemporary engineering, research, and hands-on practice to explore solutions that are ecological, affordable, resilient, and relevant to the future of construction.
+               <p className="text-sm leading-relaxed text-nanavu-deepstone relative z-10 font-medium">
+                 <span className="font-semibold text-nanavu-teal/90">Naamearth</span> is a sustainability-driven initiative dedicated to advancing natural, regenerative, and responsible approaches to sustainability. It combines traditional knowledge, contemporary engineering, research, and hands-on practice to explore solutions that are ecological, affordable, resilient, and relevant to the future of construction.
                </p>
             </a>
          </div>
