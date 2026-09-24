@@ -117,7 +117,7 @@ function Admin() {
     if (!filteredUsers.length) return;
     
     // Define headers
-    const headers = ["Name", "Email", "Phone", "WhatsApp", "Organization", "Branch", "Year", "Status", "Order ID", "Amount Paid", "Concept Pitching", "Team Name"];
+    const headers = ["Name", "Email", "Phone", "WhatsApp", "Organization", "Branch", "Year", "Status", "Order ID", "Amount Paid", "Concept Pitching", "Team Name", "Food Preference"];
     
     // Map data to rows
     const rows = filteredUsers.map(u => [
@@ -132,7 +132,8 @@ function Admin() {
       `"${u.razorpay_order_id || ''}"`,
       `"${u.amount_paid_inr || 0}"`,
       `"${u.ideathon_opt_in ? 'Yes' : 'No'}"`,
-      `"${u.teams?.name || 'N/A'}"`
+      `"${u.teams?.name || 'N/A'}"`,
+      `"${u.food_preference || 'N/A'}"`
     ]);
     
     const csvContent = "data:text/csv;charset=utf-8," 
@@ -284,6 +285,7 @@ function Admin() {
                   <th className="p-6 font-medium">Order ID</th>
                   <th className="p-6 font-medium">Concept Pitching</th>
                   <th className="p-6 font-medium">Team Name</th>
+                  <th className="p-6 font-medium">Food</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -329,6 +331,9 @@ function Admin() {
                     </td>
                     <td className="p-6 text-xs text-[#8C877D] max-w-[150px] truncate" title={u.teams?.name || ''}>
                       {u.teams?.name || '-'}
+                    </td>
+                    <td className="p-6 text-xs text-white whitespace-nowrap">
+                      {u.food_preference || '-'}
                     </td>
                   </tr>
                 )) : (

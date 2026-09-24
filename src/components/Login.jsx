@@ -80,7 +80,12 @@ function Login() {
   }
 
   return (
-    <section className="min-h-screen bg-[#1E2523] text-[#F3EFE6] flex items-center justify-center px-6 py-32">
+    <section className="min-h-screen bg-[#1E2523] text-[#F3EFE6] flex items-center justify-center px-6 py-32 relative">
+      <Link to="/" className="absolute top-8 left-8 md:top-12 md:left-12 flex items-center gap-2 text-[#8C877D] hover:text-white transition-colors group">
+        <span className="text-xl transition-transform group-hover:-translate-x-1">←</span>
+        <span className="text-xs tracking-widest uppercase mt-0.5">Back to Home</span>
+      </Link>
+      
       <div className="max-w-md w-full mx-auto">
         <div className="text-center mb-12">
           <p className="uppercase tracking-[0.4em] text-xs text-[#287A73]">

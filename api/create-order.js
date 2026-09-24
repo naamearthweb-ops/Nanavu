@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   const { 
     userType = 'student', optIdeathon = false, teamName, currency = 'INR', receipt, 
-    email, password, full_name, phone, whatsapp, organization, branch, year_of_study 
+    email, password, full_name, phone, whatsapp, organization, branch, year_of_study, food_preference 
   } = req.body;
 
   let calculatedAmount = userType === 'student' ? 300 : 600;
@@ -157,7 +157,8 @@ export default async function handler(req, res) {
           amount_paid_inr: calculatedAmount,
           payment_status: payment_status,
           ideathon_opt_in: optIdeathon,
-          team_id: teamId
+          team_id: teamId,
+          food_preference
         })
         .eq('user_id', userId);
 
@@ -181,7 +182,8 @@ export default async function handler(req, res) {
             amount_paid_inr: calculatedAmount,
             payment_status: payment_status,
             ideathon_opt_in: optIdeathon,
-            team_id: teamId
+            team_id: teamId,
+            food_preference
           }
         ]);
 

@@ -80,9 +80,10 @@ function Speakers() {
       image: "kukku.jpeg",
       description: "Specialized in design thinking methodology, climate responsive designs, and sustainable energy.",
       detailedDescription: [
-        "Architect Kukku Joseph is specialized in design thinking methodology to design products, services and environments.",
-        "His interest areas revolve around Climate Responsive Designs and Sustainable Energy. He has industry experience in developing energy efficient and climate responsive designs.",
-        "He is also an active member in several governmental and non-government organizations which has helped the team while leading the Shanthipuram Colony development Project in ASADI."
+        "Ar. Kukku Joseph Jose is an interArchitect Kukku Joseph is specialized in design thinking methodology to design products, services and environments.national architect and educator based in Kochi, Kerala. As the founder of NOW & BUILD NOW, he applies design thinking across architecture, products, and environments, with a strong focus on climate responsiveness, sustainable energy, user comfort, and long-term efficiency.",
+        "Guided by a philosophy of \"Infuse in Action,\" Ar. Kukku views sustainability as an extension of wholeness—where built structures exist in harmony with human activity and natural ecosystems. His creative approach is rooted in an endless cycle of Learning, Unlearning, and Relearning, breaking away from conventional design conditioning to build for the future.",
+        "A strong advocate for innovation and technological integration, Ar. Kukku actively shapes the next generation of architects through research-driven mentorship, publishing, and academic contributions. Across master planning, architectural design, and complex construction execution, his work transforms intricate client briefs into forward-thinking, high-performance environments.",
+        "\"OWN your NOW.\"",
       ]
     },
     {
@@ -129,7 +130,7 @@ function Speakers() {
       number: "07",
       name: "DR. SAJEEB R",
       role: "FORMER PRINCIPAL, TKMCE",
-      location: "SPEAKER",
+      // location: "SPEAKER",
       image: "sajeeb.jpeg",
       description: "Distinguished academician and structural engineer with expertise in structural dynamics and sustainable construction.",
       detailedDescription: [
@@ -143,13 +144,13 @@ function Speakers() {
       number: "08",
       name: "AR. HARITHA C",
       role: "ASSISTANT PROFESSOR, DEPARTMENT OF ARCHITECTURE",
-      location: "SPEAKER",
+      // location: "SPEAKER",
       image: "https://dap.tkmce.ac.in/wp-content/uploads/2025/02/HARITHA-C.webp",
-      description: "Interested in resource-conscious, need-based architectural solutions. Experienced with sustainable architecture and green building practices.",
+      description: "Assistant Professor at TKMCE specializing in Net-zero and low-carbon buildings. Recognized nationally with multiple awards including the JK AYA State Young Architect's Award.",
       detailedDescription: [
-        "Ar. Haritha C is an Assistant Professor in the Department of Architecture. She completed her B.Arch. from NIT Calicut in 2008 and earned her M.Arch. in Sustainable Architecture from CEPT University, Ahmedabad.",
-        "Her professional journey includes working with MES College of Engineering, Kuttippuram, M/s Larsen & Toubro Ltd., Chennai, and Designseeds, Calicut.",
-        "She is particularly interested in resource-conscious, need-based architectural solutions and advancing sustainable building practices."
+        "Haritha C is an Assistant Professor in the Department of Architecture and Planning at TKM College of Engineering, Kollam. She completed her B.Arch from NIT Calicut with a Gold medal in 2008 and holds a Master's in Sustainable Architecture from CEPT University, Ahmedabad. Before teaching, she worked with Larsen & Toubro in Chennai and Design seeds in Calicut.",
+        "Her design work has been recognised nationally, with the 26th JK AYA State Young Architect's Award (2017), a Special Jury commendation at the NDTV Design & Architecture Awards, and a silver leaf at the IIA Kerala State Awards. She also received the Kerala Government's Swami Vivekanandan Yuva Prathibha Puraskaram in 2017 and was featured among twenty women architects by Vanitha Veedu in 2022.",
+        "Her ongoing doctoral research at IIT Madras focuses on Net-zero and low-carbon buildings in India. She presented a part of this work at the World Sustainable Built Environment Conference (WSBE26) in Melbourne in June 2026."
       ]
     },
   ];

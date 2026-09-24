@@ -55,7 +55,7 @@ function Partners() {
       name: "SSA TKMCE",
       image: "https://scontent.cdninstagram.com/v/t51.82787-19/546223143_18075505496320842_5023859323970534395_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=100&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=RPNX2d-HVJkQ7kNvwFpvvKh&_nc_oc=AdqVqEZp1dp7Jmy6tMbi4wqvr-LPEKV1DMFqCt-Eq2xKVPsrBTOhZFBI66RcF-b8vasEdWjsrf9QbGExq3p7dIlv&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=68mJVLlmeI3R2qTlsMA4Ew&_nc_ss=7b689&oh=00_AQIpucsccN1gonreSwlFAyLldJxuIk3Qw-kyrGKvnqopQA&oe=6AB5ABD0",
       url: "https://www.instagram.com/ssa.tkmce/",
-      department: "Department of Architecture",
+      department: "Department of Architecture and Planning",
       departmentUrl: "https://dap.tkmce.ac.in/",
       description: "The Society of Student Architects at TKMCE, serving as a platform for architecture students to engage in design, workshops, competitions, talks, exhibitions, and national-level architecture activities.",
     },

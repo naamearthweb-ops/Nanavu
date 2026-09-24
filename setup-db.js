@@ -28,7 +28,8 @@ async function setup() {
         year_of_study TEXT NOT NULL,
         razorpay_order_id TEXT NOT NULL,
         razorpay_payment_id TEXT NOT NULL,
-        amount_paid_inr INTEGER NOT NULL
+        amount_paid_inr INTEGER NOT NULL,
+        food_preference TEXT
       );
     `;
 

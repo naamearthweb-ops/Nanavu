@@ -386,7 +386,7 @@ function JoinNanavu() {
       </div>
 
       {/* ACCESS INFO */}
-      <div className="mt-16 bg-white/40 border border-nanavu-charcoal/10 rounded-2xl p-8 md:p-12 text-sm leading-relaxed grid grid-cols-1 md:grid-cols-2 gap-8 shadow-sm">
+      <div className="mt-16 bg-white/40 border border-nanavu-charcoal/10 rounded-2xl p-8 md:p-12 text-sm leading-relaxed grid grid-cols-1 md:grid-cols-3 gap-8 shadow-sm">
         <div>
           <h3 className="font-medium text-nanavu-teal tracking-[0.2em] uppercase mb-4 text-xs">Delegate Pass & Access</h3>
           <p className="text-nanavu-deepstone text-xs leading-relaxed">
@@ -397,6 +397,12 @@ function JoinNanavu() {
           <h3 className="font-medium text-nanavu-teal tracking-[0.2em] uppercase mb-4 text-xs">Concept Pitching</h3>
           <p className="text-nanavu-deepstone text-xs leading-relaxed">
             Concept Pitching is a team-based event and requires separate registration. All team members must have a valid delegate pass in addition to registering for Concept Pitching.
+          </p>
+        </div>
+        <div>
+          <h3 className="font-medium text-nanavu-teal tracking-[0.2em] uppercase mb-4 text-xs">Food & Refreshments</h3>
+          <p className="text-nanavu-deepstone text-xs leading-relaxed">
+            Lunch and refreshments will be provided for all registered attendees during the conclave.
           </p>
         </div>
       </div>

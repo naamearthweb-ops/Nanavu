@@ -12,75 +12,48 @@ function Experience() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const track = trackRef.current;
-
       if (!track) return;
 
-      // ==========================================
-      // HORIZONTAL SCROLL
-      // ==========================================
+      const getDistance = () => Math.max(0, track.scrollWidth - window.innerWidth);
 
-      const getDistance = () =>
-        Math.max(
-          0,
-          track.scrollWidth - window.innerWidth
-        );
-
-      gsap.to(track, {
+      // Horizontal pin & scrub
+      const horizontalTween = gsap.to(track, {
         x: () => -getDistance(),
         ease: "none",
-
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-
-          // Much shorter scroll distance
-          end: () => `+=${getDistance() * 0.55}`,
-
+          end: () => `+=${getDistance() * 0.8}`,
           scrub: 0.8,
-
           pin: true,
-
           anticipatePin: 1,
-
           invalidateOnRefresh: true,
         },
       });
 
-      // ==========================================
-      // PANEL ANIMATIONS
-      // ==========================================
+      const panels = gsap.utils.toArray(".experience-panel");
 
-      const panels = gsap.utils.toArray(
-        ".experience-panel"
-      );
+      panels.forEach((panel, i) => {
+        // Skip intro panel
+        if (i === 0) return;
 
-      panels.forEach((panel) => {
-        const image = panel.querySelector(
-          ".experience-image"
-        );
-
-        const content = panel.querySelector(
-          ".experience-content"
-        );
+        const image = panel.querySelector(".experience-image");
+        const content = panel.querySelector(".experience-content");
 
         if (image) {
           gsap.fromTo(
             image,
-            {
-              scale: 1.06,
-              opacity: 0,
-            },
+            { scale: 1.06, opacity: 0 },
             {
               scale: 1,
               opacity: 1,
               duration: 0.8,
               ease: "power2.out",
-
               scrollTrigger: {
                 trigger: panel,
-                start: "top 85%",
-                toggleActions:
-                  "play none none reverse",
+                start: "left 85%", // Triggers based on horizontal left edge
+                containerAnimation: horizontalTween,
+                toggleActions: "play none none reverse",
               },
             }
           );
@@ -89,21 +62,17 @@ function Experience() {
         if (content) {
           gsap.fromTo(
             content,
-            {
-              y: 35,
-              opacity: 0,
-            },
+            { y: 35, opacity: 0 },
             {
               y: 0,
               opacity: 1,
               duration: 0.7,
               ease: "power2.out",
-
               scrollTrigger: {
                 trigger: panel,
-                start: "top 85%",
-                toggleActions:
-                  "play none none reverse",
+                start: "left 85%", // Triggers based on horizontal left edge
+                containerAnimation: horizontalTween,
+                toggleActions: "play none none reverse",
               },
             }
           );
@@ -117,788 +86,165 @@ function Experience() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      id="experience"
-      className="
-        relative
-        bg-nanavu-charcoal
-        text-nanavu-offwhite
-      "
-    >
-
-      {/* ==================================================
-          DESKTOP
-      ================================================== */}
-
-      <div
-        ref={trackRef}
-        className="
-          hidden
-          md:flex
-          h-screen
-          w-max
-        "
-      >
-
-        {/* ==================================================
-            INTRO
-        ================================================== */}
-
-        <div
-          className="
-            experience-panel
-            relative
-            w-screen
-            h-screen
-            flex-shrink-0
-            px-12
-            lg:px-20
-            py-12
-            flex
-            flex-col
-            justify-between
-          "
-        >
-
-          {/* TOP */}
-
-          <div
-            className="
-              flex
-              justify-between
-              items-start
-            "
-          >
-
-            <span
-              className="
-                text-[10px]
-                tracking-[0.4em]
-                text-nanavu-sand
-              "
-            >
-              04 / EXPERIENCE
-            </span>
-
-            <span
-              className="
-                text-[10px]
-                tracking-[0.3em]
-                text-nanavu-stone
-              "
-            >
-              SCROLL TO EXPLORE →
-            </span>
-
+    <section ref={sectionRef} id="experience" className="relative bg-nanavu-charcoal text-nanavu-offwhite">
+      {/* DESKTOP */}
+      <div ref={trackRef} className="hidden md:flex h-screen w-max">
+        
+        {/* INTRO */}
+        <div className="experience-panel relative w-screen h-screen flex-shrink-0 px-12 lg:px-20 py-12 flex flex-col justify-between">
+          <div className="flex justify-between items-start">
+            <span className="text-[10px] tracking-[0.4em] text-nanavu-sand">04 / EXPERIENCE</span>
+            <span className="text-[10px] tracking-[0.3em] text-nanavu-stone">SCROLL TO EXPLORE →</span>
           </div>
-
-
-          {/* CENTER */}
-
           <div>
-
-            <p
-              className="
-                mb-7
-                text-xs
-                tracking-[0.3em]
-                text-nanavu-stone
-              "
-            >
-              ENTER THE WORLD OF NANAVU
-            </p>
-
-            <h2
-              className="
-                text-[13vw]
-                lg:text-[11vw]
-                leading-[0.75]
-                tracking-[-0.07em]
-                font-light
-              "
-            >
-              THE
-              <br />
-              EXPERIENCE
-            </h2>
-
+            <p className="mb-7 text-xs tracking-[0.3em] text-nanavu-stone">ENTER THE WORLD OF NANAVU</p>
+            <h2 className="text-[13vw] lg:text-[11vw] leading-[0.75] tracking-[-0.07em] font-light">THE<br />EXPERIENCE</h2>
           </div>
-
-
-          {/* BOTTOM */}
-
-          <div
-            className="
-              flex
-              justify-between
-              items-end
-            "
-          >
-
-            <span
-              className="
-                text-xs
-                tracking-[0.2em]
-                text-nanavu-stone
-              "
-            >
-              01 — 04
-            </span>
-
-            <span
-              className="
-                text-3xl
-                text-nanavu-teal
-              "
-            >
-              →
-            </span>
-
+          <div className="flex justify-between items-end">
+            <span className="text-xs tracking-[0.2em] text-nanavu-stone">01 — 04</span>
+            <span className="text-3xl text-nanavu-teal">→</span>
           </div>
-
         </div>
 
-
-        {/* ==================================================
-            01 - PANEL DISCUSSION
-        ================================================== */}
-
-        <div
-          className="
-            experience-panel
-            relative
-            w-[80vw]
-            h-screen
-            flex-shrink-0
-            px-12
-            lg:px-16
-            flex
-            items-center
-          "
-        >
-
-          <div
-            className="
-              w-full
-              grid
-              grid-cols-12
-              gap-8
-              items-center
-            "
-          >
-
-            {/* TEXT */}
-
-            <div
-              className="
-                experience-content
-                col-span-5
-              "
-            >
-
-              <span
-                className="
-                  text-xs
-                  tracking-[0.3em]
-                  text-nanavu-sand
-                  font-medium
-                "
-              >
-                01 / PANEL DISCUSSION
-              </span>
-
-              <h3
-                className="
-                  mt-4
-                  text-[4.5vw]
-                  leading-[0.9]
-                  tracking-[-0.05em]
-                  font-light
-                  text-nanavu-teal
-                "
-              >
-                IDEAS IN DIALOGUE
+        {/* 01 - TECHNICAL SESSIONS */}
+        <div className="experience-panel relative w-[80vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
+          <div className="w-full grid grid-cols-12 gap-8 items-center">
+            <div className="experience-content col-span-5">
+              <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">01 / TRACK ONE</span>
+              <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-teal">
+                TECHNICAL SESSIONS
               </h3>
-
-              <p className="mt-2 text-sm text-[#C99A72] tracking-wider uppercase font-medium">
-                Perspectives in Focus
+              <p className="mt-2 text-sm text-[#C99A72] tracking-wider uppercase font-medium">Interactive & Expert-Led</p>
+              <p className="mt-5 max-w-sm text-sm lg:text-base leading-relaxed text-nanavu-offwhite/70">
+                Expert-led sessions on emerging materials, technologies, and practices in sustainable construction, with opportunities for interaction and knowledge exchange.
               </p>
-
-              <p
-                className="
-                  mt-5
-                  max-w-sm
-                  text-sm
-                  lg:text-base
-                  leading-relaxed
-                  text-nanavu-offwhite/70
-                "
-              >
-                Exploring the growing scope of sustainable construction, emerging career pathways, and connecting education with real-world practice for young professionals.
-              </p>
-
-              <div className="mt-6 pt-4 border-t border-white/10 text-xs text-nanavu-stone">
-                <span className="text-[#D8C7A5]">GUEST SPEAKERS:</span> Ar. Vinu Daniel (Wallmakers) & Ar. Eugene Pandala (CSBNE)
-              </div>
-
             </div>
-
-
-            {/* IMAGE */}
-
-            <div
-              className="
-                col-span-7
-                col-start-6
-              "
-            >
-
-              <div
-                className="
-                  experience-image
-                  relative
-                  h-[55vh]
-                  w-full
-                  overflow-hidden
-                "
-              >
-                <ImagePlaceholder
-                  label="Panel Discussion: Ideas in Dialogue & Career Pathways"
-                  category="TRACK 01 PLACEHOLDER"
-                  aspect="h-full"
-                />
+            <div className="col-span-7 col-start-6">
+              <div className="experience-image relative h-[55vh] w-full overflow-hidden">
+                <ImagePlaceholder label="Technical Sessions" category="TRACK 01" aspect="h-full" />
               </div>
-
             </div>
-
           </div>
-
         </div>
 
-
-        {/* ==================================================
-            02 - TECHNICAL SESSIONS
-        ================================================== */}
-
-        <div
-          className="
-            experience-panel
-            relative
-            w-[80vw]
-            h-screen
-            flex-shrink-0
-            px-12
-            lg:px-16
-            flex
-            items-center
-          "
-        >
-
-          <div
-            className="
-              w-full
-              grid
-              grid-cols-12
-              gap-8
-              items-center
-            "
-          >
-
-            {/* IMAGE */}
-
+        {/* 02 - PANEL DISCUSSION */}
+        <div className="experience-panel relative w-[80vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
+          <div className="w-full grid grid-cols-12 gap-8 items-center">
             <div className="col-span-7">
-
-              <div
-                className="
-                  experience-image
-                  relative
-                  h-[55vh]
-                  w-full
-                  overflow-hidden
-                "
-              >
-                <ImagePlaceholder
-                  label="Technical Sessions: Natural Materials & CSEB Building"
-                  category="TRACK 02 PLACEHOLDER"
-                  aspect="h-full"
-                />
+              <div className="experience-image relative h-[55vh] w-full overflow-hidden">
+                <ImagePlaceholder label="Panel Discussion" category="TRACK 02" aspect="h-full" />
               </div>
-
             </div>
-
-
-            {/* TEXT */}
-
-            <div
-              className="
-                experience-content
-                col-span-5
-                col-start-8
-              "
-            >
-
-              <span
-                className="
-                  text-xs
-                  tracking-[0.3em]
-                  text-nanavu-sand
-                  font-medium
-                "
-              >
-                02 / TECHNICAL SESSIONS
-              </span>
-
-              <h3
-                className="
-                  mt-4
-                  text-[4.5vw]
-                  leading-[0.9]
-                  tracking-[-0.05em]
-                  font-light
-                  text-nanavu-clay
-                "
-              >
-                KNOWLEDGE THAT DRIVES
+            <div className="experience-content col-span-5 col-start-8">
+              <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">02 / TRACK TWO</span>
+              <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-clay">
+                PANEL DISCUSSION
               </h3>
-
-              <p className="mt-2 text-sm text-[#D8C7A5] tracking-wider uppercase font-medium">
-                Innovation & Engineering
+              <p className="mt-2 text-sm text-[#D8C7A5] tracking-wider uppercase font-medium">Bridging Education and Practice</p>
+              <p className="mt-5 max-w-sm text-sm lg:text-base leading-relaxed text-nanavu-offwhite/70">
+                Why Sustainability Remains Optional in Construction — exploring the gap between education and professional practice and how sustainability can become integral to construction.
               </p>
-
-              <p
-                className="
-                  mt-5
-                  max-w-sm
-                  text-sm
-                  lg:text-base
-                  leading-relaxed
-                  text-nanavu-offwhite/70
-                "
-              >
-                Technical sessions led by practicing professionals introducing students to natural construction techniques, Compressed Stabilised Earth Blocks (CSEB), filler slabs, and climate resilience.
-              </p>
-
-              <div className="mt-6 pt-4 border-t border-white/10 text-xs text-nanavu-stone">
-                <span className="text-[#D8C7A5]">GUEST SPEAKERS:</span> Madhavan Namboothiri (Clean Tech) & Ar. P.B. Sajan (COSTFORD)
-              </div>
-
             </div>
-
           </div>
-
         </div>
 
-
-        {/* ==================================================
-            03 - SUSTAINABLE EXPO
-        ================================================== */}
-
-        <div
-          className="
-            experience-panel
-            relative
-            w-[80vw]
-            h-screen
-            flex-shrink-0
-            px-12
-            lg:px-16
-            flex
-            items-center
-          "
-        >
-
-          <div
-            className="
-              w-full
-              grid
-              grid-cols-12
-              gap-8
-              items-center
-            "
-          >
-
-            {/* TEXT */}
-
-            <div
-              className="
-                experience-content
-                col-span-5
-              "
-            >
-
-              <span
-                className="
-                  text-xs
-                  tracking-[0.3em]
-                  text-nanavu-sand
-                  font-medium
-                "
-              >
-                03 / SUSTAINABLE EXPO
-              </span>
-
-              <h3
-                className="
-                  mt-4
-                  text-[4.5vw]
-                  leading-[0.9]
-                  tracking-[-0.05em]
-                  font-light
-                  text-nanavu-sand
-                "
-              >
-                EXPLORE IDEAS
+        {/* 03 - CONCEPT PITCHING */}
+        <div className="experience-panel relative w-[80vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
+          <div className="w-full grid grid-cols-12 gap-8 items-center">
+            <div className="experience-content col-span-5">
+              <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">03 / TRACK THREE</span>
+              <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-sand">
+                CONCEPT PITCHING
               </h3>
-
-              <p className="mt-2 text-sm text-[#287A73] tracking-wider uppercase font-medium">
-                Experience Innovation
+              <p className="mt-2 text-sm text-[#287A73] tracking-wider uppercase font-medium">The 2050 Kerala Home</p>
+              <p className="mt-5 max-w-sm text-sm lg:text-base leading-relaxed text-nanavu-offwhite/70">
+                Imagining a Kerala home that is affordable, low-carbon, climate-resilient, and comfortable.
               </p>
-
-              <p
-                className="
-                  mt-5
-                  max-w-sm
-                  text-sm
-                  lg:text-base
-                  leading-relaxed
-                  text-nanavu-offwhite/70
-                "
-              >
-                An interactive showcase of architectural models, bio-based products, and sustainable technologies demonstrating how green building works without compromising quality or strength.
-              </p>
-
             </div>
-
-
-            {/* IMAGE */}
-
-            <div
-              className="
-                col-span-7
-                col-start-6
-              "
-            >
-
-              <div
-                className="
-                  experience-image
-                  relative
-                  h-[55vh]
-                  w-full
-                  overflow-hidden
-                "
-              >
-                <ImagePlaceholder
-                  label="Sustainable Building & Materials Expo Showcase"
-                  category="TRACK 03 PLACEHOLDER"
-                  aspect="h-full"
-                />
+            <div className="col-span-7 col-start-6">
+              <div className="experience-image relative h-[55vh] w-full overflow-hidden">
+                <ImagePlaceholder label="Concept Pitching" category="TRACK 03" aspect="h-full" />
               </div>
-
             </div>
-
           </div>
-
         </div>
 
-
-        {/* ==================================================
-            04 - IDEATHON
-        ================================================== */}
-
-        <div
-          className="
-            experience-panel
-            relative
-            w-[80vw]
-            h-screen
-            flex-shrink-0
-            px-12
-            lg:px-16
-            flex
-            items-center
-          "
-        >
-
-          <div
-            className="
-              w-full
-              grid
-              grid-cols-12
-              gap-8
-              items-center
-            "
-          >
-
-            {/* IMAGE */}
-
+        {/* 04 - EXHIBITION */}
+        <div className="experience-panel relative w-[80vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
+          <div className="w-full grid grid-cols-12 gap-8 items-center">
             <div className="col-span-7">
-
-              <div
-                className="
-                  experience-image
-                  relative
-                  h-[55vh]
-                  w-full
-                  overflow-hidden
-                "
-              >
-                <ImagePlaceholder
-                  label="Student Ideathon: Thinking Bold & Creating Change"
-                  category="TRACK 04 PLACEHOLDER"
-                  aspect="h-full"
-                />
+              <div className="experience-image relative h-[55vh] w-full overflow-hidden">
+                <ImagePlaceholder label="Exhibition" category="TRACK 04" aspect="h-full" />
               </div>
-
             </div>
-
-
-            {/* TEXT */}
-
-            <div
-              className="
-                experience-content
-                col-span-5
-                col-start-8
-              "
-            >
-
-              <span
-                className="
-                  text-xs
-                  tracking-[0.3em]
-                  text-nanavu-sand
-                  font-medium
-                "
-              >
-                04 / IDEATHON
-              </span>
-
-              <h3
-                className="
-                  mt-4
-                  text-[4.5vw]
-                  leading-[0.9]
-                  tracking-[-0.05em]
-                  font-light
-                  text-[#D8C7A5]
-                "
-              >
-                THINK BOLD
+            <div className="experience-content col-span-5 col-start-8">
+              <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">04 / TRACK FOUR</span>
+              <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-[#D8C7A5]">
+                EXHIBITION
               </h3>
-
-              <p className="mt-2 text-sm text-[#C99A72] tracking-wider uppercase font-medium">
-                Create Change
+              <p className="mt-2 text-sm text-[#C99A72] tracking-wider uppercase font-medium">Sustainable Showcase</p>
+              <p className="mt-5 max-w-sm text-sm lg:text-base leading-relaxed text-nanavu-offwhite/70">
+                A showcase of innovative ideas, materials, technologies, and student projects focused on sustainable construction.
               </p>
-
-              <p
-                className="
-                  mt-5
-                  max-w-sm
-                  text-sm
-                  lg:text-base
-                  leading-relaxed
-                  text-nanavu-offwhite/70
-                "
-              >
-                A dynamic platform for students to think creatively, engineer practical responses, and solve real-world campus & urban sustainability challenges.
-              </p>
-
             </div>
-
           </div>
-
-
-          {/* END */}
-
-          <div
-            className="
-              absolute
-              right-8
-              bottom-8
-            "
-          >
-            <span
-              className="
-                text-xs
-                tracking-[0.25em]
-                text-nanavu-teal
-              "
-            >
-              CONTINUE →
-            </span>
+          <div className="absolute right-8 bottom-8">
+            <span className="text-xs tracking-[0.25em] text-nanavu-teal">CONTINUE →</span>
           </div>
-
         </div>
 
       </div>
 
-
-      {/* ==================================================
-          MOBILE
-      ================================================== */}
-
-      <div
-        className="
-          md:hidden
-          px-6
-          py-24
-        "
-      >
-
-        {/* HEADER */}
-
+      {/* MOBILE */}
+      <div className="md:hidden px-6 py-24">
         <div className="mb-20">
-
-          <span
-            className="
-              text-[10px]
-              tracking-[0.4em]
-              text-nanavu-sand
-            "
-          >
-            04 / EXPERIENCE
-          </span>
-
-          <h2
-            className="
-              mt-8
-              text-[19vw]
-              leading-[0.75]
-              tracking-[-0.07em]
-              font-light
-            "
-          >
-            THE
-            <br />
-            EXPERIENCE
-          </h2>
-
+          <span className="text-[10px] tracking-[0.4em] text-nanavu-sand">04 / EXPERIENCE</span>
+          <h2 className="mt-8 text-[19vw] leading-[0.75] tracking-[-0.07em] font-light">THE<br />EXPERIENCE</h2>
         </div>
-
-
-        {/* MOBILE ITEMS */}
 
         {[
           {
             number: "01",
-            title: "LISTEN",
+            title: "TECHNICAL SESSIONS",
             color: "text-nanavu-teal",
-            text:
-              "Stories, conversations and voices that make us stop and listen.",
+            text: "Expert-led sessions on emerging materials, technologies, and practices in sustainable construction, with opportunities for interaction and knowledge exchange.",
           },
           {
             number: "02",
-            title: "EXPLORE",
+            title: "PANEL DISCUSSION",
             color: "text-nanavu-clay",
-            text:
-              "Discover new perspectives, places, people and possibilities.",
+            text: "Bridging Education and Practice: Why Sustainability Remains Optional in Construction — exploring the gap between education and professional practice.",
           },
           {
             number: "03",
-            title: "CREATE",
+            title: "CONCEPT PITCHING",
             color: "text-nanavu-sand",
-            text:
-              "Get involved, experiment and turn ideas into something real.",
+            text: "The 2050 Kerala Home — imagining a Kerala home that is affordable, low-carbon, climate-resilient, and comfortable.",
           },
           {
             number: "04",
-            title: "ACT",
+            title: "EXHIBITION",
             color: "text-nanavu-offwhite",
-            text:
-              "Take what you discover here and carry it into the world.",
+            text: "A showcase of innovative ideas, materials, technologies, and student projects focused on sustainable construction.",
           },
         ].map((item) => (
-          <div
-            key={item.number}
-            className="mb-24"
-          >
-
-            <span
-              className="
-                text-xs
-                tracking-[0.3em]
-                text-nanavu-sand
-              "
-            >
-              {item.number}
-            </span>
-
-
-            <h3
-              className={`
-                mt-5
-                text-[19vw]
-                leading-[0.8]
-                tracking-[-0.06em]
-                font-light
-                ${item.color}
-              `}
-            >
+          <div key={item.number} className="mb-24">
+            <span className="text-xs tracking-[0.3em] text-nanavu-sand">{item.number}</span>
+            <h3 className={`mt-5 text-[15vw] leading-[0.9] tracking-[-0.05em] font-light ${item.color}`}>
               {item.title}
             </h3>
-
-
-            {/* IMAGE */}
-
-            <div
-              className="
-                relative
-                mt-8
-                w-full
-                h-[48vh]
-                overflow-hidden
-              "
-            >
-
-              <img
-                src="/experience.jpg"
-                alt={`NANAVU ${item.title}`}
-                className="
-                  w-full
-                  h-full
-                  object-cover
-                "
-              />
-
-              <div
-                className="
-                  absolute
-                  left-5
-                  bottom-5
-                  px-3
-                  py-2
-                  bg-black/40
-                  backdrop-blur-sm
-                  text-[9px]
-                  tracking-[0.3em]
-                "
-              >
+            <div className="relative mt-8 w-full h-[48vh] overflow-hidden">
+              <img src="/experience.jpg" alt={`NANAVU ${item.title}`} className="w-full h-full object-cover" />
+              <div className="absolute left-5 bottom-5 px-3 py-2 bg-black/40 backdrop-blur-sm text-[9px] tracking-[0.3em]">
                 {item.title}
               </div>
-
             </div>
-
-
-            {/* DESCRIPTION */}
-
-            <p
-              className="
-                mt-7
-                text-base
-                leading-relaxed
-                text-nanavu-offwhite/60
-              "
-            >
+            <p className="mt-7 text-sm leading-relaxed text-nanavu-offwhite/60">
               {item.text}
             </p>
-
           </div>
         ))}
-
       </div>
-
     </section>
   );
 }

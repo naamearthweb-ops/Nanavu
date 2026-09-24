@@ -16,6 +16,7 @@ function Register() {
     branch: "",
     year: "1",
     otherYear: "",
+    foodPreference: "Veg",
   });
   
   const [loading, setLoading] = useState(false);
@@ -90,7 +91,8 @@ function Register() {
           organization: formData.organization,
           branch: formData.branch,
           year_of_study: formData.year === 'Other' ? formData.otherYear : formData.year,
-          password: formData.password
+          password: formData.password,
+          food_preference: formData.foodPreference
         }),
       });
 
@@ -174,7 +176,12 @@ function Register() {
   }
 
   return (
-    <section className="min-h-screen bg-[#1E2523] text-[#F3EFE6] flex items-center justify-center px-6 py-32">
+    <section className="min-h-screen bg-[#1E2523] text-[#F3EFE6] flex items-center justify-center px-6 py-32 relative">
+      <Link to="/" className="absolute top-8 left-8 md:top-12 md:left-12 flex items-center gap-2 text-[#8C877D] hover:text-white transition-colors group">
+        <span className="text-xl transition-transform group-hover:-translate-x-1">←</span>
+        <span className="text-xs tracking-widest uppercase mt-0.5">Back to Home</span>
+      </Link>
+
       <div className="max-w-2xl w-full mx-auto">
         <div className="text-center mb-12">
           <p className="uppercase tracking-[0.4em] text-xs text-[#287A73]">
@@ -202,6 +209,13 @@ function Register() {
             <h3 className="font-medium text-[#287A73] tracking-widest uppercase mb-2 text-xs">Concept Pitching</h3>
             <p className="text-[#8C877D] text-xs leading-relaxed">
               Concept Pitching is a team-based event and requires separate registration. All team members must have a valid delegate pass in addition to registering for Concept Pitching.
+            </p>
+          </div>
+          <div className="h-px bg-[#287A73]/20 w-full"></div>
+          <div>
+            <h3 className="font-medium text-[#287A73] tracking-widest uppercase mb-2 text-xs">Food & Refreshments</h3>
+            <p className="text-[#8C877D] text-xs leading-relaxed">
+              Lunch and refreshments will be provided for all registered attendees during the conclave.
             </p>
           </div>
         </div>
@@ -267,6 +281,34 @@ function Register() {
                   className="mt-2 bg-[#1E2523] border border-white/10 p-3 rounded-lg text-sm text-[#F3EFE6] focus:border-[#287A73] outline-none transition" 
                 />
               )}
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="text-xs tracking-widest text-[#8C877D] uppercase">Food Preference</label>
+            <div className="flex flex-col md:flex-row gap-4">
+              <label className="flex items-center gap-2 cursor-pointer text-sm">
+                <input 
+                  type="radio" 
+                  name="foodPreference" 
+                  value="Veg" 
+                  checked={formData.foodPreference === "Veg"}
+                  onChange={handleChange}
+                  className="accent-[#287A73]"
+                />
+                Vegetarian
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer text-sm">
+                <input 
+                  type="radio" 
+                  name="foodPreference" 
+                  value="Non-Veg" 
+                  checked={formData.foodPreference === "Non-Veg"}
+                  onChange={handleChange}
+                  className="accent-[#287A73]"
+                />
+                Non-Vegetarian
+              </label>
             </div>
           </div>
 
