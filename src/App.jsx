@@ -27,7 +27,7 @@ function Home() {
       <Navbar />
       <Hero />
       <Introduction />
-      <Experience />
+      {/* <Experience /> */}
       <Speakers />
       <PeopleBehind />
       {/* <Workshops /> */}
