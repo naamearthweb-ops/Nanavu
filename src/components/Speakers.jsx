@@ -43,9 +43,9 @@ function Speakers() {
       role: "FORMER DIRECTOR, WATER RESOURCES DEPT",
       location: "SPEAKER",
       topic: "The Last Bus for Green Initiatives: Sustainability – Still Out of Syllabus?",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7p4y8zR2toQN8U7QEJ7SQiECtn4yS16D8m1XreyW2Pa3CcusdbXeNL3VS&s=10",
-      imageStyle: { objectPosition: "40% 0%" },
-      wrapperStyle: { transform: "scale(1.2)" },
+      image: "/subash.jpeg",
+      // imageStyle: { objectPosition: "40% 0%" },
+      // wrapperStyle: { transform: "scale(1.2)" },
       description: "Former Director of the Water Resources Department, author of 16 books, and leading consultant for various green global agencies.",
       detailedDescription: [
         "Dr. V. Subhash Chandra Bose is the Former Director of the Water Resources Department sponsored by the Ministry of Jalashakti, GOI.",
@@ -60,15 +60,15 @@ function Speakers() {
       role: "CO-FOUNDER, BHOOMIJA",
       location: "SPEAKER",
       topic: "Sustainability as a Way of Thinking: The Bhoomija Story",
-      image: "https://www.bhoomija.com/images/manasi_guru1.jpg",
+      image: "/manasi.jpeg",
       imageStyle: { objectPosition: "85% 30%" },
       wrapperStyle: { transform: "scale(1.25)" },
       description: "Co-founder of Bhoomija, dedicated to creating nature inclusive, people friendly, and context sensible architecture.",
       detailedDescription: [
-        "Team Bhoomija was born in the year of 2011, out of the love and passion for architecture shared by the couple Ar. Guruprasad Rane & Ar. Manasi Puliyappatta.",
-        "Being a Maharashtrian born and brought up in Mumbai, Guruprasad Rane came to Kerala in 2003 after Graduating from L.S.Raheja School of Architecture and chose to practice under Ar. G.Shankar (Habitat Technology Group, Trivandum), to explore alternate and sustainable building practices.",
-        "Meanwhile, Manasi also joined the same workplace after her B.Arch from M.E.S. Kuttipuram, driven by the same interest. Somewhere their dreams met and they decided to walk together in life as well as their profession.",
-        "Bhoomija sprouted from this common ground as an extension of their dream of creating nature inclusive, people friendly, context sensible architecture."
+        "Bhoomija Creations was founded in 2011 by architects Ar. Guruprasad Rane and Ar. Manasi Puliyappatta, brought together by a shared love for architecture and a curiosity to explore more meaningful and sustainable ways of building. What began with an interest in natural materials and alternative building practices gradually evolved into a practice rooted in the relationship between people, place and nature.",
+        "Based in rural Kerala, Bhoomija works across a range of projects, from homes and community spaces to public and institutional projects. Our architecture grows from an understanding of the site, climate, materials, local knowledge and the people who inhabit it. We believe sustainability is not an added layer to architecture, but a way of thinking, about using less, responding to what is already available, and creating spaces that remain relevant over time.",
+        "Over the years, our work has received recognition at national and international platforms. We have received Commendations twice in the UIA–UN-Habitat 2030 Award, which recognises architectural projects contributing to the objectives of the UN Agenda 2030 and its Sustainable Development Goals.",
+        "At Bhoomija, we continue to explore how architecture can be more nature-inclusive, people-friendly and sensitive to its context, while remaining contemporary, practical and deeply rooted in its place."
       ]
     },
     {
@@ -80,10 +80,10 @@ function Speakers() {
       image: "kukku.jpeg",
       description: "Specialized in design thinking methodology, climate responsive designs, and sustainable energy.",
       detailedDescription: [
-        "Ar. Kukku Joseph Jose is an interArchitect Kukku Joseph is specialized in design thinking methodology to design products, services and environments.national architect and educator based in Kochi, Kerala. As the founder of NOW & BUILD NOW, he applies design thinking across architecture, products, and environments, with a strong focus on climate responsiveness, sustainable energy, user comfort, and long-term efficiency.",
+        "Ar. Kukku Joseph Jose is an international architect and educator based in Kochi, Kerala. As the founder of NOW & BUILD NOW, he applies design thinking across architecture, products, and environments, with a strong focus on climate responsiveness, sustainable energy, user comfort, and long-term efficiency.",
         "Guided by a philosophy of \"Infuse in Action,\" Ar. Kukku views sustainability as an extension of wholeness—where built structures exist in harmony with human activity and natural ecosystems. His creative approach is rooted in an endless cycle of Learning, Unlearning, and Relearning, breaking away from conventional design conditioning to build for the future.",
         "A strong advocate for innovation and technological integration, Ar. Kukku actively shapes the next generation of architects through research-driven mentorship, publishing, and academic contributions. Across master planning, architectural design, and complex construction execution, his work transforms intricate client briefs into forward-thinking, high-performance environments.",
-        "\"OWN your NOW.\"",
+        "\"OWN your NOW.\""
       ]
     },
     {
@@ -143,7 +143,7 @@ function Speakers() {
     {
       number: "08",
       name: "AR. HARITHA C",
-      role: "ASSISTANT PROFESSOR, DEPARTMENT OF ARCHITECTURE",
+      role: "ASSISTANT PROFESSOR, DEPARTMENT OF ARCHITECTURE AND PLANNING",
       // location: "SPEAKER",
       image: "https://dap.tkmce.ac.in/wp-content/uploads/2025/02/HARITHA-C.webp",
       description: "Assistant Professor at TKMCE specializing in Net-zero and low-carbon buildings. Recognized nationally with multiple awards including the JK AYA State Young Architect's Award.",

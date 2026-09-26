@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -395,6 +396,16 @@ function Introduction() {
               NANAVU contributes to the Kerala Carbon Neutral Pathway 2050 and India’s commitment to net-zero emissions by 2070.
             </p>
 
+            <div className="mt-12">
+              <Link
+                to="/schedule"
+                className="inline-flex items-center gap-2 bg-[#287A73] hover:bg-[#1f635c] text-white px-8 py-3.5 rounded-full text-xs tracking-widest font-medium transition-all shadow-md hover:shadow-lg"
+              >
+                <span>VIEW PROGRAMME SCHEDULE</span>
+                <span className="text-sm">→</span>
+              </Link>
+            </div>
+
           </div>
 
         </div>
@@ -678,10 +689,12 @@ function Introduction() {
                <div className="absolute top-6 right-6 w-12 h-12 rounded-full border border-nanavu-plant/20 bg-white/50 backdrop-blur-md flex items-center justify-center overflow-hidden z-20 shadow-sm group-hover:scale-105 transition-transform duration-500">
                  <img src="/partners/csc-logo.png" alt="CSC Logo" className="w-full h-full object-contain p-1.5 opacity-60 group-hover:opacity-100 transition-opacity" />
                </div>
+
                <div 
-                 className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700 bg-cover bg-center grayscale group-hover:grayscale-0"
-                 style={{ backgroundImage: `url("csc.jpeg")` }}
+                 className="absolute inset-0 z-0 opacity-60 group-hover:opacity-100 transition-opacity duration-700 bg-cover bg-center grayscale-0"
+                 style={{ backgroundImage: `url("/csc.jpeg")` }}
                />
+               <div className="absolute inset-0 z-0 bg-[#F3EFE6]/80 group-hover:bg-[#F3EFE6]/75 transition-colors duration-700" />
 
                <div className="w-10 h-10 rounded-full border border-nanavu-plant/20 flex items-center justify-center mb-6 bg-nanavu-plant/5 text-nanavu-plant group-hover:scale-110 transition-transform duration-500">
                   <span className="text-xs tracking-widest font-medium">02</span>
@@ -700,6 +713,13 @@ function Introduction() {
                <div className="absolute top-6 right-6 w-12 h-12 rounded-full border border-nanavu-teal/40 bg-white/50 backdrop-blur-md flex items-center justify-center overflow-hidden z-20 shadow-sm group-hover:scale-105 transition-transform duration-500">
                  <img src="/partners/naamearth-logo.png" alt="NAAMEARTH Logo" className="w-full h-full object-contain p-1.5 opacity-60 group-hover:opacity-100 transition-opacity" />
                </div>
+
+               <div 
+                 className="absolute inset-0 z-0 opacity-60 group-hover:opacity-100 transition-opacity duration-700 bg-cover bg-center grayscale-0"
+                 style={{ backgroundImage: `url("https://www.naamearth.in/images/background/people.jpg")` }}
+               />
+               <div className="absolute inset-0 z-0 bg-[#F3EFE6]/80 group-hover:bg-[#F3EFE6]/75 transition-colors duration-700" />
+               
 
                {/* BACKGROUND IMAGE & OVERLAY */}
                <div 

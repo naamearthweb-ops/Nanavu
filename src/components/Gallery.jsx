@@ -227,12 +227,12 @@ function Gallery() {
             KEEP EXPLORING
           </span>
           
-          <Link 
+          {/* <Link 
             to="/gallery" 
             className="px-8 py-4 border border-[#287A73] text-[#287A73] text-xs font-medium tracking-[0.25em] uppercase hover:bg-[#287A73] hover:text-[#F3EFE6] transition-colors duration-300"
           >
             Explore Full Gallery
-          </Link>
+          </Link> */}
 
           <span className="text-xs tracking-[0.25em] text-[#287A73]">
             08 / JOIN NANAVU →

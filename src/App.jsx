@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Introduction from "./components/Introduction"; 
+import Highlights from "./components/Highlights";
 import Experience from "./components/Experience";
 import Speakers from "./components/Speakers";
 import PeopleBehind from "./components/PeopleBehind";
@@ -12,6 +13,7 @@ import Gallery from "./components/Gallery";
 import GalleryPage from "./components/GalleryPage";
 import JoinNanavu from "./components/JoinNanavu";
 import Footer from "./components/Footer";
+import SchedulePage from "./components/SchedulePage";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import ForgotPassword from "./components/ForgotPassword";
@@ -27,6 +29,7 @@ function Home() {
       <Navbar />
       <Hero />
       <Introduction />
+      <Highlights />
       {/* <Experience /> */}
       <Speakers />
       <PeopleBehind />
@@ -53,7 +56,8 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/admin" element={<Admin />} />
-        <Route path="/gallery" element={<GalleryPage />} />
+        {/* <Route path="/gallery" element={<GalleryPage />} /> */}
+        <Route path="/schedule" element={<SchedulePage />} />
       </Routes>
     </Router>
   );
