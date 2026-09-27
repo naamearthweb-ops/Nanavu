@@ -28,8 +28,8 @@ function Home() {
     <main>
       <Navbar />
       <Hero />
-      <Introduction />
       <Highlights />
+      <Introduction />
       {/* <Experience /> */}
       <Speakers />
       <PeopleBehind />

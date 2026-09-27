@@ -57,7 +57,7 @@ function PeopleBehind() {
       ]
     },
     {
-      name: "Haritha C",
+      name: "Ar. Haritha C",
       role: "Chairperson, Campus Sustainability Council(CSC), TKMCE Kollam",
       image: "https://dap.tkmce.ac.in/wp-content/uploads/2025/02/HARITHA-C.webp",
       description: "Assistant Professor at TKMCE specializing in Net-zero and low-carbon buildings.",
@@ -68,7 +68,7 @@ function PeopleBehind() {
       ]
     },
     {
-      name: "Basithali E. K.",
+      name: "Prof. Basithali E. K.",
       role: "Founder of naamearth",
       image: "https://www.naamearth.in/images/people/basith_ali.jpg",
       imgClass: "scale-200",
