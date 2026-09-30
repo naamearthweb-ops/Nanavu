@@ -30,7 +30,7 @@ function Home() {
       <Hero />
       <Highlights />
       <Introduction />
-      {/* <Experience /> */}
+      <Experience />
       <Speakers />
       <PeopleBehind />
       {/* <Workshops /> */}

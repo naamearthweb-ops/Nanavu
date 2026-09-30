@@ -42,6 +42,14 @@ function Partners() {
       logo: "/partners/tkm-trust.png",
       url: "https://tkmtrust.org",
     },
+    {
+      name: "THE LEELA\u00A0ASHTAMUDI, A RAVIZ HOTEL",
+      short: "THE LEELA",
+      role: "HOSPITALITY PARTNER",
+      description: "Experience luxury and sustainability by the tranquil backwaters of Ashtamudi.",
+      logo: "/partners/leela-logo.png",
+      url: "https://www.theleela.com/",
+    },
   ];
 
   const associatePartners = [
@@ -238,7 +246,7 @@ function Partners() {
             target="_blank"
             rel="noopener noreferrer"
             title={`Visit ${partner.name}`}
-            className="
+            className={`
               group
               relative
               pt-8
@@ -254,7 +262,8 @@ function Partners() {
               w-full
               max-w-md
               mx-auto
-            "
+              ${index === 4 ? "md:col-span-2" : ""}
+            `}
           >
             {/* NUMBER & EXTERNAL ICON */}
             <div className="flex justify-between items-center w-full absolute top-4 left-0 right-0 z-10 px-2">

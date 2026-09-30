@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ImagePlaceholder from "./ImagePlaceholder";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,86 +107,66 @@ function Experience() {
         </div>
 
         {/* 01 - TECHNICAL SESSIONS */}
-        <div className="experience-panel relative w-[80vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
-          <div className="w-full grid grid-cols-12 gap-8 items-center">
-            <div className="experience-content col-span-5">
-              <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">01 / TRACK ONE</span>
-              <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-teal">
-                TECHNICAL SESSIONS
-              </h3>
-              <p className="mt-2 text-sm text-[#C99A72] tracking-wider uppercase font-medium">Interactive & Expert-Led</p>
-              <p className="mt-5 max-w-sm text-sm lg:text-base leading-relaxed text-nanavu-offwhite/70">
-                Expert-led sessions on emerging materials, technologies, and practices in sustainable construction, with opportunities for interaction and knowledge exchange.
-              </p>
-            </div>
-            <div className="col-span-7 col-start-6">
-              <div className="experience-image relative h-[55vh] w-full overflow-hidden">
-                <ImagePlaceholder label="Technical Sessions" category="TRACK 01" aspect="h-full" />
-              </div>
-            </div>
+        <div className="experience-panel relative w-[60vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
+          <div className="w-full max-w-2xl experience-content">
+            <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">01 / TRACK ONE</span>
+            <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-teal">
+              TECHNICAL SESSIONS
+            </h3>
+            <p className="mt-2 text-sm text-[#C99A72] tracking-wider uppercase font-medium">Interactive & Expert-Led</p>
+            <p className="mt-5 text-base lg:text-lg leading-relaxed text-nanavu-offwhite/70">
+              Expert-led sessions on emerging materials, technologies, and practices in sustainable construction, with opportunities for interaction and knowledge exchange.
+            </p>
           </div>
         </div>
 
         {/* 02 - PANEL DISCUSSION */}
-        <div className="experience-panel relative w-[80vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
-          <div className="w-full grid grid-cols-12 gap-8 items-center">
-            <div className="col-span-7">
-              <div className="experience-image relative h-[55vh] w-full overflow-hidden">
-                <ImagePlaceholder label="Panel Discussion" category="TRACK 02" aspect="h-full" />
-              </div>
-            </div>
-            <div className="experience-content col-span-5 col-start-8">
-              <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">02 / TRACK TWO</span>
-              <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-clay">
-                PANEL DISCUSSION
-              </h3>
-              <p className="mt-2 text-sm text-[#D8C7A5] tracking-wider uppercase font-medium">Bridging Education and Practice</p>
-              <p className="mt-5 max-w-sm text-sm lg:text-base leading-relaxed text-nanavu-offwhite/70">
-                Why Sustainability Remains Optional in Construction — exploring the gap between education and professional practice and how sustainability can become integral to construction.
-              </p>
-            </div>
+        <div className="experience-panel relative w-[60vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
+          <div className="w-full max-w-2xl experience-content">
+            <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">02 / TRACK TWO</span>
+            <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-clay">
+              PANEL DISCUSSION
+            </h3>
+            <p className="mt-2 text-sm text-[#D8C7A5] tracking-wider uppercase font-medium">Bridging Education and Practice</p>
+            <p className="mt-5 text-base lg:text-lg leading-relaxed text-nanavu-offwhite/70">
+              Why Sustainability Remains Optional in Construction — exploring the gap between education and professional practice and how sustainability can become integral to construction.
+            </p>
           </div>
         </div>
 
         {/* 03 - CONCEPT PITCHING */}
-        <div className="experience-panel relative w-[80vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
-          <div className="w-full grid grid-cols-12 gap-8 items-center">
-            <div className="experience-content col-span-5">
-              <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">03 / TRACK THREE</span>
-              <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-sand">
-                CONCEPT PITCHING
-              </h3>
-              <p className="mt-2 text-sm text-[#287A73] tracking-wider uppercase font-medium">The 2050 Kerala Home</p>
-              <p className="mt-5 max-w-sm text-sm lg:text-base leading-relaxed text-nanavu-offwhite/70">
-                Imagining a Kerala home that is affordable, low-carbon, climate-resilient, and comfortable.
-              </p>
-            </div>
-            <div className="col-span-7 col-start-6">
-              <div className="experience-image relative h-[55vh] w-full overflow-hidden">
-                <ImagePlaceholder label="Concept Pitching" category="TRACK 03" aspect="h-full" />
-              </div>
+        <div className="experience-panel relative w-[60vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
+          <div className="w-full max-w-2xl experience-content">
+            <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">03 / TRACK THREE</span>
+            <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-nanavu-sand">
+              CONCEPT PITCHING
+            </h3>
+            <p className="mt-2 text-sm text-[#287A73] tracking-wider uppercase font-medium">The 2050 Kerala Home</p>
+            <p className="mt-5 text-base lg:text-lg leading-relaxed text-nanavu-offwhite/70">
+              Imagining a Kerala home that is affordable, low-carbon, climate-resilient, and comfortable.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a href="/guidelines.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-xs tracking-wider border border-nanavu-sand/50 text-nanavu-sand hover:bg-nanavu-sand hover:text-nanavu-charcoal transition-colors uppercase">
+                Event Guidelines
+              </a>
+              <a href="/theme.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-xs tracking-wider border border-[#287A73]/50 text-[#287A73] hover:bg-[#287A73] hover:text-nanavu-offwhite transition-colors uppercase">
+                Themes
+              </a>
             </div>
           </div>
         </div>
 
         {/* 04 - EXHIBITION */}
-        <div className="experience-panel relative w-[80vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
-          <div className="w-full grid grid-cols-12 gap-8 items-center">
-            <div className="col-span-7">
-              <div className="experience-image relative h-[55vh] w-full overflow-hidden">
-                <ImagePlaceholder label="Exhibition" category="TRACK 04" aspect="h-full" />
-              </div>
-            </div>
-            <div className="experience-content col-span-5 col-start-8">
-              <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">04 / TRACK FOUR</span>
-              <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-[#D8C7A5]">
-                EXHIBITION
-              </h3>
-              <p className="mt-2 text-sm text-[#C99A72] tracking-wider uppercase font-medium">Sustainable Showcase</p>
-              <p className="mt-5 max-w-sm text-sm lg:text-base leading-relaxed text-nanavu-offwhite/70">
-                A showcase of innovative ideas, materials, technologies, and student projects focused on sustainable construction.
-              </p>
-            </div>
+        <div className="experience-panel relative w-[60vw] h-screen flex-shrink-0 px-12 lg:px-16 flex items-center">
+          <div className="w-full max-w-2xl experience-content">
+            <span className="text-xs tracking-[0.3em] text-nanavu-sand font-medium">04 / TRACK FOUR</span>
+            <h3 className="mt-4 text-[4vw] leading-[0.9] tracking-[-0.05em] font-light text-[#D8C7A5]">
+              EXHIBITION
+            </h3>
+            <p className="mt-2 text-sm text-[#C99A72] tracking-wider uppercase font-medium">Sustainable Showcase</p>
+            <p className="mt-5 text-base lg:text-lg leading-relaxed text-nanavu-offwhite/70">
+              A showcase of innovative ideas, materials, technologies, and student projects focused on sustainable construction.
+            </p>
           </div>
           <div className="absolute right-8 bottom-8">
             <span className="text-xs tracking-[0.25em] text-nanavu-teal">CONTINUE →</span>
@@ -220,6 +200,10 @@ function Experience() {
             title: "CONCEPT PITCHING",
             color: "text-nanavu-sand",
             text: "The 2050 Kerala Home — imagining a Kerala home that is affordable, low-carbon, climate-resilient, and comfortable.",
+            links: [
+              { label: "Event Guidelines", url: "/guidelines.pdf", border: "border-nanavu-sand/50", textCol: "text-nanavu-sand", hoverBg: "hover:bg-nanavu-sand", hoverText: "hover:text-nanavu-charcoal" },
+              { label: "Themes", url: "/theme.pdf", border: "border-[#287A73]/50", textCol: "text-[#287A73]", hoverBg: "hover:bg-[#287A73]", hoverText: "hover:text-nanavu-offwhite" }
+            ]
           },
           {
             number: "04",
@@ -227,21 +211,24 @@ function Experience() {
             color: "text-nanavu-offwhite",
             text: "A showcase of innovative ideas, materials, technologies, and student projects focused on sustainable construction.",
           },
-        ].map((item) => (
-          <div key={item.number} className="mb-24">
+        ].map((item, idx) => (
+          <div key={item.number} className={`mb-16 ${idx > 0 ? "border-t border-nanavu-stone/20 pt-12" : ""}`}>
             <span className="text-xs tracking-[0.3em] text-nanavu-sand">{item.number}</span>
             <h3 className={`mt-5 text-[15vw] leading-[0.9] tracking-[-0.05em] font-light ${item.color}`}>
               {item.title}
             </h3>
-            <div className="relative mt-8 w-full h-[48vh] overflow-hidden">
-              <img src="/experience.jpg" alt={`NANAVU ${item.title}`} className="w-full h-full object-cover" />
-              <div className="absolute left-5 bottom-5 px-3 py-2 bg-black/40 backdrop-blur-sm text-[9px] tracking-[0.3em]">
-                {item.title}
-              </div>
-            </div>
             <p className="mt-7 text-sm leading-relaxed text-nanavu-offwhite/60">
               {item.text}
             </p>
+            {item.links && (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {item.links.map(link => (
+                  <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className={`px-4 py-2 text-[10px] tracking-wider border ${link.border} ${link.textCol} ${link.hoverBg} ${link.hoverText} transition-colors uppercase`}>
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
