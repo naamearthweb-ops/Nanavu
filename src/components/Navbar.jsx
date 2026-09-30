@@ -113,7 +113,7 @@ function Navbar() {
   let menuItems = [
     { name: "ABOUT", link: "/#about" },
     { name: "SCHEDULE", link: "/schedule" },
-    { name: "PROGRAMME", link: "/#workshops" },
+    { name: "PROGRAMME", link: "/#experience" },
     { name: "SPEAKERS", link: "/#speakers" },
     { name: "PARTNERS", link: "/#partners" },
     { name: "IMPACT", link: "/#impact" },
