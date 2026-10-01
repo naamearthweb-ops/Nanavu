@@ -19,7 +19,7 @@ function Checkout() {
   const [availableTeams, setAvailableTeams] = useState([]);
   const [showTeamDropdown, setShowTeamDropdown] = useState(false);
 
-  const baseAmount = userType === "student" ? 300 : 600;
+  const baseAmount = userType === "student" ? 450 : 800;
   const displayAmount = baseAmount + (optIdeathon ? 50 : 0);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ function Checkout() {
           return;
         }
         setRegistration(data);
-        setUserType(data.amount_paid_inr === 600 || data.amount_paid_inr === 750 ? "other" : "student");
+        setUserType(data.amount_paid_inr === 800 || data.amount_paid_inr === 850 || data.amount_paid_inr === 600 || data.amount_paid_inr === 750 ? "other" : "student");
         setOptIdeathon(data.ideathon_opt_in || false);
         if (data.teams?.name) setTeamName(data.teams.name);
       }
@@ -220,7 +220,7 @@ function Checkout() {
                   onChange={() => setUserType("student")}
                   className="accent-[#287A73]"
                 />
-                Student (₹300)
+                Student (₹450)
               </label>
               <label className="flex items-center gap-2 cursor-pointer text-sm">
                 <input 
@@ -231,7 +231,7 @@ function Checkout() {
                   onChange={() => setUserType("other")}
                   className="accent-[#287A73]"
                 />
-                Professional/Other (₹600)
+                Professional/Other (₹800)
               </label>
             </div>
 

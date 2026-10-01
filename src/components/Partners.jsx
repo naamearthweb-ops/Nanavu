@@ -47,8 +47,9 @@ function Partners() {
       short: "THE LEELA",
       role: "HOSPITALITY PARTNER",
       description: "Experience luxury and sustainability by the tranquil backwaters of Ashtamudi.",
-      logo: "/partners/leela-logo.png",
+      logo: "/partners/leela-black.png",
       url: "https://www.theleela.com/",
+      customLogoClass: "max-w-[200px] scale-125 group-hover:scale-[1.3]",
     },
   ];
 
@@ -287,10 +288,9 @@ function Partners() {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="
+                  className={`
                     h-full
                     w-auto
-                    max-w-[140px]
                     object-contain
                     grayscale
                     opacity-70
@@ -298,8 +298,8 @@ function Partners() {
                     duration-700
                     group-hover:grayscale-0
                     group-hover:opacity-100
-                    group-hover:scale-105
-                  "
+                    ${partner.customLogoClass || "max-w-[140px] group-hover:scale-105"}
+                  `}
                 />
               </div>
             </div>

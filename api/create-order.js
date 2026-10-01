@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     email, password, full_name, phone, whatsapp, organization, branch, year_of_study, food_preference 
   } = req.body;
 
-  let calculatedAmount = userType === 'student' ? 300 : 600;
+  let calculatedAmount = userType === 'student' ? 450 : 800;
     if (optIdeathon) {
       calculatedAmount += 50;
     }

@@ -24,7 +24,6 @@ function Register() {
   const [success, setSuccess] = useState(false);
   
   const [user, setUser] = useState(null);
-  const [hasRegistered, setHasRegistered] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
 
   const [userType, setUserType] = useState("student");
@@ -32,20 +31,36 @@ function Register() {
   const [teamName, setTeamName] = useState("");
   const [availableTeams, setAvailableTeams] = useState([]);
   const [showTeamDropdown, setShowTeamDropdown] = useState(false);
+  const [registrationClosed, setRegistrationClosed] = useState(false);
 
-  const baseAmount = userType === "student" ? 300 : 600;
+  const baseAmount = userType === "student" ? 450 : 800;
   const displayAmount = baseAmount + (optIdeathon ? 50 : 0);
 
   useEffect(() => {
-    const checkAuth = async () => {
+    const checkAuthAndSettings = async () => {
+      // Check auth
       const { data: { session } } = await supabase.auth.getSession();
       if (session?.user) {
         navigate("/checkout");
         return;
       }
+      
+      // Check if registration is closed
+      try {
+        const res = await fetch("/api/settings");
+        if (res.ok) {
+          const settings = await res.json();
+          if (settings.registration_closed === 'true') {
+            setRegistrationClosed(true);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch settings");
+      }
+      
       setCheckingAuth(false);
     };
-    checkAuth();
+    checkAuthAndSettings();
   }, [navigate]);
 
   useEffect(() => {
@@ -167,6 +182,24 @@ function Register() {
         <div className="text-center max-w-2xl mx-auto bg-[#29312F] p-12 rounded-2xl border border-[#287A73]/40 shadow-xl">
           <h2 className="text-4xl text-[#287A73] mb-4">Registration Successful!</h2>
           <p className="text-[#8C877D]">Thank you for registering for NANAVU '26. Your account has been created.</p>
+          <div className="flex gap-4 justify-center mt-8">
+            <Link to="/" className="inline-block border border-[#287A73] text-[#287A73] px-6 py-3 rounded-xl hover:bg-[#287A73] hover:text-[#F3EFE6] transition">Return to Home</Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (registrationClosed) {
+    return (
+      <section className="min-h-screen bg-[#1E2523] text-[#F3EFE6] flex flex-col items-center justify-center px-6 py-32 relative">
+        <Link to="/" className="absolute top-8 left-8 md:top-12 md:left-12 flex items-center gap-2 text-[#8C877D] hover:text-white transition-colors group">
+          <span className="text-xl transition-transform group-hover:-translate-x-1">←</span>
+          <span className="text-xs tracking-widest uppercase mt-0.5">Back to Home</span>
+        </Link>
+        <div className="text-center max-w-2xl mx-auto bg-[#29312F] p-12 rounded-2xl border border-[#287A73]/40 shadow-xl">
+          <h2 className="text-4xl text-[#287A73] mb-4">Registration is closed</h2>
+          <p className="text-[#8C877D]">Thank you for your interest in NANAVU '26. Online registrations have been closed.</p>
           <div className="flex gap-4 justify-center mt-8">
             <Link to="/" className="inline-block border border-[#287A73] text-[#287A73] px-6 py-3 rounded-xl hover:bg-[#287A73] hover:text-[#F3EFE6] transition">Return to Home</Link>
           </div>
@@ -324,7 +357,7 @@ function Register() {
                   onChange={() => setUserType("student")}
                   className="accent-[#287A73]"
                 />
-                Student (₹300)
+                Student (₹450)
               </label>
               <label className="flex items-center gap-2 cursor-pointer text-sm">
                 <input 
@@ -335,7 +368,7 @@ function Register() {
                   onChange={() => setUserType("other")}
                   className="accent-[#287A73]"
                 />
-                Professional/Other (₹600)
+                Professional/Other (₹800)
               </label>
             </div>
 

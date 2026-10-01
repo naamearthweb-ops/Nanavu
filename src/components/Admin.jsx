@@ -22,6 +22,9 @@ function Admin() {
   const [adminLoading, setAdminLoading] = useState(false);
   const [adminMsg, setAdminMsg] = useState({ text: "", type: "" });
 
+  const [registrationClosed, setRegistrationClosed] = useState(false);
+  const [togglingRegistration, setTogglingRegistration] = useState(false);
+
   useEffect(() => {
     fetchData();
   }, [navigate]);
@@ -46,6 +49,13 @@ function Admin() {
       
       setUsers(data.users);
       setAdminRole(data.adminRole);
+
+      // Fetch settings
+      const settingsRes = await fetch('/api/settings');
+      if (settingsRes.ok) {
+        const settings = await settingsRes.json();
+        setRegistrationClosed(settings.registration_closed === 'true');
+      }
 
       if (data.adminRole === 'SUPER_ADMIN') {
         fetchAdmins(session.access_token);
@@ -110,6 +120,30 @@ function Admin() {
       else alert("Failed to remove admin.");
     } catch (err) {
       alert("Error removing admin.");
+    }
+  };
+
+  const toggleRegistration = async () => {
+    if (!confirm(`Are you sure you want to ${registrationClosed ? 'OPEN' : 'CLOSE'} registrations?`)) return;
+    setTogglingRegistration(true);
+    try {
+      const res = await fetch('/api/admin/settings', {
+        method: 'POST',
+        headers: { 
+          'Authorization': `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ key: 'registration_closed', value: registrationClosed ? 'false' : 'true' })
+      });
+      if (res.ok) {
+        setRegistrationClosed(!registrationClosed);
+      } else {
+        alert("Failed to update registration status.");
+      }
+    } catch (err) {
+      alert("Error updating registration status.");
+    } finally {
+      setTogglingRegistration(false);
     }
   };
 
@@ -192,7 +226,18 @@ function Admin() {
               </span>
             </div>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row gap-4 items-end">
+            <button 
+              onClick={toggleRegistration} 
+              disabled={togglingRegistration}
+              className={`flex items-center gap-2 border px-5 py-3 rounded-xl text-xs tracking-widest uppercase transition-all ${
+                registrationClosed 
+                  ? 'bg-red-500/10 border-red-500/50 text-red-400 hover:bg-red-500/20' 
+                  : 'bg-[#4ADE80]/10 border-[#4ADE80]/50 text-[#4ADE80] hover:bg-[#4ADE80]/20'
+              }`}
+            >
+              {togglingRegistration ? "..." : (registrationClosed ? "Registration Closed (Click to Open)" : "Registration Open (Click to Close)")}
+            </button>
             <button onClick={downloadCSV} className="flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white px-5 py-3 rounded-xl text-xs tracking-widest uppercase transition-all">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
               Export CSV

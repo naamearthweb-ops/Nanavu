@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'You have already paid.' });
     }
 
-    let calculatedAmount = userType === 'student' ? 300 : 600;
+    let calculatedAmount = userType === 'student' ? 450 : 800;
     let teamId = null;
     
     if (optIdeathon) {
